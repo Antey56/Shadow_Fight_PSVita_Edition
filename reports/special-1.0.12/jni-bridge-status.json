@@ -78,7 +78,7 @@
     231
   ],
   "unsupported_slots": "NULL; reject through capability gate before use",
-  "python_tests": 214,
+  "python_tests": 215,
   "ctest_targets": 8,
   "unity_executed": false,
   "device_tested": false,
@@ -97,7 +97,7 @@
   "exception_objects": "synthetic immutable error payload; no Java Throwable class/unwind",
   "registration": "typed JNI batch; immutable declarations and ARM32 address ranges required",
   "reflection": "known synthetic classes only; initialize=true rejected",
-  "strings": "validated modified UTF-8; 64 KiB per string; 16 copied char leases",
+  "strings": "validated modified UTF-8; 64 KiB per string; 8 MiB aggregate payload; 16 copied char leases",
   "primitive_arrays": "8 types; copied Elements; checked regions; 8 MiB total backing, 4 MiB copied lease budget",
   "object_arrays": "restricted leaf-only references; 4096 elements/array, 8 MiB aggregate; nested arrays rejected",
   "direct_buffers": "borrowed native memory only; no Java buffer methods or audio driver",

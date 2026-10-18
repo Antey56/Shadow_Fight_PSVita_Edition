@@ -128,3 +128,14 @@ class ObjectArrayTests(unittest.TestCase):
         ints=self.fn(179,P,I)(self.env,2);self.set(a,0,ints)
         self.assertTrue(self.check());self.clear()
         self.assertEqual(self.length(self.get(a)),2)
+
+    def test_retained_strings_have_aggregate_budget(self):
+        cls=self.cls();a=self.new(256,cls);count=0
+        for i in range(256):
+            s=self.string(b'x'*65536)
+            if not s:break
+            self.set(a,i,s);self.delete(s);count+=1
+        self.assertGreater(count,0);self.assertLess(count,256)
+        self.assertTrue(self.check());self.clear()
+        self.delete(a)
+        s=self.string(b'x'*65536);self.assertTrue(s);self.assertFalse(self.check())

@@ -3,7 +3,7 @@
 #include <string.h>
 #define REF_COUNT 64
 #define GEN_MAX 0xffffffu
-typedef struct {size_t refs,bytes,units;uint64_t identity;char data[];} JString;
+typedef struct {size_t refs,bytes,units;uint64_t identity;SfJniObjects *owner;char data[];} JString;
 typedef struct {size_t refs,bytes;uint64_t identity;int32_t length;int type;
                 void *data;SfJniObjects *owner;} JArray;
 typedef struct JObjectArray JObjectArray;
@@ -12,7 +12,7 @@ typedef struct {uint32_t generation;unsigned char kind,global;int error;
 struct JObjectArray {size_t refs,bytes;int32_t length;int component;
                      SfJniObjects *owner;RefSlot values[];};
 struct SfJniObjects {AAssetManager *manager;RefSlot slots[REF_COUNT];int exception;
-                     uint64_t exception_id,serial;size_t array_bytes,lease_bytes,object_bytes;
+                     uint64_t exception_id,serial;size_t array_bytes,lease_bytes,object_bytes,string_bytes;
                      struct {void *data;size_t bytes;uint64_t identity;int type;} array_leases[16];};
 static const size_t array_widths[]={1,1,2,2,4,8,4,8};
 static void fail(SfJniObjects *e,int error){
@@ -56,7 +56,9 @@ static void release_slot(RefSlot *s){
         a->owner->object_bytes-=a->bytes;free(a);
     }
     s->objects=0;
-    if(s->kind==19&&s->string&&!--s->string->refs)free(s->string);
+    if(s->kind==19&&s->string&&!--s->string->refs){
+        s->string->owner->string_bytes-=s->string->bytes+1;free(s->string);
+    }
     if(s->array&&!--s->array->refs){
         if(s->array->type>=0){s->array->owner->array_bytes-=s->array->bytes;free(s->array->data);}
         free(s->array);
@@ -164,9 +166,11 @@ SfJniRef sf_jni_string_utf(SfJniObjects *e,const char *text){
         fail(e,SF_JNI_BAD_TYPE);return 0;
     }
     if(e->serial==UINT64_MAX){fail(e,SF_JNI_CAPACITY);return 0;}
+    if(bytes+1>8u*1024u*1024u-e->string_bytes){fail(e,SF_JNI_CAPACITY);return 0;}
     JString *s=malloc(sizeof(*s)+bytes+1);if(!s){fail(e,SF_JNI_CAPACITY);return 0;}
     SfJniRef r=allocate(e,19,0);if(!r){free(s);return 0;}
-    s->refs=1;s->bytes=bytes;s->units=units;s->identity=++e->serial;memcpy(s->data,text,bytes+1);
+    s->refs=1;s->bytes=bytes;s->units=units;s->identity=++e->serial;s->owner=e;
+    e->string_bytes+=bytes+1;memcpy(s->data,text,bytes+1);
     e->slots[(r&255u)-1].string=s;return r;
 }
 int sf_jni_string_view(SfJniObjects *e,SfJniRef r,const char **text,size_t *bytes,size_t *units,uint64_t *identity){

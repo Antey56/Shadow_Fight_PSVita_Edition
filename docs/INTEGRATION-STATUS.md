@@ -55,4 +55,4 @@ Reference: [JNI FatalError specification](https://docs.oracle.com/en/java/javase
 
 ## 2026-10-18: reference arrays
 
-Current source 0.7-objarrays1 adds three leaf object-array slots, bringing the table to 74 implemented entries. See [ownership, limits and tests](JNI-OBJECT-ARRAYS.md). Nested arrays, initialization and workers remain incomplete. 214 Python tests and 8 CTest targets pass; the new array probe has not been tested on Vita. Earlier 0.7 hardware results remain scoped to gfxtrace1.
+Current source 0.7-objarrays2 adds three leaf object-array slots, bringing the table to 74 implemented entries. See [ownership, limits and tests](JNI-OBJECT-ARRAYS.md). Nested arrays, initialization and workers remain incomplete. 215 Python tests and 8 CTest targets pass; the new array probe has not been tested on Vita. Earlier 0.7 hardware results remain scoped to gfxtrace1.
