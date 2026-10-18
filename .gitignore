@@ -1,0 +1,13 @@
+local-input/
+build*/
+__pycache__/
+*.pyc
+*.exe
+*.apk
+*.apkm
+*.apks
+*.dll
+*.o
+*.obj
+*.a
+.toolchains/

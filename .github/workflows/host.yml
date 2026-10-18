@@ -1,0 +1,21 @@
+name: Host checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  host:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build host components
+        run: cmake -S . -B build-host -DCMAKE_BUILD_TYPE=Debug && cmake --build build-host -j2
+      - name: C tests
+        run: ctest --test-dir build-host --output-on-failure
+      - name: Python and C integration tests
+        run: python -m unittest discover -s tests -v

@@ -1,0 +1,21 @@
+pkgname=libmathneon
+pkgver=0.0.0.r11.g0faab81
+pkgrel=1
+url="https://github.com/Rinnegatamante/math-neon"
+source=("git+https://github.com/Rinnegatamante/math-neon.git#commit=0faab814782c071ff4015527f1ca955ab1ccc470")
+_follow=HEAD
+sha256sums=('SKIP')
+
+build() {
+  cd math-neon
+  make -j$(nproc)
+}
+
+package () {
+  mkdir -p $pkgdir/$VITASDK/arm-vita-eabi/lib
+  mkdir -p $pkgdir/$VITASDK/arm-vita-eabi/include
+
+  cd math-neon
+  cp libmathneon.a $pkgdir/$VITASDK/arm-vita-eabi/lib/
+  cp source/math_neon.h $pkgdir/$VITASDK/arm-vita-eabi/include/
+}

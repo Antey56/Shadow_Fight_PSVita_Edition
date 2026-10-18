@@ -1,0 +1,10 @@
+[0/1] Re-running CMake...
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: <WORKSPACE>/sf2-vita/build-vita
+[1/7] Converting to Sony ELF sf2_diagnostic.velf
+[2/7] Creating SELF eboot.bin
+[3/7] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/eboot.bin.out eboot.bin"
+[4/7] Generating param.sfo for sf2-diagnostic.vpk
+[5/7] Building vpk sf2-diagnostic.vpk
+[6/7] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/sf2-diagnostic.vpk.out sf2-diagnostic.vpk"

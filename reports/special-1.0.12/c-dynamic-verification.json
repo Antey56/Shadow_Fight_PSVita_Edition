@@ -1,0 +1,72 @@
+[
+  {
+    "module": "libcrashlytics-common.so",
+    "relocations_verified": 2875,
+    "matches_python": true,
+    "works_without_sections": true,
+    "game_executed": false
+  },
+  {
+    "module": "libcrashlytics-handler.so",
+    "relocations_verified": 1024,
+    "matches_python": true,
+    "works_without_sections": true,
+    "game_executed": false
+  },
+  {
+    "module": "libcrashlytics-trampoline.so",
+    "relocations_verified": 10,
+    "matches_python": true,
+    "works_without_sections": true,
+    "game_executed": false
+  },
+  {
+    "module": "libcrashlytics.so",
+    "relocations_verified": 1032,
+    "matches_python": true,
+    "works_without_sections": true,
+    "game_executed": false
+  },
+  {
+    "module": "libFirebaseCppApp-10_2_0.so",
+    "relocations_verified": 14682,
+    "matches_python": true,
+    "works_without_sections": true,
+    "game_executed": false
+  },
+  {
+    "module": "libFirebaseCppCrashlytics.so",
+    "relocations_verified": 62,
+    "matches_python": true,
+    "works_without_sections": true,
+    "game_executed": false
+  },
+  {
+    "module": "libFirebaseCppMessaging.so",
+    "relocations_verified": 189,
+    "matches_python": true,
+    "works_without_sections": true,
+    "game_executed": false
+  },
+  {
+    "module": "libil2cpp.so",
+    "relocations_verified": 284466,
+    "matches_python": true,
+    "works_without_sections": true,
+    "game_executed": false
+  },
+  {
+    "module": "libmain.so",
+    "relocations_verified": 79,
+    "matches_python": true,
+    "works_without_sections": true,
+    "game_executed": false
+  },
+  {
+    "module": "libunity.so",
+    "relocations_verified": 28947,
+    "matches_python": true,
+    "works_without_sections": true,
+    "game_executed": false
+  }
+]

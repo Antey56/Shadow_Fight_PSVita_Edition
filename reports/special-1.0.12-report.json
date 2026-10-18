@@ -1,0 +1,5485 @@
+{
+  "publication_view": "allowlisted technical summary; full report kept locally",
+  "apk": {
+    "name": "com.nekki.shadowfight2.paid--30000019.apk",
+    "size": 125481320,
+    "sha256": "ac570008f56922dd1df5bd66934cb4dd44ab3eff0e2961d4f7b02ca398fc969f"
+  },
+  "summary": {
+    "abis": [
+      "armeabi-v7a"
+    ],
+    "asset_count": 1464,
+    "asset_bytes": 252973065,
+    "asset_kinds": {
+      "other": 1457,
+      "config_candidate": 6,
+      "texture": 1
+    },
+    "armv7_present": true
+  },
+  "manifest": [
+    {
+      "tag": "manifest",
+      "attributes": {
+        "versionCode": 30000019,
+        "versionName": "1.0.12",
+        "package": "com.nekki.shadowfight2.paid"
+      }
+    },
+    {
+      "tag": "uses-sdk",
+      "attributes": {
+        "minSdkVersion": 14,
+        "targetSdkVersion": 33
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "android.permission.INTERNET"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "android.permission.WAKE_LOCK"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "android.permission.ACCESS_NETWORK_STATE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "android.permission.ACCESS_WIFI_STATE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "android.permission.READ_PHONE_STATE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "android.permission.POST_NOTIFICATIONS"
+      }
+    },
+    {
+      "tag": "uses-feature",
+      "attributes": {
+        "glEsVersion": 131072
+      }
+    },
+    {
+      "tag": "uses-feature",
+      "attributes": {
+        "name": "android.hardware.touchscreen",
+        "required": false
+      }
+    },
+    {
+      "tag": "uses-feature",
+      "attributes": {
+        "name": "android.hardware.touchscreen.multitouch",
+        "required": false
+      }
+    },
+    {
+      "tag": "uses-feature",
+      "attributes": {
+        "name": "android.hardware.touchscreen.multitouch.distinct",
+        "required": false
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.google.android.c2dm.permission.RECEIVE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.google.android.gms.permission.AD_ID"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.nekki.shadowfight2.paid.permission.C2D_MESSAGE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.sec.android.provider.badge.permission.READ"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.sec.android.provider.badge.permission.WRITE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.htc.launcher.permission.READ_SETTINGS"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.htc.launcher.permission.UPDATE_SHORTCUT"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.sonyericsson.home.permission.BROADCAST_BADGE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.sonymobile.home.permission.PROVIDER_INSERT_BADGE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.anddoes.launcher.permission.UPDATE_COUNT"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.majeur.launcher.permission.UPDATE_BADGE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.huawei.android.launcher.permission.CHANGE_BADGE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.huawei.android.launcher.permission.READ_SETTINGS"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.huawei.android.launcher.permission.WRITE_SETTINGS"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "android.permission.READ_APP_BADGE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.oppo.launcher.permission.READ_SETTINGS"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.oppo.launcher.permission.WRITE_SETTINGS"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "me.everything.badger.permission.BADGE_COUNT_READ"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "me.everything.badger.permission.BADGE_COUNT_WRITE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.android.vending.BILLING"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.android.vending.CHECK_LICENSE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "android.permission.VIBRATE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.nekki.shadowfight2.paid.permission.RECEIVE_ADM_MESSAGE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.amazon.device.messaging.permission.RECEIVE"
+      }
+    },
+    {
+      "tag": "uses-permission",
+      "attributes": {
+        "name": "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"
+      }
+    },
+    {
+      "tag": "application",
+      "attributes": {
+        "name": "androidx.multidex.MultiDexApplication"
+      }
+    }
+  ],
+  "libraries": [
+    {
+      "bits": 32,
+      "machine": 40,
+      "type": 3,
+      "flags": "0x5000200",
+      "needed": [
+        "libdl.so",
+        "liblog.so",
+        "libz.so",
+        "libc.so",
+        "libm.so"
+      ],
+      "imports": [
+        {
+          "name": "__cxa_atexit",
+          "weak": false
+        },
+        {
+          "name": "__cxa_finalize",
+          "weak": false
+        },
+        {
+          "name": "raise",
+          "weak": false
+        },
+        {
+          "name": "memset",
+          "weak": false
+        },
+        {
+          "name": "memcpy",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy",
+          "weak": false
+        },
+        {
+          "name": "pthread_key_delete",
+          "weak": true
+        },
+        {
+          "name": "abort",
+          "weak": false
+        },
+        {
+          "name": "strlen",
+          "weak": false
+        },
+        {
+          "name": "dladdr",
+          "weak": false
+        },
+        {
+          "name": "close",
+          "weak": false
+        },
+        {
+          "name": "fsync",
+          "weak": false
+        },
+        {
+          "name": "open",
+          "weak": false
+        },
+        {
+          "name": "write",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr",
+          "weak": false
+        },
+        {
+          "name": "memchr",
+          "weak": false
+        },
+        {
+          "name": "strrchr",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr8",
+          "weak": false
+        },
+        {
+          "name": "__errno",
+          "weak": false
+        },
+        {
+          "name": "atoll",
+          "weak": false
+        },
+        {
+          "name": "lseek",
+          "weak": false
+        },
+        {
+          "name": "memcmp",
+          "weak": false
+        },
+        {
+          "name": "read",
+          "weak": false
+        },
+        {
+          "name": "statfs",
+          "weak": false
+        },
+        {
+          "name": "strchr",
+          "weak": false
+        },
+        {
+          "name": "strtol",
+          "weak": false
+        },
+        {
+          "name": "sysconf",
+          "weak": false
+        },
+        {
+          "name": "getopt_long",
+          "weak": false
+        },
+        {
+          "name": "getppid",
+          "weak": false
+        },
+        {
+          "name": "geteuid",
+          "weak": false
+        },
+        {
+          "name": "fprintf",
+          "weak": false
+        },
+        {
+          "name": "strncmp",
+          "weak": false
+        },
+        {
+          "name": "optarg",
+          "weak": false
+        },
+        {
+          "name": "optind",
+          "weak": false
+        },
+        {
+          "name": "__sF",
+          "weak": false
+        },
+        {
+          "name": "__android_log_buf_write",
+          "weak": false
+        },
+        {
+          "name": "eventfd",
+          "weak": false
+        },
+        {
+          "name": "epoll_ctl",
+          "weak": false
+        },
+        {
+          "name": "epoll_wait",
+          "weak": false
+        },
+        {
+          "name": "getsockopt",
+          "weak": false
+        },
+        {
+          "name": "setsockopt",
+          "weak": false
+        },
+        {
+          "name": "getuid",
+          "weak": false
+        },
+        {
+          "name": "getpid",
+          "weak": false
+        },
+        {
+          "name": "syscall",
+          "weak": false
+        },
+        {
+          "name": "time",
+          "weak": false
+        },
+        {
+          "name": "ceilf",
+          "weak": false
+        },
+        {
+          "name": "gettimeofday",
+          "weak": false
+        },
+        {
+          "name": "uname",
+          "weak": false
+        },
+        {
+          "name": "__system_property_get",
+          "weak": false
+        },
+        {
+          "name": "towlower",
+          "weak": false
+        },
+        {
+          "name": "towupper",
+          "weak": false
+        },
+        {
+          "name": "tolower",
+          "weak": false
+        },
+        {
+          "name": "toupper",
+          "weak": false
+        },
+        {
+          "name": "vsscanf",
+          "weak": false
+        },
+        {
+          "name": "vasprintf",
+          "weak": false
+        },
+        {
+          "name": "wcsxfrm",
+          "weak": false
+        },
+        {
+          "name": "wcscoll",
+          "weak": false
+        },
+        {
+          "name": "wctob",
+          "weak": false
+        },
+        {
+          "name": "mbrlen",
+          "weak": false
+        },
+        {
+          "name": "isxdigit",
+          "weak": false
+        },
+        {
+          "name": "strftime",
+          "weak": false
+        },
+        {
+          "name": "strtod",
+          "weak": false
+        },
+        {
+          "name": "strcoll",
+          "weak": false
+        },
+        {
+          "name": "strxfrm",
+          "weak": false
+        },
+        {
+          "name": "btowc",
+          "weak": false
+        },
+        {
+          "name": "isupper",
+          "weak": false
+        },
+        {
+          "name": "iswalpha",
+          "weak": false
+        },
+        {
+          "name": "isblank",
+          "weak": false
+        },
+        {
+          "name": "islower",
+          "weak": false
+        },
+        {
+          "name": "iswlower",
+          "weak": false
+        },
+        {
+          "name": "iswprint",
+          "weak": false
+        },
+        {
+          "name": "iswcntrl",
+          "weak": false
+        },
+        {
+          "name": "iswdigit",
+          "weak": false
+        },
+        {
+          "name": "iswupper",
+          "weak": false
+        },
+        {
+          "name": "iswxdigit",
+          "weak": false
+        },
+        {
+          "name": "iswpunct",
+          "weak": false
+        },
+        {
+          "name": "iswspace",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_settype",
+          "weak": false
+        },
+        {
+          "name": "pthread_equal",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_self",
+          "weak": false
+        },
+        {
+          "name": "sched_yield",
+          "weak": false
+        },
+        {
+          "name": "tzset",
+          "weak": false
+        },
+        {
+          "name": "localtime_r",
+          "weak": false
+        },
+        {
+          "name": "mktime",
+          "weak": false
+        },
+        {
+          "name": "tzname",
+          "weak": false
+        },
+        {
+          "name": "daylight",
+          "weak": false
+        },
+        {
+          "name": "timezone",
+          "weak": false
+        },
+        {
+          "name": "sched_getscheduler",
+          "weak": false
+        },
+        {
+          "name": "sched_getparam",
+          "weak": false
+        },
+        {
+          "name": "getpriority",
+          "weak": false
+        },
+        {
+          "name": "atoi",
+          "weak": false
+        },
+        {
+          "name": "nanosleep",
+          "weak": false
+        },
+        {
+          "name": "pthread_detach",
+          "weak": false
+        },
+        {
+          "name": "pthread_once",
+          "weak": false
+        },
+        {
+          "name": "strnlen",
+          "weak": false
+        },
+        {
+          "name": "calloc",
+          "weak": false
+        },
+        {
+          "name": "isalnum",
+          "weak": false
+        },
+        {
+          "name": "sigaltstack",
+          "weak": false
+        },
+        {
+          "name": "pthread_getspecific",
+          "weak": false
+        },
+        {
+          "name": "mprotect",
+          "weak": false
+        },
+        {
+          "name": "pthread_setspecific",
+          "weak": false
+        },
+        {
+          "name": "prctl",
+          "weak": false
+        },
+        {
+          "name": "munmap",
+          "weak": false
+        },
+        {
+          "name": "pthread_key_create",
+          "weak": false
+        },
+        {
+          "name": "fork",
+          "weak": false
+        },
+        {
+          "name": "execve",
+          "weak": false
+        },
+        {
+          "name": "execv",
+          "weak": false
+        },
+        {
+          "name": "_exit",
+          "weak": false
+        },
+        {
+          "name": "waitpid",
+          "weak": false
+        },
+        {
+          "name": "dlsym",
+          "weak": false
+        },
+        {
+          "name": "sigsetjmp",
+          "weak": false
+        },
+        {
+          "name": "sigaction",
+          "weak": false
+        },
+        {
+          "name": "strerror_r",
+          "weak": false
+        },
+        {
+          "name": "snprintf",
+          "weak": false
+        },
+        {
+          "name": "siglongjmp",
+          "weak": false
+        },
+        {
+          "name": "opendir",
+          "weak": false
+        },
+        {
+          "name": "readdir",
+          "weak": false
+        },
+        {
+          "name": "strcmp",
+          "weak": false
+        },
+        {
+          "name": "dirfd",
+          "weak": false
+        },
+        {
+          "name": "flock",
+          "weak": false
+        },
+        {
+          "name": "lseek64",
+          "weak": false
+        },
+        {
+          "name": "ftruncate64",
+          "weak": false
+        },
+        {
+          "name": "lstat",
+          "weak": false
+        },
+        {
+          "name": "strtoumax",
+          "weak": false
+        },
+        {
+          "name": "mkdir",
+          "weak": false
+        },
+        {
+          "name": "rename",
+          "weak": false
+        },
+        {
+          "name": "stat",
+          "weak": false
+        },
+        {
+          "name": "unlink",
+          "weak": false
+        },
+        {
+          "name": "rmdir",
+          "weak": false
+        },
+        {
+          "name": "writev",
+          "weak": false
+        },
+        {
+          "name": "vfprintf",
+          "weak": false
+        },
+        {
+          "name": "strstr",
+          "weak": false
+        },
+        {
+          "name": "strtoimax",
+          "weak": false
+        },
+        {
+          "name": "memalign",
+          "weak": false
+        },
+        {
+          "name": "__assert2",
+          "weak": false
+        },
+        {
+          "name": "fputc",
+          "weak": false
+        },
+        {
+          "name": "pread64",
+          "weak": false
+        },
+        {
+          "name": "ptrace",
+          "weak": false
+        },
+        {
+          "name": "socketpair",
+          "weak": false
+        },
+        {
+          "name": "sendmsg",
+          "weak": false
+        },
+        {
+          "name": "recvmsg",
+          "weak": false
+        },
+        {
+          "name": "readlink",
+          "weak": false
+        },
+        {
+          "name": "sscanf",
+          "weak": false
+        },
+        {
+          "name": "setsid",
+          "weak": false
+        },
+        {
+          "name": "execvp",
+          "weak": false
+        },
+        {
+          "name": "strsignal",
+          "weak": false
+        },
+        {
+          "name": "closedir",
+          "weak": false
+        },
+        {
+          "name": "__mmap2",
+          "weak": false
+        },
+        {
+          "name": "free",
+          "weak": false
+        },
+        {
+          "name": "isspace",
+          "weak": false
+        },
+        {
+          "name": "strtoul",
+          "weak": false
+        },
+        {
+          "name": "strtoll",
+          "weak": false
+        },
+        {
+          "name": "strtoull",
+          "weak": false
+        },
+        {
+          "name": "deflateEnd",
+          "weak": false
+        },
+        {
+          "name": "inflateEnd",
+          "weak": false
+        },
+        {
+          "name": "inflateInit_",
+          "weak": false
+        },
+        {
+          "name": "deflateInit_",
+          "weak": false
+        },
+        {
+          "name": "deflate",
+          "weak": false
+        },
+        {
+          "name": "inflate",
+          "weak": false
+        },
+        {
+          "name": "getaddrinfo",
+          "weak": false
+        },
+        {
+          "name": "socket",
+          "weak": false
+        },
+        {
+          "name": "connect",
+          "weak": false
+        },
+        {
+          "name": "fcntl",
+          "weak": false
+        },
+        {
+          "name": "poll",
+          "weak": false
+        },
+        {
+          "name": "freeaddrinfo",
+          "weak": false
+        },
+        {
+          "name": "strncpy",
+          "weak": false
+        },
+        {
+          "name": "clock_gettime",
+          "weak": false
+        },
+        {
+          "name": "zError",
+          "weak": false
+        },
+        {
+          "name": "deflateInit2_",
+          "weak": false
+        },
+        {
+          "name": "fopen",
+          "weak": false
+        },
+        {
+          "name": "fscanf",
+          "weak": false
+        },
+        {
+          "name": "feof",
+          "weak": false
+        },
+        {
+          "name": "pthread_create",
+          "weak": false
+        },
+        {
+          "name": "pthread_join",
+          "weak": false
+        },
+        {
+          "name": "fclose",
+          "weak": false
+        },
+        {
+          "name": "fflush",
+          "weak": false
+        },
+        {
+          "name": "__android_log_write",
+          "weak": false
+        },
+        {
+          "name": "gettid",
+          "weak": false
+        },
+        {
+          "name": "fputs",
+          "weak": false
+        },
+        {
+          "name": "ldexp",
+          "weak": false
+        },
+        {
+          "name": "vsnprintf",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_trylock",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_lock",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_unlock",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_fail",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_guard",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_broadcast",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_signal",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_timedwait",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_wait",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_destroy",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr4",
+          "weak": false
+        },
+        {
+          "name": "malloc",
+          "weak": false
+        },
+        {
+          "name": "realloc",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memset",
+          "weak": false
+        },
+        {
+          "name": "__gnu_Unwind_Find_exidx",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memset4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy8",
+          "weak": false
+        }
+      ],
+      "jni_exports": [],
+      "relocations": {
+        "23": 2562,
+        "21": 17,
+        "2": 26,
+        "22": 270
+      },
+      "load_segments": [
+        {
+          "vaddr": 0,
+          "memsz": 440400
+        },
+        {
+          "vaddr": 444496,
+          "memsz": 16988
+        }
+      ],
+      "load_span": 461484,
+      "path": "lib/armeabi-v7a/libcrashlytics-common.so",
+      "size": 456204
+    },
+    {
+      "bits": 32,
+      "machine": 40,
+      "type": 3,
+      "flags": "0x5000200",
+      "needed": [
+        "libdl.so",
+        "liblog.so",
+        "libz.so",
+        "libc.so",
+        "libm.so"
+      ],
+      "imports": [
+        {
+          "name": "__cxa_atexit",
+          "weak": false
+        },
+        {
+          "name": "__cxa_finalize",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove",
+          "weak": false
+        },
+        {
+          "name": "dladdr",
+          "weak": false
+        },
+        {
+          "name": "__android_log_print",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_fail",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_guard",
+          "weak": false
+        },
+        {
+          "name": "abort",
+          "weak": false
+        },
+        {
+          "name": "dlopen",
+          "weak": false
+        },
+        {
+          "name": "dlsym",
+          "weak": false
+        },
+        {
+          "name": "strlen",
+          "weak": false
+        },
+        {
+          "name": "free",
+          "weak": false
+        },
+        {
+          "name": "memalign",
+          "weak": false
+        },
+        {
+          "name": "malloc",
+          "weak": false
+        },
+        {
+          "name": "__errno",
+          "weak": false
+        },
+        {
+          "name": "fflush",
+          "weak": false
+        },
+        {
+          "name": "fprintf",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr",
+          "weak": false
+        },
+        {
+          "name": "pthread_getspecific",
+          "weak": false
+        },
+        {
+          "name": "pthread_key_create",
+          "weak": false
+        },
+        {
+          "name": "pthread_once",
+          "weak": false
+        },
+        {
+          "name": "pthread_setspecific",
+          "weak": false
+        },
+        {
+          "name": "strcmp",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr8",
+          "weak": false
+        },
+        {
+          "name": "calloc",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_lock",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_unlock",
+          "weak": false
+        },
+        {
+          "name": "__assert2",
+          "weak": false
+        },
+        {
+          "name": "__sF",
+          "weak": false
+        },
+        {
+          "name": "fputc",
+          "weak": false
+        },
+        {
+          "name": "vasprintf",
+          "weak": false
+        },
+        {
+          "name": "vfprintf",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove4",
+          "weak": false
+        },
+        {
+          "name": "islower",
+          "weak": false
+        },
+        {
+          "name": "isxdigit",
+          "weak": false
+        },
+        {
+          "name": "realloc",
+          "weak": false
+        },
+        {
+          "name": "snprintf",
+          "weak": false
+        },
+        {
+          "name": "__gnu_Unwind_Find_exidx",
+          "weak": false
+        }
+      ],
+      "jni_exports": [
+        "JNI_Init",
+        "JNI_OnLoad"
+      ],
+      "relocations": {
+        "23": 982,
+        "21": 2,
+        "2": 1,
+        "22": 39
+      },
+      "load_segments": [
+        {
+          "vaddr": 0,
+          "memsz": 66028
+        },
+        {
+          "vaddr": 70124,
+          "memsz": 5229
+        }
+      ],
+      "load_span": 75353,
+      "path": "lib/armeabi-v7a/libcrashlytics-handler.so",
+      "size": 72324
+    },
+    {
+      "bits": 32,
+      "machine": 40,
+      "type": 3,
+      "flags": "0x5000200",
+      "needed": [
+        "libdl.so",
+        "liblog.so",
+        "libc.so",
+        "libm.so"
+      ],
+      "imports": [
+        {
+          "name": "__cxa_atexit",
+          "weak": false
+        },
+        {
+          "name": "__libc_init",
+          "weak": false
+        },
+        {
+          "name": "__android_log_print",
+          "weak": false
+        },
+        {
+          "name": "dlerror",
+          "weak": false
+        },
+        {
+          "name": "dlopen",
+          "weak": false
+        },
+        {
+          "name": "dlsym",
+          "weak": false
+        }
+      ],
+      "jni_exports": [],
+      "relocations": {
+        "23": 4,
+        "22": 6
+      },
+      "load_segments": [
+        {
+          "vaddr": 0,
+          "memsz": 1429
+        },
+        {
+          "vaddr": 5525,
+          "memsz": 371
+        }
+      ],
+      "load_span": 5896,
+      "path": "lib/armeabi-v7a/libcrashlytics-trampoline.so",
+      "size": 7220
+    },
+    {
+      "bits": 32,
+      "machine": 40,
+      "type": 3,
+      "flags": "0x5000200",
+      "needed": [
+        "libdl.so",
+        "liblog.so",
+        "libc.so",
+        "libm.so"
+      ],
+      "imports": [
+        {
+          "name": "__cxa_atexit",
+          "weak": false
+        },
+        {
+          "name": "__cxa_finalize",
+          "weak": false
+        },
+        {
+          "name": "__android_log_print",
+          "weak": false
+        },
+        {
+          "name": "getpid",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr8",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove",
+          "weak": false
+        },
+        {
+          "name": "__system_property_get",
+          "weak": false
+        },
+        {
+          "name": "abort",
+          "weak": false
+        },
+        {
+          "name": "atoi",
+          "weak": false
+        },
+        {
+          "name": "dladdr",
+          "weak": false
+        },
+        {
+          "name": "dlopen",
+          "weak": false
+        },
+        {
+          "name": "dlsym",
+          "weak": false
+        },
+        {
+          "name": "strlen",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_fail",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_guard",
+          "weak": false
+        },
+        {
+          "name": "free",
+          "weak": false
+        },
+        {
+          "name": "malloc",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr",
+          "weak": false
+        },
+        {
+          "name": "pthread_getspecific",
+          "weak": false
+        },
+        {
+          "name": "pthread_key_create",
+          "weak": false
+        },
+        {
+          "name": "pthread_once",
+          "weak": false
+        },
+        {
+          "name": "pthread_setspecific",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_broadcast",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_wait",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_lock",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_unlock",
+          "weak": false
+        },
+        {
+          "name": "syscall",
+          "weak": false
+        },
+        {
+          "name": "calloc",
+          "weak": false
+        },
+        {
+          "name": "__assert2",
+          "weak": false
+        },
+        {
+          "name": "__sF",
+          "weak": false
+        },
+        {
+          "name": "fputc",
+          "weak": false
+        },
+        {
+          "name": "vasprintf",
+          "weak": false
+        },
+        {
+          "name": "vfprintf",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove4",
+          "weak": false
+        },
+        {
+          "name": "islower",
+          "weak": false
+        },
+        {
+          "name": "isxdigit",
+          "weak": false
+        },
+        {
+          "name": "realloc",
+          "weak": false
+        },
+        {
+          "name": "snprintf",
+          "weak": false
+        },
+        {
+          "name": "strcmp",
+          "weak": false
+        },
+        {
+          "name": "__errno",
+          "weak": false
+        },
+        {
+          "name": "memalign",
+          "weak": false
+        },
+        {
+          "name": "fflush",
+          "weak": false
+        },
+        {
+          "name": "fprintf",
+          "weak": false
+        },
+        {
+          "name": "__gnu_Unwind_Find_exidx",
+          "weak": false
+        }
+      ],
+      "jni_exports": [
+        "JNI_Init",
+        "JNI_OnLoad"
+      ],
+      "relocations": {
+        "23": 984,
+        "21": 2,
+        "2": 1,
+        "22": 45
+      },
+      "load_segments": [
+        {
+          "vaddr": 0,
+          "memsz": 72016
+        },
+        {
+          "vaddr": 76112,
+          "memsz": 5273
+        }
+      ],
+      "load_span": 81385,
+      "path": "lib/armeabi-v7a/libcrashlytics.so",
+      "size": 78336
+    },
+    {
+      "bits": 32,
+      "machine": 40,
+      "type": 3,
+      "flags": "0x5000200",
+      "needed": [
+        "liblog.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ],
+      "imports": [
+        {
+          "name": "__cxa_atexit",
+          "weak": false
+        },
+        {
+          "name": "__cxa_finalize",
+          "weak": false
+        },
+        {
+          "name": "__android_log_vprint",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_fail",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_guard",
+          "weak": false
+        },
+        {
+          "name": "abort",
+          "weak": false
+        },
+        {
+          "name": "vsnprintf",
+          "weak": false
+        },
+        {
+          "name": "clock_gettime",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_broadcast",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_timedwait",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_wait",
+          "weak": false
+        },
+        {
+          "name": "pthread_getspecific",
+          "weak": false
+        },
+        {
+          "name": "malloc",
+          "weak": false
+        },
+        {
+          "name": "realloc",
+          "weak": false
+        },
+        {
+          "name": "free",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove",
+          "weak": false
+        },
+        {
+          "name": "memcmp",
+          "weak": false
+        },
+        {
+          "name": "pthread_key_create",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_lock",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_unlock",
+          "weak": false
+        },
+        {
+          "name": "pthread_once",
+          "weak": false
+        },
+        {
+          "name": "pthread_setspecific",
+          "weak": false
+        },
+        {
+          "name": "snprintf",
+          "weak": false
+        },
+        {
+          "name": "strlen",
+          "weak": false
+        },
+        {
+          "name": "strncat",
+          "weak": false
+        },
+        {
+          "name": "strncpy",
+          "weak": false
+        },
+        {
+          "name": "strcmp",
+          "weak": false
+        },
+        {
+          "name": "strtok_r",
+          "weak": false
+        },
+        {
+          "name": "pthread_equal",
+          "weak": false
+        },
+        {
+          "name": "pthread_self",
+          "weak": false
+        },
+        {
+          "name": "sem_destroy",
+          "weak": false
+        },
+        {
+          "name": "sem_init",
+          "weak": false
+        },
+        {
+          "name": "sem_post",
+          "weak": false
+        },
+        {
+          "name": "sem_wait",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove4",
+          "weak": false
+        },
+        {
+          "name": "memchr",
+          "weak": false
+        },
+        {
+          "name": "strcpy",
+          "weak": false
+        },
+        {
+          "name": "strtod",
+          "weak": false
+        },
+        {
+          "name": "strtol",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_settype",
+          "weak": false
+        },
+        {
+          "name": "close",
+          "weak": false
+        },
+        {
+          "name": "ferror",
+          "weak": false
+        },
+        {
+          "name": "pthread_join",
+          "weak": false
+        },
+        {
+          "name": "read",
+          "weak": false
+        },
+        {
+          "name": "remove",
+          "weak": false
+        },
+        {
+          "name": "umask",
+          "weak": false
+        },
+        {
+          "name": "flock",
+          "weak": false
+        },
+        {
+          "name": "ftell",
+          "weak": false
+        },
+        {
+          "name": "inotify_add_watch",
+          "weak": false
+        },
+        {
+          "name": "inotify_init",
+          "weak": false
+        },
+        {
+          "name": "open",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_signal",
+          "weak": false
+        },
+        {
+          "name": "pthread_create",
+          "weak": false
+        },
+        {
+          "name": "strncmp",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr8",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy8",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memset",
+          "weak": false
+        },
+        {
+          "name": "__errno",
+          "weak": false
+        },
+        {
+          "name": "acos",
+          "weak": false
+        },
+        {
+          "name": "asin",
+          "weak": false
+        },
+        {
+          "name": "atan",
+          "weak": false
+        },
+        {
+          "name": "atoi",
+          "weak": false
+        },
+        {
+          "name": "cos",
+          "weak": false
+        },
+        {
+          "name": "sin",
+          "weak": false
+        },
+        {
+          "name": "strpbrk",
+          "weak": false
+        },
+        {
+          "name": "strtoll",
+          "weak": false
+        },
+        {
+          "name": "strtoull",
+          "weak": false
+        },
+        {
+          "name": "tan",
+          "weak": false
+        },
+        {
+          "name": "toupper",
+          "weak": false
+        },
+        {
+          "name": "fclose",
+          "weak": false
+        },
+        {
+          "name": "fflush",
+          "weak": false
+        },
+        {
+          "name": "fopen",
+          "weak": false
+        },
+        {
+          "name": "fread",
+          "weak": false
+        },
+        {
+          "name": "fseek",
+          "weak": false
+        },
+        {
+          "name": "fseeko",
+          "weak": false
+        },
+        {
+          "name": "ftello",
+          "weak": false
+        },
+        {
+          "name": "fwrite",
+          "weak": false
+        },
+        {
+          "name": "getenv",
+          "weak": false
+        },
+        {
+          "name": "mkdir",
+          "weak": false
+        },
+        {
+          "name": "realpath",
+          "weak": false
+        },
+        {
+          "name": "stat",
+          "weak": false
+        },
+        {
+          "name": "ceilf",
+          "weak": false
+        },
+        {
+          "name": "isalnum",
+          "weak": false
+        },
+        {
+          "name": "isalpha",
+          "weak": false
+        },
+        {
+          "name": "strtoul",
+          "weak": false
+        },
+        {
+          "name": "strerror_r",
+          "weak": false
+        },
+        {
+          "name": "nanosleep",
+          "weak": false
+        },
+        {
+          "name": "pthread_detach",
+          "weak": false
+        },
+        {
+          "name": "sysconf",
+          "weak": false
+        },
+        {
+          "name": "calloc",
+          "weak": false
+        },
+        {
+          "name": "syscall",
+          "weak": false
+        },
+        {
+          "name": "__assert2",
+          "weak": false
+        },
+        {
+          "name": "__sF",
+          "weak": false
+        },
+        {
+          "name": "fputc",
+          "weak": false
+        },
+        {
+          "name": "vfprintf",
+          "weak": false
+        },
+        {
+          "name": "memalign",
+          "weak": false
+        },
+        {
+          "name": "strtoimax",
+          "weak": false
+        },
+        {
+          "name": "strtoumax",
+          "weak": false
+        },
+        {
+          "name": "strstr",
+          "weak": false
+        },
+        {
+          "name": "dladdr",
+          "weak": false
+        },
+        {
+          "name": "fprintf",
+          "weak": false
+        },
+        {
+          "name": "memcpy",
+          "weak": false
+        },
+        {
+          "name": "memset",
+          "weak": false
+        },
+        {
+          "name": "pthread_key_delete",
+          "weak": true
+        },
+        {
+          "name": "raise",
+          "weak": false
+        },
+        {
+          "name": "sscanf",
+          "weak": false
+        },
+        {
+          "name": "strcoll",
+          "weak": false
+        },
+        {
+          "name": "strftime",
+          "weak": false
+        },
+        {
+          "name": "iswprint",
+          "weak": false
+        },
+        {
+          "name": "iswpunct",
+          "weak": false
+        },
+        {
+          "name": "iswspace",
+          "weak": false
+        },
+        {
+          "name": "iswupper",
+          "weak": false
+        },
+        {
+          "name": "iswxdigit",
+          "weak": false
+        },
+        {
+          "name": "isxdigit",
+          "weak": false
+        },
+        {
+          "name": "mbrlen",
+          "weak": false
+        },
+        {
+          "name": "vasprintf",
+          "weak": false
+        },
+        {
+          "name": "vsscanf",
+          "weak": false
+        },
+        {
+          "name": "wcscoll",
+          "weak": false
+        },
+        {
+          "name": "wcsxfrm",
+          "weak": false
+        },
+        {
+          "name": "wctob",
+          "weak": false
+        },
+        {
+          "name": "strxfrm",
+          "weak": false
+        },
+        {
+          "name": "tolower",
+          "weak": false
+        },
+        {
+          "name": "towlower",
+          "weak": false
+        },
+        {
+          "name": "towupper",
+          "weak": false
+        },
+        {
+          "name": "isblank",
+          "weak": false
+        },
+        {
+          "name": "islower",
+          "weak": false
+        },
+        {
+          "name": "isupper",
+          "weak": false
+        },
+        {
+          "name": "iswalpha",
+          "weak": false
+        },
+        {
+          "name": "iswcntrl",
+          "weak": false
+        },
+        {
+          "name": "iswdigit",
+          "weak": false
+        },
+        {
+          "name": "iswlower",
+          "weak": false
+        },
+        {
+          "name": "btowc",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_trylock",
+          "weak": false
+        },
+        {
+          "name": "sched_yield",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr4",
+          "weak": false
+        },
+        {
+          "name": "__gnu_Unwind_Find_exidx",
+          "weak": false
+        }
+      ],
+      "jni_exports": [
+        "JNI_OnLoad",
+        "Java_com_google_firebase_app_internal_cpp_Log_nativeLog",
+        "Java_com_google_firebase_dynamiclinks_internal_cpp_DynamicLinksNativeWrapper_receivedDynamicLinkCallback"
+      ],
+      "relocations": {
+        "23": 3027,
+        "21": 738,
+        "2": 3666,
+        "22": 7251
+      },
+      "load_segments": [
+        {
+          "vaddr": 0,
+          "memsz": 3017316
+        },
+        {
+          "vaddr": 3023540,
+          "memsz": 77540
+        }
+      ],
+      "load_span": 3101080,
+      "path": "lib/armeabi-v7a/libFirebaseCppApp-10_2_0.so",
+      "size": 5132780
+    },
+    {
+      "bits": 32,
+      "machine": 40,
+      "type": 3,
+      "flags": "0x5000200",
+      "needed": [
+        "liblog.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ],
+      "imports": [
+        {
+          "name": "strlen",
+          "weak": false
+        },
+        {
+          "name": "strcpy",
+          "weak": false
+        },
+        {
+          "name": "__cxa_atexit",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_guard",
+          "weak": false
+        },
+        {
+          "name": "__cxa_finalize",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_fail",
+          "weak": false
+        },
+        {
+          "name": "_Unwind_Resume",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase11crashlytics11Crashlytics11GetInstanceEPNS_3AppEPNS_10InitResultE",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase11crashlytics11Crashlytics12LogExceptionEPKcS3_NSt6__ndk16vectorINS0_5FrameENS4_9allocatorIS6_EEEE",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase11crashlytics11Crashlytics12SetCustomKeyEPKcS3_",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase11crashlytics11Crashlytics30IsCrashlyticsCollectionEnabledEv",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase11crashlytics11Crashlytics31SetCrashlyticsCollectionEnabledEb",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase11crashlytics11Crashlytics3LogEPKc",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase11crashlytics11Crashlytics9SetUserIdEPKc",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase11crashlytics11CrashlyticsD1Ev",
+          "weak": false
+        },
+        {
+          "name": "_ZNSt11logic_errorC2EPKc",
+          "weak": false
+        },
+        {
+          "name": "_ZNSt12length_errorD1Ev",
+          "weak": false
+        },
+        {
+          "name": "_ZNSt12out_of_rangeD1Ev",
+          "weak": false
+        },
+        {
+          "name": "_ZNSt16invalid_argumentD1Ev",
+          "weak": false
+        },
+        {
+          "name": "_ZSt9terminatev",
+          "weak": false
+        },
+        {
+          "name": "_ZTISt12length_error",
+          "weak": false
+        },
+        {
+          "name": "_ZTISt12out_of_range",
+          "weak": false
+        },
+        {
+          "name": "_ZTISt16invalid_argument",
+          "weak": false
+        },
+        {
+          "name": "_ZTVSt12length_error",
+          "weak": false
+        },
+        {
+          "name": "_ZTVSt12out_of_range",
+          "weak": false
+        },
+        {
+          "name": "_ZTVSt16invalid_argument",
+          "weak": false
+        },
+        {
+          "name": "_ZdlPv",
+          "weak": false
+        },
+        {
+          "name": "_Znaj",
+          "weak": false
+        },
+        {
+          "name": "_Znwj",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_unwind_cpp_pr0",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_unwind_cpp_pr1",
+          "weak": false
+        },
+        {
+          "name": "__cxa_allocate_exception",
+          "weak": false
+        },
+        {
+          "name": "__cxa_begin_catch",
+          "weak": false
+        },
+        {
+          "name": "__cxa_end_catch",
+          "weak": false
+        },
+        {
+          "name": "__cxa_free_exception",
+          "weak": false
+        },
+        {
+          "name": "__cxa_throw",
+          "weak": false
+        },
+        {
+          "name": "__gxx_personality_v0",
+          "weak": false
+        }
+      ],
+      "jni_exports": [],
+      "relocations": {
+        "23": 3,
+        "21": 10,
+        "22": 49
+      },
+      "load_segments": [
+        {
+          "vaddr": 0,
+          "memsz": 21253
+        },
+        {
+          "vaddr": 28132,
+          "memsz": 644
+        }
+      ],
+      "load_span": 28776,
+      "path": "lib/armeabi-v7a/libFirebaseCppCrashlytics.so",
+      "size": 41040
+    },
+    {
+      "bits": 32,
+      "machine": 40,
+      "type": 3,
+      "flags": "0x5000200",
+      "needed": [
+        "liblog.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ],
+      "imports": [
+        {
+          "name": "memcmp",
+          "weak": false
+        },
+        {
+          "name": "__cxa_atexit",
+          "weak": false
+        },
+        {
+          "name": "strlen",
+          "weak": false
+        },
+        {
+          "name": "__cxa_finalize",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_fail",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_guard",
+          "weak": false
+        },
+        {
+          "name": "_Unwind_Resume",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase12FutureHandleC1Ev",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase12FutureHandleC2EjPNS_6detail18FutureApiInterfaceE",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase12FutureHandleD1Ev",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase12FutureHandleaSERKS0_",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase23g_messaging_initializerE",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase5Mutex7AcquireEv",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase5Mutex7ReleaseEv",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase5MutexC1ENS0_4ModeE",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase5MutexC2ENS0_4ModeE",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase5MutexD1Ev",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase8LogDebugEPKcz",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase8callback11AddCallbackEPNS0_8CallbackE",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging11DeleteTokenEv",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging11SetListenerEPNS0_8ListenerE",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging11UnsubscribeEPKc",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging17RequestPermissionEv",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging32IsTokenRegistrationOnInitEnabledEv",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging33SetTokenRegistrationOnInitEnabledEb",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging34SetDeliveryMetricsExportToBigQueryEb",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging38DeliveryMetricsExportToBigQueryEnabledEv",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging8GetTokenEv",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging8ListenerD2Ev",
+          "weak": false
+        },
+        {
+          "name": "_ZN8firebase9messaging9SubscribeEPKc",
+          "weak": false
+        },
+        {
+          "name": "_ZNSt11logic_errorC2EPKc",
+          "weak": false
+        },
+        {
+          "name": "_ZNSt12length_errorD1Ev",
+          "weak": false
+        },
+        {
+          "name": "_ZSt9terminatev",
+          "weak": false
+        },
+        {
+          "name": "_ZTIN8firebase9messaging8ListenerE",
+          "weak": false
+        },
+        {
+          "name": "_ZTISt12length_error",
+          "weak": false
+        },
+        {
+          "name": "_ZTVN10__cxxabiv117__class_type_infoE",
+          "weak": false
+        },
+        {
+          "name": "_ZTVN10__cxxabiv120__si_class_type_infoE",
+          "weak": false
+        },
+        {
+          "name": "_ZTVSt12length_error",
+          "weak": false
+        },
+        {
+          "name": "_ZdlPv",
+          "weak": false
+        },
+        {
+          "name": "_Znwj",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_idiv",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_uidiv",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_unwind_cpp_pr0",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_unwind_cpp_pr1",
+          "weak": false
+        },
+        {
+          "name": "__cxa_allocate_exception",
+          "weak": false
+        },
+        {
+          "name": "__cxa_begin_catch",
+          "weak": false
+        },
+        {
+          "name": "__cxa_free_exception",
+          "weak": false
+        },
+        {
+          "name": "__cxa_throw",
+          "weak": false
+        },
+        {
+          "name": "__gxx_personality_v0",
+          "weak": false
+        }
+      ],
+      "jni_exports": [],
+      "relocations": {
+        "23": 4,
+        "21": 18,
+        "2": 25,
+        "22": 142
+      },
+      "load_segments": [
+        {
+          "vaddr": 0,
+          "memsz": 45537
+        },
+        {
+          "vaddr": 52176,
+          "memsz": 1200
+        }
+      ],
+      "load_span": 53376,
+      "path": "lib/armeabi-v7a/libFirebaseCppMessaging.so",
+      "size": 87540
+    },
+    {
+      "bits": 32,
+      "machine": 40,
+      "type": 3,
+      "flags": "0x5000200",
+      "needed": [
+        "liblog.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ],
+      "imports": [
+        {
+          "name": "__cxa_atexit",
+          "weak": false
+        },
+        {
+          "name": "__cxa_finalize",
+          "weak": false
+        },
+        {
+          "name": "strtoumax",
+          "weak": false
+        },
+        {
+          "name": "strtoimax",
+          "weak": false
+        },
+        {
+          "name": "fputc",
+          "weak": false
+        },
+        {
+          "name": "__assert2",
+          "weak": false
+        },
+        {
+          "name": "memcpy",
+          "weak": false
+        },
+        {
+          "name": "memset",
+          "weak": false
+        },
+        {
+          "name": "raise",
+          "weak": false
+        },
+        {
+          "name": "wctob",
+          "weak": false
+        },
+        {
+          "name": "wcsxfrm",
+          "weak": false
+        },
+        {
+          "name": "strcoll",
+          "weak": false
+        },
+        {
+          "name": "sscanf",
+          "weak": false
+        },
+        {
+          "name": "strxfrm",
+          "weak": false
+        },
+        {
+          "name": "towupper",
+          "weak": false
+        },
+        {
+          "name": "toupper",
+          "weak": false
+        },
+        {
+          "name": "vasprintf",
+          "weak": false
+        },
+        {
+          "name": "vsscanf",
+          "weak": false
+        },
+        {
+          "name": "wcscoll",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_trylock",
+          "weak": false
+        },
+        {
+          "name": "iswalpha",
+          "weak": false
+        },
+        {
+          "name": "isupper",
+          "weak": false
+        },
+        {
+          "name": "iswdigit",
+          "weak": false
+        },
+        {
+          "name": "iswcntrl",
+          "weak": false
+        },
+        {
+          "name": "iswprint",
+          "weak": false
+        },
+        {
+          "name": "iswlower",
+          "weak": false
+        },
+        {
+          "name": "iswspace",
+          "weak": false
+        },
+        {
+          "name": "iswpunct",
+          "weak": false
+        },
+        {
+          "name": "iswxdigit",
+          "weak": false
+        },
+        {
+          "name": "iswupper",
+          "weak": false
+        },
+        {
+          "name": "isxdigit",
+          "weak": false
+        },
+        {
+          "name": "mbrlen",
+          "weak": false
+        },
+        {
+          "name": "btowc",
+          "weak": false
+        },
+        {
+          "name": "islower",
+          "weak": false
+        },
+        {
+          "name": "isblank",
+          "weak": false
+        },
+        {
+          "name": "pthread_equal",
+          "weak": false
+        },
+        {
+          "name": "strtoll",
+          "weak": false
+        },
+        {
+          "name": "strtoull",
+          "weak": false
+        },
+        {
+          "name": "strtol",
+          "weak": false
+        },
+        {
+          "name": "__pthread_cleanup_pop",
+          "weak": false
+        },
+        {
+          "name": "__pthread_cleanup_push",
+          "weak": false
+        },
+        {
+          "name": "sem_getvalue",
+          "weak": false
+        },
+        {
+          "name": "sem_destroy",
+          "weak": false
+        },
+        {
+          "name": "sem_post",
+          "weak": false
+        },
+        {
+          "name": "sem_init",
+          "weak": false
+        },
+        {
+          "name": "sem_wait",
+          "weak": false
+        },
+        {
+          "name": "sem_timedwait",
+          "weak": false
+        },
+        {
+          "name": "siglongjmp",
+          "weak": false
+        },
+        {
+          "name": "setjmp",
+          "weak": false
+        },
+        {
+          "name": "sigsuspend",
+          "weak": false
+        },
+        {
+          "name": "sigsetjmp",
+          "weak": false
+        },
+        {
+          "name": "usleep",
+          "weak": false
+        },
+        {
+          "name": "strtoul",
+          "weak": false
+        },
+        {
+          "name": "atol",
+          "weak": false
+        },
+        {
+          "name": "clock",
+          "weak": false
+        },
+        {
+          "name": "mprotect",
+          "weak": false
+        },
+        {
+          "name": "pclose",
+          "weak": false
+        },
+        {
+          "name": "nanosleep",
+          "weak": false
+        },
+        {
+          "name": "pthread_attr_getdetachstate",
+          "weak": false
+        },
+        {
+          "name": "popen",
+          "weak": false
+        },
+        {
+          "name": "pthread_getattr_np",
+          "weak": false
+        },
+        {
+          "name": "pthread_attr_getstack",
+          "weak": false
+        },
+        {
+          "name": "pthread_kill",
+          "weak": false
+        },
+        {
+          "name": "pthread_join",
+          "weak": false
+        },
+        {
+          "name": "pthread_sigmask",
+          "weak": false
+        },
+        {
+          "name": "round",
+          "weak": false
+        },
+        {
+          "name": "strlcpy",
+          "weak": false
+        },
+        {
+          "name": "scalbn",
+          "weak": false
+        },
+        {
+          "name": "fmax",
+          "weak": false
+        },
+        {
+          "name": "vfprintf",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_guard",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_fail",
+          "weak": false
+        },
+        {
+          "name": "madvise",
+          "weak": false
+        },
+        {
+          "name": "dlerror",
+          "weak": false
+        },
+        {
+          "name": "pread",
+          "weak": false
+        },
+        {
+          "name": "prctl",
+          "weak": false
+        },
+        {
+          "name": "recv",
+          "weak": false
+        },
+        {
+          "name": "pthread_attr_setstacksize",
+          "weak": false
+        },
+        {
+          "name": "strerror_r",
+          "weak": false
+        },
+        {
+          "name": "sem_trywait",
+          "weak": false
+        },
+        {
+          "name": "syscall",
+          "weak": false
+        },
+        {
+          "name": "strspn",
+          "weak": false
+        },
+        {
+          "name": "exp2f",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr8",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy8",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove4",
+          "weak": false
+        },
+        {
+          "name": "cosf",
+          "weak": false
+        },
+        {
+          "name": "sinf",
+          "weak": false
+        },
+        {
+          "name": "sqrtf",
+          "weak": false
+        },
+        {
+          "name": "fclose",
+          "weak": false
+        },
+        {
+          "name": "fopen",
+          "weak": false
+        },
+        {
+          "name": "fflush",
+          "weak": false
+        },
+        {
+          "name": "fseek",
+          "weak": false
+        },
+        {
+          "name": "fread",
+          "weak": false
+        },
+        {
+          "name": "ftello",
+          "weak": false
+        },
+        {
+          "name": "fseeko",
+          "weak": false
+        },
+        {
+          "name": "fwrite",
+          "weak": false
+        },
+        {
+          "name": "write",
+          "weak": false
+        },
+        {
+          "name": "read",
+          "weak": false
+        },
+        {
+          "name": "memchr",
+          "weak": false
+        },
+        {
+          "name": "strerror",
+          "weak": false
+        },
+        {
+          "name": "vsnprintf",
+          "weak": false
+        },
+        {
+          "name": "strlen",
+          "weak": false
+        },
+        {
+          "name": "calloc",
+          "weak": false
+        },
+        {
+          "name": "bind",
+          "weak": false
+        },
+        {
+          "name": "dlopen",
+          "weak": false
+        },
+        {
+          "name": "close",
+          "weak": false
+        },
+        {
+          "name": "free",
+          "weak": false
+        },
+        {
+          "name": "dlsym",
+          "weak": false
+        },
+        {
+          "name": "malloc",
+          "weak": false
+        },
+        {
+          "name": "getpid",
+          "weak": false
+        },
+        {
+          "name": "sendmsg",
+          "weak": false
+        },
+        {
+          "name": "recvmsg",
+          "weak": false
+        },
+        {
+          "name": "strdup",
+          "weak": false
+        },
+        {
+          "name": "socket",
+          "weak": false
+        },
+        {
+          "name": "__errno",
+          "weak": false
+        },
+        {
+          "name": "strncpy",
+          "weak": false
+        },
+        {
+          "name": "floor",
+          "weak": false
+        },
+        {
+          "name": "floorf",
+          "weak": false
+        },
+        {
+          "name": "fprintf",
+          "weak": false
+        },
+        {
+          "name": "isspace",
+          "weak": false
+        },
+        {
+          "name": "isalpha",
+          "weak": false
+        },
+        {
+          "name": "strrchr",
+          "weak": false
+        },
+        {
+          "name": "pow",
+          "weak": false
+        },
+        {
+          "name": "tolower",
+          "weak": false
+        },
+        {
+          "name": "strtod",
+          "weak": false
+        },
+        {
+          "name": "towlower",
+          "weak": false
+        },
+        {
+          "name": "__sF",
+          "weak": false
+        },
+        {
+          "name": "bsearch",
+          "weak": false
+        },
+        {
+          "name": "atoi",
+          "weak": false
+        },
+        {
+          "name": "chmod",
+          "weak": false
+        },
+        {
+          "name": "chdir",
+          "weak": false
+        },
+        {
+          "name": "clock_gettime",
+          "weak": false
+        },
+        {
+          "name": "clock_getres",
+          "weak": false
+        },
+        {
+          "name": "connect",
+          "weak": false
+        },
+        {
+          "name": "closedir",
+          "weak": false
+        },
+        {
+          "name": "div",
+          "weak": false
+        },
+        {
+          "name": "difftime",
+          "weak": false
+        },
+        {
+          "name": "dlclose",
+          "weak": false
+        },
+        {
+          "name": "dladdr",
+          "weak": false
+        },
+        {
+          "name": "dup2",
+          "weak": false
+        },
+        {
+          "name": "dup",
+          "weak": false
+        },
+        {
+          "name": "environ",
+          "weak": false
+        },
+        {
+          "name": "abort",
+          "weak": false
+        },
+        {
+          "name": "__system_property_get",
+          "weak": false
+        },
+        {
+          "name": "access",
+          "weak": false
+        },
+        {
+          "name": "accept",
+          "weak": false
+        },
+        {
+          "name": "inet_ntop",
+          "weak": false
+        },
+        {
+          "name": "inet_addr",
+          "weak": false
+        },
+        {
+          "name": "ioctl",
+          "weak": false
+        },
+        {
+          "name": "inet_pton",
+          "weak": false
+        },
+        {
+          "name": "listen",
+          "weak": false
+        },
+        {
+          "name": "isatty",
+          "weak": false
+        },
+        {
+          "name": "lseek",
+          "weak": false
+        },
+        {
+          "name": "localtime",
+          "weak": false
+        },
+        {
+          "name": "memalign",
+          "weak": false
+        },
+        {
+          "name": "lstat",
+          "weak": false
+        },
+        {
+          "name": "mkdir",
+          "weak": false
+        },
+        {
+          "name": "memcmp",
+          "weak": false
+        },
+        {
+          "name": "mmap",
+          "weak": false
+        },
+        {
+          "name": "mktime",
+          "weak": false
+        },
+        {
+          "name": "munmap",
+          "weak": false
+        },
+        {
+          "name": "msync",
+          "weak": false
+        },
+        {
+          "name": "fcntl",
+          "weak": false
+        },
+        {
+          "name": "exit",
+          "weak": false
+        },
+        {
+          "name": "fstat",
+          "weak": false
+        },
+        {
+          "name": "freeaddrinfo",
+          "weak": false
+        },
+        {
+          "name": "ftruncate",
+          "weak": false
+        },
+        {
+          "name": "fsync",
+          "weak": false
+        },
+        {
+          "name": "getcwd",
+          "weak": false
+        },
+        {
+          "name": "getaddrinfo",
+          "weak": false
+        },
+        {
+          "name": "gethostname",
+          "weak": false
+        },
+        {
+          "name": "getenv",
+          "weak": false
+        },
+        {
+          "name": "getpeername",
+          "weak": false
+        },
+        {
+          "name": "getnameinfo",
+          "weak": false
+        },
+        {
+          "name": "getsockopt",
+          "weak": false
+        },
+        {
+          "name": "getsockname",
+          "weak": false
+        },
+        {
+          "name": "gmtime",
+          "weak": false
+        },
+        {
+          "name": "gettimeofday",
+          "weak": false
+        },
+        {
+          "name": "unsetenv",
+          "weak": false
+        },
+        {
+          "name": "unlink",
+          "weak": false
+        },
+        {
+          "name": "utime",
+          "weak": false
+        },
+        {
+          "name": "pthread_key_delete",
+          "weak": false
+        },
+        {
+          "name": "pthread_key_create",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_unlock",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_lock",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_once",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_settype",
+          "weak": false
+        },
+        {
+          "name": "pthread_rwlock_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_rwlock_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_rwlock_unlock",
+          "weak": false
+        },
+        {
+          "name": "pthread_rwlock_rdlock",
+          "weak": false
+        },
+        {
+          "name": "pthread_self",
+          "weak": false
+        },
+        {
+          "name": "pthread_rwlock_wrlock",
+          "weak": false
+        },
+        {
+          "name": "opendir",
+          "weak": false
+        },
+        {
+          "name": "open",
+          "weak": false
+        },
+        {
+          "name": "poll",
+          "weak": false
+        },
+        {
+          "name": "pipe",
+          "weak": false
+        },
+        {
+          "name": "pthread_attr_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_attr_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_broadcast",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_signal",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_timedwait_relative_np",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_timedwait",
+          "weak": false
+        },
+        {
+          "name": "pthread_create",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_wait",
+          "weak": false
+        },
+        {
+          "name": "pthread_getspecific",
+          "weak": false
+        },
+        {
+          "name": "pthread_detach",
+          "weak": false
+        },
+        {
+          "name": "shutdown",
+          "weak": false
+        },
+        {
+          "name": "setsockopt",
+          "weak": false
+        },
+        {
+          "name": "sigaction",
+          "weak": false
+        },
+        {
+          "name": "sprintf",
+          "weak": false
+        },
+        {
+          "name": "snprintf",
+          "weak": false
+        },
+        {
+          "name": "strchr",
+          "weak": false
+        },
+        {
+          "name": "stat",
+          "weak": false
+        },
+        {
+          "name": "strcpy",
+          "weak": false
+        },
+        {
+          "name": "strcmp",
+          "weak": false
+        },
+        {
+          "name": "strncmp",
+          "weak": false
+        },
+        {
+          "name": "strftime",
+          "weak": false
+        },
+        {
+          "name": "sysconf",
+          "weak": false
+        },
+        {
+          "name": "strstr",
+          "weak": false
+        },
+        {
+          "name": "uname",
+          "weak": false
+        },
+        {
+          "name": "time",
+          "weak": false
+        },
+        {
+          "name": "pthread_setspecific",
+          "weak": false
+        },
+        {
+          "name": "pthread_setname_np",
+          "weak": false
+        },
+        {
+          "name": "readlink",
+          "weak": false
+        },
+        {
+          "name": "readdir",
+          "weak": false
+        },
+        {
+          "name": "recvfrom",
+          "weak": false
+        },
+        {
+          "name": "realloc",
+          "weak": false
+        },
+        {
+          "name": "rename",
+          "weak": false
+        },
+        {
+          "name": "rmdir",
+          "weak": false
+        },
+        {
+          "name": "select",
+          "weak": false
+        },
+        {
+          "name": "sched_yield",
+          "weak": false
+        },
+        {
+          "name": "sendfile",
+          "weak": false
+        },
+        {
+          "name": "send",
+          "weak": false
+        },
+        {
+          "name": "setenv",
+          "weak": false
+        },
+        {
+          "name": "sendto",
+          "weak": false
+        },
+        {
+          "name": "ceil",
+          "weak": false
+        },
+        {
+          "name": "powf",
+          "weak": false
+        },
+        {
+          "name": "ceilf",
+          "weak": false
+        },
+        {
+          "name": "modf",
+          "weak": false
+        },
+        {
+          "name": "expf",
+          "weak": false
+        },
+        {
+          "name": "fmodf",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy4",
+          "weak": false
+        },
+        {
+          "name": "tanf",
+          "weak": false
+        },
+        {
+          "name": "fmod",
+          "weak": false
+        },
+        {
+          "name": "atan2f",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy",
+          "weak": false
+        },
+        {
+          "name": "atanf",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memset8",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove8",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memset",
+          "weak": false
+        },
+        {
+          "name": "__android_log_print",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memset4",
+          "weak": false
+        },
+        {
+          "name": "__end__",
+          "weak": true
+        },
+        {
+          "name": "bsd_signal",
+          "weak": false
+        },
+        {
+          "name": "__gnu_Unwind_Find_exidx",
+          "weak": false
+        }
+      ],
+      "jni_exports": [
+        "JNI_OnLoad",
+        "JNI_OnUnload"
+      ],
+      "relocations": {
+        "23": 281650,
+        "21": 163,
+        "2": 1568,
+        "22": 1085
+      },
+      "load_segments": [
+        {
+          "vaddr": 0,
+          "memsz": 36848232
+        },
+        {
+          "vaddr": 36855936,
+          "memsz": 2228692
+        }
+      ],
+      "load_span": 39084628,
+      "path": "lib/armeabi-v7a/libil2cpp.so",
+      "size": 38534968
+    },
+    {
+      "bits": 32,
+      "machine": 40,
+      "type": 3,
+      "flags": "0x5000200",
+      "needed": [
+        "liblog.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ],
+      "imports": [
+        {
+          "name": "__cxa_atexit",
+          "weak": false
+        },
+        {
+          "name": "__cxa_finalize",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_fail",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_guard",
+          "weak": false
+        },
+        {
+          "name": "dlclose",
+          "weak": false
+        },
+        {
+          "name": "dlerror",
+          "weak": false
+        },
+        {
+          "name": "read",
+          "weak": false
+        },
+        {
+          "name": "dlopen",
+          "weak": false
+        },
+        {
+          "name": "pthread_once",
+          "weak": false
+        },
+        {
+          "name": "dlsym",
+          "weak": false
+        },
+        {
+          "name": "strlen",
+          "weak": false
+        },
+        {
+          "name": "free",
+          "weak": false
+        },
+        {
+          "name": "strcmp",
+          "weak": false
+        },
+        {
+          "name": "malloc",
+          "weak": false
+        },
+        {
+          "name": "snprintf",
+          "weak": false
+        },
+        {
+          "name": "strtol",
+          "weak": false
+        },
+        {
+          "name": "__errno",
+          "weak": false
+        },
+        {
+          "name": "close",
+          "weak": false
+        },
+        {
+          "name": "memchr",
+          "weak": false
+        },
+        {
+          "name": "memcmp",
+          "weak": false
+        },
+        {
+          "name": "memmem",
+          "weak": false
+        },
+        {
+          "name": "open",
+          "weak": false
+        },
+        {
+          "name": "__sF",
+          "weak": false
+        },
+        {
+          "name": "abort",
+          "weak": false
+        },
+        {
+          "name": "fprintf",
+          "weak": false
+        },
+        {
+          "name": "fflush",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr8",
+          "weak": false
+        },
+        {
+          "name": "__gnu_Unwind_Find_exidx",
+          "weak": false
+        },
+        {
+          "name": "dladdr",
+          "weak": false
+        }
+      ],
+      "jni_exports": [
+        "JNI_OnLoad"
+      ],
+      "relocations": {
+        "23": 30,
+        "21": 5,
+        "22": 44
+      },
+      "load_segments": [
+        {
+          "vaddr": 0,
+          "memsz": 15824
+        },
+        {
+          "vaddr": 20120,
+          "memsz": 637
+        }
+      ],
+      "load_span": 20757,
+      "path": "lib/armeabi-v7a/libmain.so",
+      "size": 18464
+    },
+    {
+      "bits": 32,
+      "machine": 40,
+      "type": 3,
+      "flags": "0x5000200",
+      "needed": [
+        "libmain.so",
+        "libandroid.so",
+        "liblog.so",
+        "libz.so",
+        "libEGL.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ],
+      "imports": [
+        {
+          "name": "__cxa_atexit",
+          "weak": false
+        },
+        {
+          "name": "__cxa_finalize",
+          "weak": false
+        },
+        {
+          "name": "scalbn",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_unwind_cpp_pr0",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_unwind_cpp_pr1",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_fail",
+          "weak": false
+        },
+        {
+          "name": "__stack_chk_guard",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr8",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy4",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove4",
+          "weak": false
+        },
+        {
+          "name": "sqrtf",
+          "weak": false
+        },
+        {
+          "name": "strcmp",
+          "weak": false
+        },
+        {
+          "name": "strlen",
+          "weak": false
+        },
+        {
+          "name": "strncat",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memclr",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memset",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memset4",
+          "weak": false
+        },
+        {
+          "name": "floor",
+          "weak": false
+        },
+        {
+          "name": "floorf",
+          "weak": false
+        },
+        {
+          "name": "iswcntrl",
+          "weak": false
+        },
+        {
+          "name": "iswalpha",
+          "weak": false
+        },
+        {
+          "name": "isupper",
+          "weak": false
+        },
+        {
+          "name": "islower",
+          "weak": false
+        },
+        {
+          "name": "isblank",
+          "weak": false
+        },
+        {
+          "name": "btowc",
+          "weak": false
+        },
+        {
+          "name": "iswxdigit",
+          "weak": false
+        },
+        {
+          "name": "iswupper",
+          "weak": false
+        },
+        {
+          "name": "iswspace",
+          "weak": false
+        },
+        {
+          "name": "iswpunct",
+          "weak": false
+        },
+        {
+          "name": "iswprint",
+          "weak": false
+        },
+        {
+          "name": "iswlower",
+          "weak": false
+        },
+        {
+          "name": "iswdigit",
+          "weak": false
+        },
+        {
+          "name": "strcoll",
+          "weak": false
+        },
+        {
+          "name": "mbrlen",
+          "weak": false
+        },
+        {
+          "name": "towupper",
+          "weak": false
+        },
+        {
+          "name": "towlower",
+          "weak": false
+        },
+        {
+          "name": "toupper",
+          "weak": false
+        },
+        {
+          "name": "strxfrm",
+          "weak": false
+        },
+        {
+          "name": "wctob",
+          "weak": false
+        },
+        {
+          "name": "wcsxfrm",
+          "weak": false
+        },
+        {
+          "name": "wcscoll",
+          "weak": false
+        },
+        {
+          "name": "vsscanf",
+          "weak": false
+        },
+        {
+          "name": "vasprintf",
+          "weak": false
+        },
+        {
+          "name": "modff",
+          "weak": false
+        },
+        {
+          "name": "atanf",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memcpy8",
+          "weak": false
+        },
+        {
+          "name": "acosf",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memset8",
+          "weak": false
+        },
+        {
+          "name": "memcmp",
+          "weak": false
+        },
+        {
+          "name": "powf",
+          "weak": false
+        },
+        {
+          "name": "ceil",
+          "weak": false
+        },
+        {
+          "name": "tolower",
+          "weak": false
+        },
+        {
+          "name": "pthread_equal",
+          "weak": false
+        },
+        {
+          "name": "memalign",
+          "weak": false
+        },
+        {
+          "name": "difftime",
+          "weak": false
+        },
+        {
+          "name": "gmtime",
+          "weak": false
+        },
+        {
+          "name": "localtime",
+          "weak": false
+        },
+        {
+          "name": "mktime",
+          "weak": false
+        },
+        {
+          "name": "strchr",
+          "weak": false
+        },
+        {
+          "name": "time",
+          "weak": false
+        },
+        {
+          "name": "memchr",
+          "weak": false
+        },
+        {
+          "name": "sscanf",
+          "weak": false
+        },
+        {
+          "name": "free",
+          "weak": false
+        },
+        {
+          "name": "realloc",
+          "weak": false
+        },
+        {
+          "name": "eglCreateContext",
+          "weak": false
+        },
+        {
+          "name": "eglCreatePbufferSurface",
+          "weak": false
+        },
+        {
+          "name": "eglDestroyContext",
+          "weak": false
+        },
+        {
+          "name": "eglDestroySurface",
+          "weak": false
+        },
+        {
+          "name": "eglGetError",
+          "weak": false
+        },
+        {
+          "name": "eglMakeCurrent",
+          "weak": false
+        },
+        {
+          "name": "fmodf",
+          "weak": false
+        },
+        {
+          "name": "eglChooseConfig",
+          "weak": false
+        },
+        {
+          "name": "eglGetConfigAttrib",
+          "weak": false
+        },
+        {
+          "name": "eglGetDisplay",
+          "weak": false
+        },
+        {
+          "name": "eglInitialize",
+          "weak": false
+        },
+        {
+          "name": "eglQueryString",
+          "weak": false
+        },
+        {
+          "name": "eglTerminate",
+          "weak": false
+        },
+        {
+          "name": "strstr",
+          "weak": false
+        },
+        {
+          "name": "ANativeWindow_getHeight",
+          "weak": false
+        },
+        {
+          "name": "ANativeWindow_getWidth",
+          "weak": false
+        },
+        {
+          "name": "eglCreateWindowSurface",
+          "weak": false
+        },
+        {
+          "name": "eglGetCurrentContext",
+          "weak": false
+        },
+        {
+          "name": "eglGetCurrentSurface",
+          "weak": false
+        },
+        {
+          "name": "eglQuerySurface",
+          "weak": false
+        },
+        {
+          "name": "eglSwapInterval",
+          "weak": false
+        },
+        {
+          "name": "__assert2",
+          "weak": false
+        },
+        {
+          "name": "strtoumax",
+          "weak": false
+        },
+        {
+          "name": "strtoimax",
+          "weak": false
+        },
+        {
+          "name": "remainderf",
+          "weak": false
+        },
+        {
+          "name": "snprintf",
+          "weak": false
+        },
+        {
+          "name": "memcpy",
+          "weak": false
+        },
+        {
+          "name": "__errno",
+          "weak": false
+        },
+        {
+          "name": "access",
+          "weak": false
+        },
+        {
+          "name": "chmod",
+          "weak": false
+        },
+        {
+          "name": "close",
+          "weak": false
+        },
+        {
+          "name": "closedir",
+          "weak": false
+        },
+        {
+          "name": "fclose",
+          "weak": false
+        },
+        {
+          "name": "flock",
+          "weak": false
+        },
+        {
+          "name": "fopen",
+          "weak": false
+        },
+        {
+          "name": "getenv",
+          "weak": false
+        },
+        {
+          "name": "getpwuid",
+          "weak": false
+        },
+        {
+          "name": "getuid",
+          "weak": false
+        },
+        {
+          "name": "lseek64",
+          "weak": false
+        },
+        {
+          "name": "lstat",
+          "weak": false
+        },
+        {
+          "name": "mkdir",
+          "weak": false
+        },
+        {
+          "name": "open",
+          "weak": false
+        },
+        {
+          "name": "opendir",
+          "weak": false
+        },
+        {
+          "name": "read",
+          "weak": false
+        },
+        {
+          "name": "readdir",
+          "weak": false
+        },
+        {
+          "name": "realpath",
+          "weak": false
+        },
+        {
+          "name": "rename",
+          "weak": false
+        },
+        {
+          "name": "rmdir",
+          "weak": false
+        },
+        {
+          "name": "stat",
+          "weak": false
+        },
+        {
+          "name": "statfs",
+          "weak": false
+        },
+        {
+          "name": "strcpy",
+          "weak": false
+        },
+        {
+          "name": "strrchr",
+          "weak": false
+        },
+        {
+          "name": "truncate",
+          "weak": false
+        },
+        {
+          "name": "unlink",
+          "weak": false
+        },
+        {
+          "name": "utime",
+          "weak": false
+        },
+        {
+          "name": "write",
+          "weak": false
+        },
+        {
+          "name": "__android_log_write",
+          "weak": false
+        },
+        {
+          "name": "malloc",
+          "weak": false
+        },
+        {
+          "name": "pthread_getspecific",
+          "weak": false
+        },
+        {
+          "name": "pthread_setspecific",
+          "weak": false
+        },
+        {
+          "name": "pow",
+          "weak": false
+        },
+        {
+          "name": "sinf",
+          "weak": false
+        },
+        {
+          "name": "ceilf",
+          "weak": false
+        },
+        {
+          "name": "puts",
+          "weak": false
+        },
+        {
+          "name": "sprintf",
+          "weak": false
+        },
+        {
+          "name": "atan2f",
+          "weak": false
+        },
+        {
+          "name": "cosf",
+          "weak": false
+        },
+        {
+          "name": "expf",
+          "weak": false
+        },
+        {
+          "name": "ldexp",
+          "weak": false
+        },
+        {
+          "name": "tanf",
+          "weak": false
+        },
+        {
+          "name": "fmod",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_broadcast",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_timedwait_relative_np",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_wait",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_lock",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_unlock",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutexattr_settype",
+          "weak": false
+        },
+        {
+          "name": "dlclose",
+          "weak": false
+        },
+        {
+          "name": "dlerror",
+          "weak": false
+        },
+        {
+          "name": "dlopen",
+          "weak": false
+        },
+        {
+          "name": "dlsym",
+          "weak": false
+        },
+        {
+          "name": "strncmp",
+          "weak": false
+        },
+        {
+          "name": "strtol",
+          "weak": false
+        },
+        {
+          "name": "qsort",
+          "weak": false
+        },
+        {
+          "name": "gettimeofday",
+          "weak": false
+        },
+        {
+          "name": "exit",
+          "weak": false
+        },
+        {
+          "name": "isalpha",
+          "weak": false
+        },
+        {
+          "name": "strpbrk",
+          "weak": false
+        },
+        {
+          "name": "vsnprintf",
+          "weak": false
+        },
+        {
+          "name": "clock_gettime",
+          "weak": false
+        },
+        {
+          "name": "nanosleep",
+          "weak": false
+        },
+        {
+          "name": "prctl",
+          "weak": false
+        },
+        {
+          "name": "pthread_getcpuclockid",
+          "weak": false
+        },
+        {
+          "name": "modf",
+          "weak": false
+        },
+        {
+          "name": "strdup",
+          "weak": false
+        },
+        {
+          "name": "__android_log_print",
+          "weak": false
+        },
+        {
+          "name": "calloc",
+          "weak": false
+        },
+        {
+          "name": "longjmp",
+          "weak": false
+        },
+        {
+          "name": "mmap",
+          "weak": false
+        },
+        {
+          "name": "munmap",
+          "weak": false
+        },
+        {
+          "name": "sigaltstack",
+          "weak": false
+        },
+        {
+          "name": "ALooper_forThread",
+          "weak": false
+        },
+        {
+          "name": "ALooper_prepare",
+          "weak": false
+        },
+        {
+          "name": "ASensorEventQueue_disableSensor",
+          "weak": false
+        },
+        {
+          "name": "ASensorEventQueue_enableSensor",
+          "weak": false
+        },
+        {
+          "name": "ASensorEventQueue_getEvents",
+          "weak": false
+        },
+        {
+          "name": "ASensorEventQueue_hasEvents",
+          "weak": false
+        },
+        {
+          "name": "ASensorEventQueue_setEventRate",
+          "weak": false
+        },
+        {
+          "name": "ASensorManager_createEventQueue",
+          "weak": false
+        },
+        {
+          "name": "ASensorManager_destroyEventQueue",
+          "weak": false
+        },
+        {
+          "name": "ASensorManager_getDefaultSensor",
+          "weak": false
+        },
+        {
+          "name": "ASensorManager_getInstance",
+          "weak": false
+        },
+        {
+          "name": "ASensorManager_getSensorList",
+          "weak": false
+        },
+        {
+          "name": "ASensor_getMinDelay",
+          "weak": false
+        },
+        {
+          "name": "ASensor_getName",
+          "weak": false
+        },
+        {
+          "name": "ASensor_getResolution",
+          "weak": false
+        },
+        {
+          "name": "ASensor_getType",
+          "weak": false
+        },
+        {
+          "name": "ASensor_getVendor",
+          "weak": false
+        },
+        {
+          "name": "asinf",
+          "weak": false
+        },
+        {
+          "name": "eglSwapBuffers",
+          "weak": false
+        },
+        {
+          "name": "fread",
+          "weak": false
+        },
+        {
+          "name": "fseek",
+          "weak": false
+        },
+        {
+          "name": "ftell",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_signal",
+          "weak": false
+        },
+        {
+          "name": "setjmp",
+          "weak": false
+        },
+        {
+          "name": "strcasecmp",
+          "weak": false
+        },
+        {
+          "name": "strerror",
+          "weak": false
+        },
+        {
+          "name": "ANativeWindow_setBuffersGeometry",
+          "weak": false
+        },
+        {
+          "name": "__system_property_get",
+          "weak": false
+        },
+        {
+          "name": "eglSurfaceAttrib",
+          "weak": false
+        },
+        {
+          "name": "pthread_once",
+          "weak": false
+        },
+        {
+          "name": "ANativeWindow_fromSurface",
+          "weak": false
+        },
+        {
+          "name": "ANativeWindow_release",
+          "weak": false
+        },
+        {
+          "name": "gettid",
+          "weak": false
+        },
+        {
+          "name": "sigaction",
+          "weak": false
+        },
+        {
+          "name": "strcat",
+          "weak": false
+        },
+        {
+          "name": "syscall",
+          "weak": false
+        },
+        {
+          "name": "fflush",
+          "weak": false
+        },
+        {
+          "name": "fscanf",
+          "weak": false
+        },
+        {
+          "name": "fseeko",
+          "weak": false
+        },
+        {
+          "name": "ftello",
+          "weak": false
+        },
+        {
+          "name": "fwrite",
+          "weak": false
+        },
+        {
+          "name": "roundf",
+          "weak": false
+        },
+        {
+          "name": "dladdr",
+          "weak": false
+        },
+        {
+          "name": "ANativeWindow_acquire",
+          "weak": false
+        },
+        {
+          "name": "getpriority",
+          "weak": false
+        },
+        {
+          "name": "inflate",
+          "weak": false
+        },
+        {
+          "name": "inflateEnd",
+          "weak": false
+        },
+        {
+          "name": "inflateInit2_",
+          "weak": false
+        },
+        {
+          "name": "pthread_attr_init",
+          "weak": false
+        },
+        {
+          "name": "pthread_attr_setstacksize",
+          "weak": false
+        },
+        {
+          "name": "pthread_create",
+          "weak": false
+        },
+        {
+          "name": "pthread_exit",
+          "weak": false
+        },
+        {
+          "name": "pthread_join",
+          "weak": false
+        },
+        {
+          "name": "pthread_self",
+          "weak": false
+        },
+        {
+          "name": "sched_yield",
+          "weak": false
+        },
+        {
+          "name": "strncpy",
+          "weak": false
+        },
+        {
+          "name": "strtoul",
+          "weak": false
+        },
+        {
+          "name": "sysconf",
+          "weak": false
+        },
+        {
+          "name": "fnmatch",
+          "weak": false
+        },
+        {
+          "name": "fdopen",
+          "weak": false
+        },
+        {
+          "name": "fchmod",
+          "weak": false
+        },
+        {
+          "name": "pthread_detach",
+          "weak": false
+        },
+        {
+          "name": "strtoll",
+          "weak": false
+        },
+        {
+          "name": "getpwuid_r",
+          "weak": false
+        },
+        {
+          "name": "geteuid",
+          "weak": false
+        },
+        {
+          "name": "__aeabi_memmove8",
+          "weak": false
+        },
+        {
+          "name": "eglGetProcAddress",
+          "weak": false
+        },
+        {
+          "name": "getaddrinfo",
+          "weak": false
+        },
+        {
+          "name": "gai_strerror",
+          "weak": false
+        },
+        {
+          "name": "freeaddrinfo",
+          "weak": false
+        },
+        {
+          "name": "fork",
+          "weak": false
+        },
+        {
+          "name": "execl",
+          "weak": false
+        },
+        {
+          "name": "dup2",
+          "weak": false
+        },
+        {
+          "name": "_exit",
+          "weak": false
+        },
+        {
+          "name": "pipe",
+          "weak": false
+        },
+        {
+          "name": "perror",
+          "weak": false
+        },
+        {
+          "name": "kill",
+          "weak": false
+        },
+        {
+          "name": "ioctl",
+          "weak": false
+        },
+        {
+          "name": "inet_ntoa",
+          "weak": false
+        },
+        {
+          "name": "inet_aton",
+          "weak": false
+        },
+        {
+          "name": "inet_addr",
+          "weak": false
+        },
+        {
+          "name": "getnameinfo",
+          "weak": false
+        },
+        {
+          "name": "waitpid",
+          "weak": false
+        },
+        {
+          "name": "shutdown",
+          "weak": false
+        },
+        {
+          "name": "select",
+          "weak": false
+        },
+        {
+          "name": "pthread_mutex_trylock",
+          "weak": false
+        },
+        {
+          "name": "atoi",
+          "weak": false
+        },
+        {
+          "name": "clearerr",
+          "weak": false
+        },
+        {
+          "name": "ferror",
+          "weak": false
+        },
+        {
+          "name": "isspace",
+          "weak": false
+        },
+        {
+          "name": "clock",
+          "weak": false
+        },
+        {
+          "name": "fgets",
+          "weak": false
+        },
+        {
+          "name": "fprintf",
+          "weak": false
+        },
+        {
+          "name": "fputc",
+          "weak": false
+        },
+        {
+          "name": "printf",
+          "weak": false
+        },
+        {
+          "name": "strtod",
+          "weak": false
+        },
+        {
+          "name": "log10f",
+          "weak": false
+        },
+        {
+          "name": "raise",
+          "weak": false
+        },
+        {
+          "name": "dirname",
+          "weak": false
+        },
+        {
+          "name": "__system_property_set",
+          "weak": false
+        },
+        {
+          "name": "__system_property_read",
+          "weak": false
+        },
+        {
+          "name": "__system_property_find",
+          "weak": false
+        },
+        {
+          "name": "strncasecmp",
+          "weak": false
+        },
+        {
+          "name": "readlink",
+          "weak": false
+        },
+        {
+          "name": "nftw",
+          "weak": false
+        },
+        {
+          "name": "mkstemp",
+          "weak": false
+        },
+        {
+          "name": "mkdtemp",
+          "weak": false
+        },
+        {
+          "name": "fchown",
+          "weak": false
+        },
+        {
+          "name": "strnlen",
+          "weak": false
+        },
+        {
+          "name": "fminf",
+          "weak": false
+        },
+        {
+          "name": "fmaxf",
+          "weak": false
+        },
+        {
+          "name": "lldiv",
+          "weak": false
+        },
+        {
+          "name": "usleep",
+          "weak": false
+        },
+        {
+          "name": "sem_open",
+          "weak": false
+        },
+        {
+          "name": "pthread_kill",
+          "weak": false
+        },
+        {
+          "name": "asctime",
+          "weak": false
+        },
+        {
+          "name": "setpriority",
+          "weak": false
+        },
+        {
+          "name": "pthread_attr_setdetachstate",
+          "weak": false
+        },
+        {
+          "name": "gethostbyname",
+          "weak": false
+        },
+        {
+          "name": "fstat",
+          "weak": false
+        },
+        {
+          "name": "rintf",
+          "weak": false
+        },
+        {
+          "name": "memmem",
+          "weak": false
+        },
+        {
+          "name": "ldexpf",
+          "weak": false
+        },
+        {
+          "name": "truncf",
+          "weak": false
+        },
+        {
+          "name": "__android_log_vprint",
+          "weak": false
+        },
+        {
+          "name": "__sF",
+          "weak": false
+        },
+        {
+          "name": "fputs",
+          "weak": false
+        },
+        {
+          "name": "vfprintf",
+          "weak": false
+        },
+        {
+          "name": "exp2f",
+          "weak": false
+        },
+        {
+          "name": "putchar",
+          "weak": false
+        },
+        {
+          "name": "gmtime_r",
+          "weak": false
+        },
+        {
+          "name": "memset",
+          "weak": false
+        },
+        {
+          "name": "lrand48",
+          "weak": false
+        },
+        {
+          "name": "ALooper_acquire",
+          "weak": false
+        },
+        {
+          "name": "ALooper_pollAll",
+          "weak": false
+        },
+        {
+          "name": "ALooper_release",
+          "weak": false
+        },
+        {
+          "name": "ALooper_wake",
+          "weak": false
+        },
+        {
+          "name": "pthread_setname_np",
+          "weak": false
+        },
+        {
+          "name": "remove",
+          "weak": false
+        },
+        {
+          "name": "sched_setaffinity",
+          "weak": false
+        },
+        {
+          "name": "atol",
+          "weak": false
+        },
+        {
+          "name": "sched_getaffinity",
+          "weak": false
+        },
+        {
+          "name": "nearbyintf",
+          "weak": false
+        },
+        {
+          "name": "strspn",
+          "weak": false
+        },
+        {
+          "name": "accept",
+          "weak": false
+        },
+        {
+          "name": "bind",
+          "weak": false
+        },
+        {
+          "name": "connect",
+          "weak": false
+        },
+        {
+          "name": "fcntl",
+          "weak": false
+        },
+        {
+          "name": "getsockname",
+          "weak": false
+        },
+        {
+          "name": "getsockopt",
+          "weak": false
+        },
+        {
+          "name": "listen",
+          "weak": false
+        },
+        {
+          "name": "madvise",
+          "weak": false
+        },
+        {
+          "name": "mprotect",
+          "weak": false
+        },
+        {
+          "name": "poll",
+          "weak": false
+        },
+        {
+          "name": "pread",
+          "weak": false
+        },
+        {
+          "name": "pthread_attr_destroy",
+          "weak": false
+        },
+        {
+          "name": "pthread_key_create",
+          "weak": false
+        },
+        {
+          "name": "pthread_key_delete",
+          "weak": false
+        },
+        {
+          "name": "recv",
+          "weak": false
+        },
+        {
+          "name": "recvfrom",
+          "weak": false
+        },
+        {
+          "name": "sem_destroy",
+          "weak": false
+        },
+        {
+          "name": "sem_init",
+          "weak": false
+        },
+        {
+          "name": "sem_post",
+          "weak": false
+        },
+        {
+          "name": "sem_timedwait",
+          "weak": false
+        },
+        {
+          "name": "sem_trywait",
+          "weak": false
+        },
+        {
+          "name": "sem_wait",
+          "weak": false
+        },
+        {
+          "name": "send",
+          "weak": false
+        },
+        {
+          "name": "sendto",
+          "weak": false
+        },
+        {
+          "name": "setsockopt",
+          "weak": false
+        },
+        {
+          "name": "socket",
+          "weak": false
+        },
+        {
+          "name": "strerror_r",
+          "weak": false
+        },
+        {
+          "name": "lseek",
+          "weak": false
+        },
+        {
+          "name": "getpeername",
+          "weak": false
+        },
+        {
+          "name": "inet_ntop",
+          "weak": false
+        },
+        {
+          "name": "inet_pton",
+          "weak": false
+        },
+        {
+          "name": "socketpair",
+          "weak": false
+        },
+        {
+          "name": "basename",
+          "weak": false
+        },
+        {
+          "name": "feof",
+          "weak": false
+        },
+        {
+          "name": "if_nametoindex",
+          "weak": false
+        },
+        {
+          "name": "memrchr",
+          "weak": false
+        },
+        {
+          "name": "strtok_r",
+          "weak": false
+        },
+        {
+          "name": "strcspn",
+          "weak": false
+        },
+        {
+          "name": "__android_log_buf_write",
+          "weak": false
+        },
+        {
+          "name": "capset",
+          "weak": false
+        },
+        {
+          "name": "dup",
+          "weak": false
+        },
+        {
+          "name": "getpid",
+          "weak": false
+        },
+        {
+          "name": "localtime_r",
+          "weak": false
+        },
+        {
+          "name": "strftime",
+          "weak": false
+        },
+        {
+          "name": "writev",
+          "weak": false
+        },
+        {
+          "name": "ptrace",
+          "weak": false
+        },
+        {
+          "name": "isxdigit",
+          "weak": false
+        },
+        {
+          "name": "strtoull",
+          "weak": false
+        },
+        {
+          "name": "vprintf",
+          "weak": false
+        },
+        {
+          "name": "pthread_cond_timedwait",
+          "weak": false
+        },
+        {
+          "name": "gethostbyaddr",
+          "weak": false
+        },
+        {
+          "name": "sched_get_priority_max",
+          "weak": false
+        },
+        {
+          "name": "pthread_setschedparam",
+          "weak": false
+        },
+        {
+          "name": "pthread_getschedparam",
+          "weak": false
+        },
+        {
+          "name": "sched_get_priority_min",
+          "weak": false
+        },
+        {
+          "name": "isalnum",
+          "weak": false
+        },
+        {
+          "name": "_Unwind_DeleteException",
+          "weak": false
+        },
+        {
+          "name": "_Unwind_GetLanguageSpecificData",
+          "weak": false
+        },
+        {
+          "name": "_Unwind_GetRegionStart",
+          "weak": false
+        },
+        {
+          "name": "_Unwind_RaiseException",
+          "weak": false
+        },
+        {
+          "name": "_Unwind_Resume",
+          "weak": false
+        },
+        {
+          "name": "_Unwind_VRS_Get",
+          "weak": false
+        },
+        {
+          "name": "_Unwind_VRS_Set",
+          "weak": false
+        },
+        {
+          "name": "__gnu_unwind_frame",
+          "weak": false
+        }
+      ],
+      "jni_exports": [
+        "JNI_OnLoad",
+        "JNI_OnUnload"
+      ],
+      "relocations": {
+        "23": 28613,
+        "21": 13,
+        "2": 6,
+        "22": 315
+      },
+      "load_segments": [
+        {
+          "vaddr": 0,
+          "memsz": 13025484
+        },
+        {
+          "vaddr": 13030320,
+          "memsz": 860088
+        }
+      ],
+      "load_span": 13890408,
+      "path": "lib/armeabi-v7a/libunity.so",
+      "size": 13250628
+    }
+  ],
+  "dex": [
+    {
+      "path": "classes.dex",
+      "string_count": 57170
+    },
+    {
+      "path": "classes2.dex",
+      "string_count": 32551
+    }
+  ],
+  "omitted": [
+    "arbitrary ELF strings",
+    "DEX strings",
+    "manifest metadata and tokens",
+    "full export names",
+    "full asset paths"
+  ],
+  "analysis_error_count": 0
+}

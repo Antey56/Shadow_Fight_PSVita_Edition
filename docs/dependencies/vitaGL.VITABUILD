@@ -1,0 +1,22 @@
+pkgname=vitaGL
+pkgver=0.0.0.r1488.g2bdbe89
+pkgrel=1
+url="https://github.com/Rinnegatamante"
+source=("git+https://github.com/Rinnegatamante/vitaGL.git#commit=2bdbe895ddc6a7e410a9ea55a8f53d8173c61ad8")
+_follow=HEAD
+sha256sums=('SKIP')
+depends=('libmathneon' 'vitaShaRK' 'taihen' 'SceShaccCgExt')
+
+build() {
+  cd $pkgname
+  make NO_DEBUG=1 -j$(nproc)
+}
+
+package () {
+  mkdir -p $pkgdir/$VITASDK/arm-vita-eabi/lib
+  mkdir -p $pkgdir/$VITASDK/arm-vita-eabi/include
+  
+  cd $pkgname
+  cp lib$pkgname.a $pkgdir/$VITASDK/arm-vita-eabi/lib/
+  cp source/$pkgname.h $pkgdir/$VITASDK/arm-vita-eabi/include/
+}

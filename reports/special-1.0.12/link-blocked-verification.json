@@ -1,0 +1,82 @@
+[
+  {
+    "module": "libcrashlytics-common.so",
+    "code": -20,
+    "first_unresolved_symbol": "optarg",
+    "relocation_index": 2562,
+    "image_exposed": false,
+    "game_executed": false
+  },
+  {
+    "module": "libcrashlytics-handler.so",
+    "code": -20,
+    "first_unresolved_symbol": "__stack_chk_guard",
+    "relocation_index": 982,
+    "image_exposed": false,
+    "game_executed": false
+  },
+  {
+    "module": "libcrashlytics-trampoline.so",
+    "code": -20,
+    "first_unresolved_symbol": "__libc_init",
+    "relocation_index": 4,
+    "image_exposed": false,
+    "game_executed": false
+  },
+  {
+    "module": "libcrashlytics.so",
+    "code": -20,
+    "first_unresolved_symbol": "__stack_chk_guard",
+    "relocation_index": 984,
+    "image_exposed": false,
+    "game_executed": false
+  },
+  {
+    "module": "libFirebaseCppApp-10_2_0.so",
+    "code": -20,
+    "first_unresolved_symbol": "__cxa_atexit",
+    "relocation_index": 3027,
+    "image_exposed": false,
+    "game_executed": false
+  },
+  {
+    "module": "libFirebaseCppCrashlytics.so",
+    "code": -20,
+    "first_unresolved_symbol": "__stack_chk_guard",
+    "relocation_index": 3,
+    "image_exposed": false,
+    "game_executed": false
+  },
+  {
+    "module": "libFirebaseCppMessaging.so",
+    "code": -20,
+    "first_unresolved_symbol": "__stack_chk_guard",
+    "relocation_index": 4,
+    "image_exposed": false,
+    "game_executed": false
+  },
+  {
+    "module": "libil2cpp.so",
+    "code": -20,
+    "first_unresolved_symbol": "strtoll",
+    "relocation_index": 281650,
+    "image_exposed": false,
+    "game_executed": false
+  },
+  {
+    "module": "libmain.so",
+    "code": -20,
+    "first_unresolved_symbol": "__aeabi_unwind_cpp_pr0",
+    "relocation_index": 30,
+    "image_exposed": false,
+    "game_executed": false
+  },
+  {
+    "module": "libunity.so",
+    "code": -20,
+    "first_unresolved_symbol": "__stack_chk_guard",
+    "relocation_index": 28613,
+    "image_exposed": false,
+    "game_executed": false
+  }
+]

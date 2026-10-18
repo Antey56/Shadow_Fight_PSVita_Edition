@@ -1,0 +1,186 @@
+[
+  {
+    "module": "libcrashlytics-common.so",
+    "relocations": {
+      "23": 2562,
+      "21": 17,
+      "2": 26,
+      "22": 270
+    },
+    "needed": [
+      "libdl.so",
+      "liblog.so",
+      "libz.so",
+      "libc.so",
+      "libm.so"
+    ],
+    "referenced_symbols": 285,
+    "matches_section_parser": true,
+    "works_without_section_headers": true
+  },
+  {
+    "module": "libcrashlytics-handler.so",
+    "relocations": {
+      "23": 982,
+      "21": 2,
+      "2": 1,
+      "22": 39
+    },
+    "needed": [
+      "libdl.so",
+      "liblog.so",
+      "libz.so",
+      "libc.so",
+      "libm.so"
+    ],
+    "referenced_symbols": 41,
+    "matches_section_parser": true,
+    "works_without_section_headers": true
+  },
+  {
+    "module": "libcrashlytics-trampoline.so",
+    "relocations": {
+      "23": 4,
+      "22": 6
+    },
+    "needed": [
+      "libdl.so",
+      "liblog.so",
+      "libc.so",
+      "libm.so"
+    ],
+    "referenced_symbols": 6,
+    "matches_section_parser": true,
+    "works_without_section_headers": true
+  },
+  {
+    "module": "libcrashlytics.so",
+    "relocations": {
+      "23": 984,
+      "21": 2,
+      "2": 1,
+      "22": 45
+    },
+    "needed": [
+      "libdl.so",
+      "liblog.so",
+      "libc.so",
+      "libm.so"
+    ],
+    "referenced_symbols": 47,
+    "matches_section_parser": true,
+    "works_without_section_headers": true
+  },
+  {
+    "module": "libFirebaseCppApp-10_2_0.so",
+    "relocations": {
+      "23": 3027,
+      "21": 738,
+      "2": 3666,
+      "22": 7251
+    },
+    "needed": [
+      "liblog.so",
+      "libm.so",
+      "libdl.so",
+      "libc.so"
+    ],
+    "referenced_symbols": 8774,
+    "matches_section_parser": true,
+    "works_without_section_headers": true
+  },
+  {
+    "module": "libFirebaseCppCrashlytics.so",
+    "relocations": {
+      "23": 3,
+      "21": 10,
+      "22": 49
+    },
+    "needed": [
+      "liblog.so",
+      "libFirebaseCppApp-10_2_0.so",
+      "libm.so",
+      "libdl.so",
+      "libc.so"
+    ],
+    "referenced_symbols": 59,
+    "matches_section_parser": true,
+    "works_without_section_headers": true
+  },
+  {
+    "module": "libFirebaseCppMessaging.so",
+    "relocations": {
+      "23": 4,
+      "21": 18,
+      "2": 25,
+      "22": 142
+    },
+    "needed": [
+      "liblog.so",
+      "libFirebaseCppApp-10_2_0.so",
+      "libm.so",
+      "libdl.so",
+      "libc.so"
+    ],
+    "referenced_symbols": 169,
+    "matches_section_parser": true,
+    "works_without_section_headers": true
+  },
+  {
+    "module": "libil2cpp.so",
+    "relocations": {
+      "23": 281650,
+      "21": 163,
+      "2": 1568,
+      "22": 1085
+    },
+    "needed": [
+      "liblog.so",
+      "libm.so",
+      "libdl.so",
+      "libc.so"
+    ],
+    "referenced_symbols": 1590,
+    "matches_section_parser": true,
+    "works_without_section_headers": true
+  },
+  {
+    "module": "libmain.so",
+    "relocations": {
+      "23": 30,
+      "21": 5,
+      "22": 44
+    },
+    "needed": [
+      "liblog.so",
+      "libm.so",
+      "libdl.so",
+      "libc.so"
+    ],
+    "referenced_symbols": 49,
+    "matches_section_parser": true,
+    "works_without_section_headers": true
+  },
+  {
+    "module": "libunity.so",
+    "relocations": {
+      "23": 28613,
+      "21": 13,
+      "2": 6,
+      "22": 315
+    },
+    "needed": [
+      "libmain.so",
+      "libandroid.so",
+      "liblog.so",
+      "libz.so",
+      "libEGL.so",
+      "libm.so",
+      "libdl.so",
+      "libc.so"
+    ],
+    "referenced_symbols": 317,
+    "matches_section_parser": true,
+    "works_without_section_headers": true
+  }
+]

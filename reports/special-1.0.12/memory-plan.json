@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "page_size": 4096,
+  "guard_pages_between_and_after_modules": 1,
+  "budget": 67108864,
+  "required": 56872960,
+  "remaining": 10235904,
+  "layout_valid": true,
+  "execution_allowed": false,
+  "modules": [
+    {
+      "path": "lib/armeabi-v7a/libcrashlytics-common.so",
+      "arena_offset": 0,
+      "required_alignment": 4096,
+      "size": 462848,
+      "elf_vaddr_min_page": 0,
+      "elf_vaddr_end_page": 462848,
+      "segments": [
+        {
+          "arena_offset": 0,
+          "size": 440400
+        },
+        {
+          "arena_offset": 444496,
+          "size": 16988
+        }
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libcrashlytics-handler.so",
+      "arena_offset": 466944,
+      "required_alignment": 4096,
+      "size": 77824,
+      "elf_vaddr_min_page": 0,
+      "elf_vaddr_end_page": 77824,
+      "segments": [
+        {
+          "arena_offset": 466944,
+          "size": 66028
+        },
+        {
+          "arena_offset": 537068,
+          "size": 5229
+        }
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libcrashlytics-trampoline.so",
+      "arena_offset": 548864,
+      "required_alignment": 4096,
+      "size": 8192,
+      "elf_vaddr_min_page": 0,
+      "elf_vaddr_end_page": 8192,
+      "segments": [
+        {
+          "arena_offset": 548864,
+          "size": 1429
+        },
+        {
+          "arena_offset": 554389,
+          "size": 371
+        }
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libcrashlytics.so",
+      "arena_offset": 561152,
+      "required_alignment": 4096,
+      "size": 81920,
+      "elf_vaddr_min_page": 0,
+      "elf_vaddr_end_page": 81920,
+      "segments": [
+        {
+          "arena_offset": 561152,
+          "size": 72016
+        },
+        {
+          "arena_offset": 637264,
+          "size": 5273
+        }
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libFirebaseCppApp-10_2_0.so",
+      "arena_offset": 647168,
+      "required_alignment": 4096,
+      "size": 3104768,
+      "elf_vaddr_min_page": 0,
+      "elf_vaddr_end_page": 3104768,
+      "segments": [
+        {
+          "arena_offset": 647168,
+          "size": 3017316
+        },
+        {
+          "arena_offset": 3670708,
+          "size": 77540
+        }
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libFirebaseCppCrashlytics.so",
+      "arena_offset": 3756032,
+      "required_alignment": 4096,
+      "size": 32768,
+      "elf_vaddr_min_page": 0,
+      "elf_vaddr_end_page": 32768,
+      "segments": [
+        {
+          "arena_offset": 3756032,
+          "size": 21253
+        },
+        {
+          "arena_offset": 3784164,
+          "size": 644
+        }
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libFirebaseCppMessaging.so",
+      "arena_offset": 3792896,
+      "required_alignment": 4096,
+      "size": 57344,
+      "elf_vaddr_min_page": 0,
+      "elf_vaddr_end_page": 57344,
+      "segments": [
+        {
+          "arena_offset": 3792896,
+          "size": 45537
+        },
+        {
+          "arena_offset": 3845072,
+          "size": 1200
+        }
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libil2cpp.so",
+      "arena_offset": 3854336,
+      "required_alignment": 4096,
+      "size": 39088128,
+      "elf_vaddr_min_page": 0,
+      "elf_vaddr_end_page": 39088128,
+      "segments": [
+        {
+          "arena_offset": 3854336,
+          "size": 36848232
+        },
+        {
+          "arena_offset": 40710272,
+          "size": 2228692
+        }
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libmain.so",
+      "arena_offset": 42946560,
+      "required_alignment": 4096,
+      "size": 24576,
+      "elf_vaddr_min_page": 0,
+      "elf_vaddr_end_page": 24576,
+      "segments": [
+        {
+          "arena_offset": 42946560,
+          "size": 15824
+        },
+        {
+          "arena_offset": 42966680,
+          "size": 637
+        }
+      ]
+    },
+    {
+      "path": "lib/armeabi-v7a/libunity.so",
+      "arena_offset": 42975232,
+      "required_alignment": 4096,
+      "size": 13893632,
+      "elf_vaddr_min_page": 0,
+      "elf_vaddr_end_page": 13893632,
+      "segments": [
+        {
+          "arena_offset": 42975232,
+          "size": 13025484
+        },
+        {
+          "arena_offset": 56005552,
+          "size": 860088
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Relative offsets only; Vita address allocation and collisions with host/GPU mappings are NOT checked.",
+    "Budget is user-selected, not detected available memory. Heap, stacks, graphics and Android/Unity services are excluded.",
+    "Guard slots are planning gaps, not installed memory protections.",
+    "Page-rounded segment ranges may share a boundary page; exact overlapping LOAD memory ranges are rejected."
+  ]
+}

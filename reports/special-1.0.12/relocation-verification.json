@@ -1,0 +1,110 @@
+{
+  "modules": [
+    {
+      "module": "libcrashlytics-common.so",
+      "relative_verified": 2562,
+      "relative_nonzero_symbol_not_tested": 0,
+      "image_bytes": 461484,
+      "result_sha256": "e83dc58271cafa320b77da4c6d4d1683798f23ae9c7873e7b54f5e3ce3b5c23d",
+      "game_code_executed": false,
+      "c_input_source": "PT_DYNAMIC",
+      "python_oracle_source": "section_headers"
+    },
+    {
+      "module": "libcrashlytics-handler.so",
+      "relative_verified": 982,
+      "relative_nonzero_symbol_not_tested": 0,
+      "image_bytes": 75353,
+      "result_sha256": "d78cbbb8a6beaf215b14e9e2cd4821524e52c53171c52895a23d7912c89bd18b",
+      "game_code_executed": false,
+      "c_input_source": "PT_DYNAMIC",
+      "python_oracle_source": "section_headers"
+    },
+    {
+      "module": "libcrashlytics-trampoline.so",
+      "relative_verified": 4,
+      "relative_nonzero_symbol_not_tested": 0,
+      "image_bytes": 5896,
+      "result_sha256": "22e92eb6bf3d9695448175b525ce05a512eb3eefd6297c0632db2d3b558be714",
+      "game_code_executed": false,
+      "c_input_source": "PT_DYNAMIC",
+      "python_oracle_source": "section_headers"
+    },
+    {
+      "module": "libcrashlytics.so",
+      "relative_verified": 984,
+      "relative_nonzero_symbol_not_tested": 0,
+      "image_bytes": 81385,
+      "result_sha256": "4d0fd95b9702dd238041c7fd432fadd67942497269128b05be13fca3fd01e814",
+      "game_code_executed": false,
+      "c_input_source": "PT_DYNAMIC",
+      "python_oracle_source": "section_headers"
+    },
+    {
+      "module": "libFirebaseCppApp-10_2_0.so",
+      "relative_verified": 3027,
+      "relative_nonzero_symbol_not_tested": 0,
+      "image_bytes": 3101080,
+      "result_sha256": "1e5910e025105978652a82e89def2c170e43dac944b2d13de487ddf6ff326801",
+      "game_code_executed": false,
+      "c_input_source": "PT_DYNAMIC",
+      "python_oracle_source": "section_headers"
+    },
+    {
+      "module": "libFirebaseCppCrashlytics.so",
+      "relative_verified": 3,
+      "relative_nonzero_symbol_not_tested": 0,
+      "image_bytes": 28776,
+      "result_sha256": "2674d10e9c9f29b3b05e5fde158915f7ce5b9042e46543ef78d903c92b5587a3",
+      "game_code_executed": false,
+      "c_input_source": "PT_DYNAMIC",
+      "python_oracle_source": "section_headers"
+    },
+    {
+      "module": "libFirebaseCppMessaging.so",
+      "relative_verified": 4,
+      "relative_nonzero_symbol_not_tested": 0,
+      "image_bytes": 53376,
+      "result_sha256": "5de9ccf86a804a0ed90cb1d4c712d440141a4b4b5d3bfa9c60ebce3162fabd18",
+      "game_code_executed": false,
+      "c_input_source": "PT_DYNAMIC",
+      "python_oracle_source": "section_headers"
+    },
+    {
+      "module": "libil2cpp.so",
+      "relative_verified": 281650,
+      "relative_nonzero_symbol_not_tested": 0,
+      "image_bytes": 39084628,
+      "result_sha256": "48496f90919c947d6dc2b6353e86a181103bacc68793051659da917d6b706cee",
+      "game_code_executed": false,
+      "c_input_source": "PT_DYNAMIC",
+      "python_oracle_source": "section_headers"
+    },
+    {
+      "module": "libmain.so",
+      "relative_verified": 30,
+      "relative_nonzero_symbol_not_tested": 0,
+      "image_bytes": 20757,
+      "result_sha256": "ffe05c31cfd0f4af6936ddb87203ef360127d2acc1af07debbf2ad7fccd7fce9",
+      "game_code_executed": false,
+      "c_input_source": "PT_DYNAMIC",
+      "python_oracle_source": "section_headers"
+    },
+    {
+      "module": "libunity.so",
+      "relative_verified": 28613,
+      "relative_nonzero_symbol_not_tested": 0,
+      "image_bytes": 13890408,
+      "result_sha256": "4d81ca5859c0a0a23878d079f6fde776e15b2de4188b1d669859c5e33bbc4c72",
+      "game_code_executed": false,
+      "c_input_source": "PT_DYNAMIC",
+      "python_oracle_source": "section_headers"
+    }
+  ],
+  "relative_verified": 317859,
+  "limitations": [
+    "Only RELATIVE symbol-index-zero relocations tested on APK.",
+    "Other types are covered by synthetic C tests, not full ELF linkage.",
+    "No instructions, constructors, JNI or game lifecycle executed."
+  ]
+}

@@ -1,0 +1,10 @@
+sf2-vita\local-input\1.0.12\libcrashlytics-common.so: structurally valid ARM32 shared object; NOT execution-certified; flags=0x5000200 loads=2 span=461484 tls=0 wx=0
+sf2-vita\local-input\1.0.12\libcrashlytics-handler.so: structurally valid ARM32 shared object; NOT execution-certified; flags=0x5000200 loads=2 span=75353 tls=0 wx=0
+sf2-vita\local-input\1.0.12\libcrashlytics-trampoline.so: structurally valid ARM32 shared object; NOT execution-certified; flags=0x5000200 loads=2 span=5896 tls=0 wx=0
+sf2-vita\local-input\1.0.12\libcrashlytics.so: structurally valid ARM32 shared object; NOT execution-certified; flags=0x5000200 loads=2 span=81385 tls=0 wx=0
+sf2-vita\local-input\1.0.12\libFirebaseCppApp-10_2_0.so: structurally valid ARM32 shared object; NOT execution-certified; flags=0x5000200 loads=2 span=3101080 tls=0 wx=0
+sf2-vita\local-input\1.0.12\libFirebaseCppCrashlytics.so: structurally valid ARM32 shared object; NOT execution-certified; flags=0x5000200 loads=2 span=28776 tls=0 wx=0
+sf2-vita\local-input\1.0.12\libFirebaseCppMessaging.so: structurally valid ARM32 shared object; NOT execution-certified; flags=0x5000200 loads=2 span=53376 tls=0 wx=0
+sf2-vita\local-input\1.0.12\libil2cpp.so: structurally valid ARM32 shared object; NOT execution-certified; flags=0x5000200 loads=2 span=39084628 tls=0 wx=0
+sf2-vita\local-input\1.0.12\libmain.so: structurally valid ARM32 shared object; NOT execution-certified; flags=0x5000200 loads=2 span=20757 tls=0 wx=0
+sf2-vita\local-input\1.0.12\libunity.so: structurally valid ARM32 shared object; NOT execution-certified; flags=0x5000200 loads=2 span=13890408 tls=0 wx=0
