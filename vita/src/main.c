@@ -1,3 +1,5 @@
+#include "bionic_math.h"
+#include "bionic_mutex.h"
 #include "arm_vm_probe.h"
 #include <psp2/kernel/processmgr.h>
 #include <psp2/ctrl.h>
@@ -123,7 +125,7 @@ static void sink(const TouchEvent *e,void *unused){
 }
 int main(void){
     FILE *reset=fopen("ux0:data/sf2vita-input.log","w");log_ready=reset!=0;if(reset)fclose(reset);
-    stage("SF2 diagnostic 0.9-libmain2; Unity NOT started");
+    stage("SF2 diagnostic 0.9-services1; Unity NOT started");
     memory_snapshot("entry",0);
     sf_log_configure(log_ready?android_log_to_file:0,0,SF_LOG_INFO);
     stage("BEFORE_CORE_PROBES");
@@ -138,6 +140,31 @@ int main(void){
     int watcher_rc=watcher<0?watcher:sceKernelStartThread(watcher,0,0);
     stage("START_WATCHER thread=%d start_rc=0x%08x; independent of graphics",watcher,(unsigned)watcher_rc);
     stage("BEFORE_AUTHORED_ELF_EXEC");
+    /* Volatile inputs and typed calls exercise hard-float to base-AAPCS bridges. */
+    volatile double math_a=2.0,math_b=3.0;volatile float math_f=6.25f;
+    double math_pow=sf_math_pow(math_a,math_b),math_scaled=sf_math_ldexp(math_a,-3),math_integer=0;
+    float math_root=sf_math_sqrtf(math_f);
+    double math_fraction=sf_math_modf(-3.25,&math_integer);
+    int math_ok=math_pow==8.0&&math_scaled==0.25&&math_root==2.5f&&math_fraction==-0.25&&math_integer==-3.0;
+    stage("MATH_ABI_PROBE %s pow=%.2f ldexp=%.2f sqrtf=%.2f modf=%.2f integer=%.2f",
+          math_ok?"PASS":"FAIL",math_pow,math_scaled,(double)math_root,math_fraction,math_integer);
+    int32_t mutex_normal=0,mutex_recursive=0x4000,mutex_error=0x8000;
+    int mlock=sf_bionic_mutex_lock(&mutex_normal);
+    int mbusy=sf_bionic_mutex_trylock(&mutex_normal);
+    int mdestroy_busy=sf_bionic_mutex_destroy(&mutex_normal);
+    int munlock=sf_bionic_mutex_unlock(&mutex_normal);
+    int mdestroy=sf_bionic_mutex_destroy(&mutex_normal);
+    int rlock=sf_bionic_mutex_lock(&mutex_recursive),rlock2=sf_bionic_mutex_lock(&mutex_recursive);
+    int runlock=sf_bionic_mutex_unlock(&mutex_recursive),runlock2=sf_bionic_mutex_unlock(&mutex_recursive);
+    int rdestroy=sf_bionic_mutex_destroy(&mutex_recursive);
+    int elock=sf_bionic_mutex_lock(&mutex_error),edead=sf_bionic_mutex_lock(&mutex_error);
+    int eunlock=sf_bionic_mutex_unlock(&mutex_error),edestroy=sf_bionic_mutex_destroy(&mutex_error);
+    int mutex_ok=!mlock&&mbusy==16&&mdestroy_busy==16&&!munlock&&!mdestroy&&
+        !rlock&&!rlock2&&!runlock&&!runlock2&&!rdestroy&&!elock&&edead==35&&!eunlock&&!edestroy;
+    stage("MUTEX_ABI_PROBE %s normal=%d,%d,%d,%d,%d recursive=%d,%d,%d,%d,%d errorcheck=%d,%d,%d,%d",
+          mutex_ok?"PASS":"FAIL",mlock,mbusy,mdestroy_busy,munlock,mdestroy,
+          rlock,rlock2,runlock,runlock2,rdestroy,elock,edead,eunlock,edestroy);
+    core_ok=core_ok&&math_ok&&mutex_ok;
     int exec_rc=0;uint32_t exec_entry=0;float exec_first=0,exec_second=0;
     char missing[128]={0};
     int exec_ok=sf_arm_vm_probe(&exec_rc,&exec_entry,&exec_first,&exec_second,missing,sizeof missing,arm_probe_trace);

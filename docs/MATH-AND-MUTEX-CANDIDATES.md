@@ -19,3 +19,16 @@ Process-shared/robust mutexes, timed mutex operations, condition variables, canc
 Current local checks: 245 Python tests and 13 CTest targets pass. The pending hardware binary 0.9-libmain1 predates these isolated candidates and is still an original JNI_OnLoad-only probe, not a Unity/game build.
 
 Reference for Android constants/storage: [AOSP bionic pthread.h](https://android.googlesource.com/platform/bionic/+/refs/heads/main/libc/include/pthread.h).
+
+
+Hardware probe 0.9-services1 links these candidates into the Vita diagnostic.
+Volatile numeric inputs exercise double pow, double/int ldexp, float sqrtf,
+and pointer-output modf through their base-AAPCS declarations. Logged values
+are compared against exact representable expectations (8, 0.25, 2.5, -0.25,
+-3). Mutex probes exercise lazy normal initialization, trylock EBUSY,
+busy destruction, recursive depth, errorcheck EDEADLK, unlock and cleanup.
+The independent START watcher starts before the probes. This is a single-thread
+hardware semantic probe; the host contention test does not establish Vita
+contention behavior. Full math catalog, fenv and engine integration remain
+uncertified. The VPK also repeats original libmain JNI_OnLoad without invoking
+NativeLoader.load. Device results are pending.
