@@ -29,7 +29,9 @@
   "xml_checked": true,
   "zip_crc_checked": true,
   "build_id": "0.7-gfxtrace1",
-  "device_tested": false,
+  "device_tested": true,
   "previous_hardware_evidence": "User report for repacked 0.6; core/JNI probes PASS, own screen not shown",
-  "binary_publication": "local only"
+  "binary_publication": "local only",
+  "hardware_report": "HARDWARE-0.7.md",
+  "hardware_scope": "Diagnostic probes, draw/swap, recorded touch events and normal START exit; Unity not started"
 }

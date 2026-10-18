@@ -29,4 +29,4 @@ Primary sources:
 
 Install only the locally identified sf2-diagnostic-0.7-gfxtrace1.vpk. Expected log header: SF2 diagnostic 0.7-gfxtrace1. Expected own screen: UNITY NOT STARTED, LOG READY and CORE CHECK PASS. Test stick/d-pad/face buttons and START, then retrieve ux0:data/sf2vita-input.log. If the splash remains, the final stage marker distinguishes init, input, drawing or swap. Do not infer that the game has started.
 
-193 Python tests and 8 CTest targets pass; updated VPK cross-build and package validation pass. Device verification of this update is pending.
+193 Python tests and 8 CTest targets pass; updated VPK cross-build and package validation pass. Device verification subsequently completed for the diagnostic loop; see [0.7 hardware report](HARDWARE-0.7.md).
