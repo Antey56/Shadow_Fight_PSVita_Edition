@@ -9,4 +9,8 @@ cmake -S "$taskRoot/vita" -B "$taskRoot/build-vita" -G Ninja -DCMAKE_BUILD_TYPE=
 if ($LASTEXITCODE -ne 0) { throw 'Vita CMake configuration failed.' }
 cmake --build "$taskRoot/build-vita" -j2
 if ($LASTEXITCODE -ne 0) { throw 'Vita build failed.' }
-Write-Output "VPK: $taskRoot/build-vita/sf2-diagnostic.vpk"
+$taskPython = (Get-Command python -ErrorAction Stop).Source
+& $taskPython "$taskRoot/tools/validate_vpk.py" "$taskRoot/build-vita/sf2-diagnostic.vpk" --version 00.07
+if ($LASTEXITCODE -ne 0) { throw 'VPK resource/identity validation failed.' }
+Write-Output "VPK 0.7-gfxtrace1: $taskRoot/build-vita/sf2-diagnostic.vpk"
+Get-FileHash -Algorithm SHA256 -LiteralPath "$taskRoot/build-vita/sf2-diagnostic.vpk"

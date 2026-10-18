@@ -1,0 +1,35 @@
+{
+  "file": "sf2-diagnostic-0.7-gfxtrace1.vpk",
+  "sha256": "0fb2e0e0a0452f0e270b569ecd9344afa64a8548d58cb40da98d3783011946e9",
+  "pngs": [
+    {
+      "path": "sce_sys/icon0.png",
+      "width": 128,
+      "height": 128,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/bg.png",
+      "width": 840,
+      "height": 500,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/startup.png",
+      "width": 280,
+      "height": 158,
+      "bit_depth": 8,
+      "color_type": 3
+    }
+  ],
+  "title_id": "SF2AUD001",
+  "app_version": "00.07",
+  "xml_checked": true,
+  "zip_crc_checked": true,
+  "build_id": "0.7-gfxtrace1",
+  "device_tested": false,
+  "previous_hardware_evidence": "User report for repacked 0.6; core/JNI probes PASS, own screen not shown",
+  "binary_publication": "local only"
+}

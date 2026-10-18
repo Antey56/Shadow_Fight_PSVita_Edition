@@ -1,8 +1,11 @@
-[1/8] Building C object CMakeFiles/sf2_diagnostic.dir/src/main.c.obj
-[2/8] Linking CXX executable sf2_diagnostic
-[3/8] Converting to Sony ELF sf2_diagnostic.velf
-[4/8] Creating SELF eboot.bin
-[5/8] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/eboot.bin.out eboot.bin"
-[6/8] Generating param.sfo for sf2-diagnostic.vpk
-[7/8] Building vpk sf2-diagnostic.vpk
-[8/8] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/sf2-diagnostic.vpk.out sf2-diagnostic.vpk"
+[1/9] Building C object CMakeFiles/sf2_diagnostic.dir/src/main.c.obj
+[2/9] Linking CXX executable sf2_diagnostic
+[3/9] Converting to Sony ELF sf2_diagnostic.velf
+[4/9] Creating SELF eboot.bin
+[5/9] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/eboot.bin.out eboot.bin"
+[6/9] Generating param.sfo for sf2-diagnostic.vpk
+[7/9] Building vpk sf2-diagnostic.vpk
+[8/9] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/sf2-diagnostic.vpk.out sf2-diagnostic.vpk"
+[9/9] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\python3.exe <WORKSPACE>/sf2-vita/vita/../tools/validate_vpk.py <WORKSPACE>/sf2-vita/build-vita/sf2-diagnostic.vpk --version 00.07 --out <WORKSPACE>/sf2-vita/build-vita/vpk-validation.json"
+{"file": "sf2-diagnostic.vpk", "sha256": "0fb2e0e0a0452f0e270b569ecd9344afa64a8548d58cb40da98d3783011946e9", "pngs": [{"path": "sce_sys/icon0.png", "width": 128, "height": 128, "bit_depth": 8, "color_type": 3}, {"path": "sce_sys/livearea/contents/bg.png", "width": 840, "height": 500, "bit_depth": 8, "color_type": 3}, {"path": "sce_sys/livearea/contents/startup.png", "width": 280, "height": 158, "bit_depth": 8, "color_type": 3}], "title_id": "SF2AUD001", "app_version": "00.07", "xml_checked": true, "zip_crc_checked": true}
+
