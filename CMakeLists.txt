@@ -49,3 +49,6 @@ set_target_properties(arm_symbols_host PROPERTIES PREFIX "")
 add_executable(bionic_once_test tests/bionic_once_test.c vita/src/bionic_once.c)
 target_link_libraries(bionic_once_test Threads::Threads)
 add_test(NAME bionic_once COMMAND bionic_once_test)
+
+add_executable(cxa_runtime_test tests/cxa_runtime_test.c vita/src/libmain_runtime.c)
+add_test(NAME cxa_runtime COMMAND cxa_runtime_test)

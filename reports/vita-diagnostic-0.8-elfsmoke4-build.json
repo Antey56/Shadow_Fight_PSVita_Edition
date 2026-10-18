@@ -29,8 +29,10 @@
   "xml_checked": true,
   "zip_crc_checked": true,
   "build_id": "0.8-elfsmoke4",
-  "device_tested": false,
+  "device_tested": true,
   "python_tests": 245,
   "ctest_targets": 10,
-  "unity_started": false
+  "unity_started": false,
+  "hardware_report": "HARDWARE-0.8.md",
+  "hardware_result": "AUTHORED_ELF_EXEC PASS; first=11.75 second=7.50; graphics/control/normal START exit after 155 frames"
 }

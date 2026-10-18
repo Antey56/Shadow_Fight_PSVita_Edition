@@ -30,3 +30,6 @@ Local validation: 217 Python tests, 9 CTest targets, Vita cross-build and VPK va
 
 
 Update: an executable mapper and Vita VM-domain path for a constructor-free authored fixture now exist; see [execution contract and limits](EXECUTABLE-ELF.md). 0.8-elfsmoke1 has been transferred for hardware testing; current source 0.8-elfsmoke2 adds dynamic export lookup. No engine ARM code has executed. Earlier statements that all ELF loading is data-only describe the previous checkpoint; actual game loading remains blocked.
+
+
+The authored ELF execution path is now hardware-verified in 0.8-elfsmoke4 (11.75/7.50). The next local experiment is [original libmain JNI_OnLoad](LIBMAIN-ENTRY-PROBE.md), with explicit restricted service semantics. Unity constructors and real dynamic loading remain blocked; original-library hardware results are pending.

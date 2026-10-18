@@ -31,3 +31,6 @@ Hardware update: [0.8-elfsmoke1](../reports/HARDWARE-0.8.md) reached the require
 
 
 0.8-elfsmoke3 reached copying but crashed on the first VM write because the domain was opened too late. The 0.8-elfsmoke4 backend fixes the order and adds per-stage trace markers; see the hardware report. Successful entry execution is not claimed until the repeated test returns the expected floats.
+
+
+Hardware completion: 0.8-elfsmoke4 now records AUTHORED_ELF_EXEC PASS with exact results 11.75 and 7.50 on Vita, followed by graphics/input and normal START exit. This supersedes pending wording above for the selected authored fixture. It does not authorize or certify game ELF initialization; see HARDWARE-0.8.md.

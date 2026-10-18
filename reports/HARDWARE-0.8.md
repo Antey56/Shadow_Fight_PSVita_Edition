@@ -23,3 +23,12 @@ The crashed main thread has PC 0xe00010e8 inside SceLibKernel, destination r0=0x
 Source inspection found sceKernelOpenVMDomain was incorrectly deferred until the cache-sync callback, after publish/memcpy. The corrected reserve path opens the domain before returning writable memory to publication; open failure frees the allocation. Cache sync remains after copying. This matches the VM-domain ordering used by so_util. Detailed markers now bracket reserve, open_before_write, copying, cache sync and each fixture entry return. 0.8-elfsmoke4 was built and transferred with SHA readback; its device result is pending.
 
 Core register layout reference: [vita-parse-core](https://github.com/xyzz/vita-parse-core/blob/master/core.py). Raw dumps include unrelated system/application notes and are not published. Only the relevant addresses and diagnostic observations are recorded here.
+
+
+## 0.8-elfsmoke4: executable ARM path verified on Vita
+
+The repeated log identifies 0.8-elfsmoke4. At 213443 us open_before_write returned zero for base 0x83500000. Copy and cache synchronization returned successfully. Both calls to entry 0x8350018d returned. At 254273 us the log records AUTHORED_ELF_EXEC PASS rc=0 first=11.75 second=7.50. This verifies the selected Thumb/softfp callback path, imported JUMP_SLOT, RELATIVE pointer and persistent BSS state in the authored module. It does not certify every ARM ABI behavior or full game imports.
+
+Kernel free user memory before graphics returned to its entry value of 225443840 bytes after the fixture allocation was freed. Startup ARM-memory/object-array probes pass. Traced graphics draws report GL error zero and swaps return. Normal START exit was reached after 155 frames. No Unity/game instruction ran; only the authored fixture was executed.
+
+The transferred VPK SHA-256 was 81cc81a11ec3ccc20d7b4fefb87967b444ea8f2cf2248db4c51846e9d0af2002. The log identifies its build but the running executable itself was not independently hashed. Earlier pending text above is historical.

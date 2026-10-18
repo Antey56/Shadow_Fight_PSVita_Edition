@@ -1,0 +1,39 @@
+{
+  "file": "sf2-diagnostic-0.9-libmain1.vpk",
+  "sha256": "cb321ec97c05efd4c2562a2d7e06cfe594113c80437670c53b272d84a8f8ff0c",
+  "pngs": [
+    {
+      "path": "sce_sys/icon0.png",
+      "width": 128,
+      "height": 128,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/bg.png",
+      "width": 840,
+      "height": 500,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/startup.png",
+      "width": 280,
+      "height": 158,
+      "bit_depth": 8,
+      "color_type": 3
+    }
+  ],
+  "title_id": "SF2AUD001",
+  "app_version": "00.09",
+  "xml_checked": true,
+  "zip_crc_checked": true,
+  "build_id": "0.9-libmain1",
+  "device_tested": false,
+  "python_tests": 245,
+  "ctest_targets": 11,
+  "unity_started": false,
+  "original_libmain_embedded": true,
+  "original_libmain_sha256": "dad352d6cc2a8cf184d4e0a9dfe6d7f3768c329b4c684587c28e48eb01511d71",
+  "binary_publication": "local and user Vita only; includes locally provided game library"
+}

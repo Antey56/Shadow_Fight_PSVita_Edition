@@ -123,7 +123,7 @@ static void sink(const TouchEvent *e,void *unused){
 }
 int main(void){
     FILE *reset=fopen("ux0:data/sf2vita-input.log","w");log_ready=reset!=0;if(reset)fclose(reset);
-    stage("SF2 diagnostic 0.8-elfsmoke4; Unity NOT started");
+    stage("SF2 diagnostic 0.9-libmain1; Unity NOT started");
     memory_snapshot("entry",0);
     sf_log_configure(log_ready?android_log_to_file:0,0,SF_LOG_INFO);
     stage("BEFORE_CORE_PROBES");
@@ -144,6 +144,13 @@ int main(void){
     stage("AUTHORED_ELF_EXEC %s rc=%d entry=0x%08x first=%.2f second=%.2f missing=%.127s; game NOT executed",
           exec_ok?"PASS":"FAIL",exec_rc,exec_entry,(double)exec_first,(double)exec_second,missing);
     core_ok=core_ok&&exec_ok;
+#ifdef SF2_LIBMAIN_ENTRY_PROBE
+    int main_rc=0;uint32_t main_version=0,main_load=0,main_unload=0;
+    stage("BEFORE_ORIGINAL_LIBMAIN_ONLOAD; Unity NOT started");
+    int main_ok=sf_libmain_entry_probe(&main_rc,&main_version,&main_load,&main_unload,arm_probe_trace);
+    stage("ORIGINAL_LIBMAIN_ONLOAD %s rc=%d version=0x%08x load=0x%08x unload=0x%08x; Unity NOT started",
+          main_ok?"PASS":"FAIL",main_rc,main_version,main_load,main_unload);
+#endif
     memory_snapshot("before_vglInit",0);
     stage("BEFORE_VGL_INIT legacy=0 circular=1048576 buffers=2 resolution=960x544 MSAA=NONE");
     vglSetCircularPoolSize(1024*1024);vglSetDisplayBufferCount(2);
