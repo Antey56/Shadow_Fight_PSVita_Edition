@@ -22,7 +22,7 @@ add_custom_command(OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/arm_smoke_image.h"
   COMMAND "${SF2_HOST_PYTHON}" "${CMAKE_CURRENT_SOURCE_DIR}/../tools/embed_arm_smoke.py"
     "${CMAKE_CURRENT_BINARY_DIR}/arm-smoke.so" "${CMAKE_CURRENT_BINARY_DIR}/arm_smoke_image.h"
   DEPENDS ../tests/arm_smoke_fixture.c ../tools/embed_arm_smoke.py ../tools/elf_dynamic.py VERBATIM)
-add_executable(sf2_diagnostic src/main.c src/diagnostic_ui.c src/touch.c src/loader_plan.c src/elf_preflight.c src/native_registry.c src/arm_reloc.c src/arm_dynamic.c src/arm_link.c src/arm_scope.c src/android_log_adapter.c src/android_asset_adapter.c src/jni_objects.c src/jni_bridge.c src/jni_vm.c src/bionic_memory.c src/jni_registration.c src/aeabi_memory.c src/aeabi_memory.S src/bionic_once.c src/bionic_math.c src/bionic_mutex.c src/libmain_runtime.c src/arm_exec.c src/arm_symbols.c src/arm_vm_probe.c "${CMAKE_CURRENT_BINARY_DIR}/arm_smoke_image.h")
+add_executable(sf2_diagnostic src/main.c src/diagnostic_ui.c src/touch.c src/loader_plan.c src/elf_preflight.c src/native_registry.c src/arm_reloc.c src/arm_dynamic.c src/arm_link.c src/arm_scope.c src/android_log_adapter.c src/android_asset_adapter.c src/jni_objects.c src/jni_bridge.c src/jni_vm.c src/bionic_memory.c src/jni_registration.c src/aeabi_memory.c src/aeabi_memory.S src/bionic_once.c src/bionic_math.c src/bionic_mutex.c src/libmain_runtime.c src/arm_arena.c src/arm_arena_vita.c src/arm_exec.c src/arm_symbols.c src/arm_vm_probe.c "${CMAKE_CURRENT_BINARY_DIR}/arm_smoke_image.h")
 target_include_directories(sf2_diagnostic PRIVATE include "${CMAKE_CURRENT_BINARY_DIR}")
 target_compile_options(sf2_diagnostic PRIVATE -Wall -Wextra)
 target_compile_definitions(sf2_diagnostic PRIVATE SF2_VITA_TARGET=1)

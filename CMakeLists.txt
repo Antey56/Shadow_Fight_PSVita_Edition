@@ -40,7 +40,7 @@ add_test(NAME bionic_memory COMMAND bionic_memory_test)
 add_executable(aeabi_memory_test tests/aeabi_memory_test.c vita/src/aeabi_memory.c)
 add_test(NAME aeabi_memory COMMAND aeabi_memory_test)
 
-add_library(arm_exec_host SHARED vita/src/arm_exec.c vita/src/arm_link.c vita/src/arm_dynamic.c vita/src/arm_reloc.c)
+add_library(arm_exec_host SHARED vita/src/arm_arena.c vita/src/arm_exec.c vita/src/arm_link.c vita/src/arm_dynamic.c vita/src/arm_reloc.c)
 set_target_properties(arm_exec_host PROPERTIES PREFIX "")
 
 add_library(arm_symbols_host SHARED vita/src/arm_symbols.c vita/src/arm_dynamic.c)
@@ -62,3 +62,6 @@ target_link_libraries(bionic_mutex_test Threads::Threads)
 add_test(NAME bionic_mutex COMMAND bionic_mutex_test)
 
 set_tests_properties(bionic_mutex PROPERTIES TIMEOUT 15)
+
+add_executable(arm_arena_test tests/arm_arena_test.c vita/src/arm_arena.c)
+add_test(NAME arm_arena COMMAND arm_arena_test)

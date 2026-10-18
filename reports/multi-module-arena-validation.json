@@ -1,0 +1,17 @@
+{
+  "python_tests": 259,
+  "ctest_targets": 14,
+  "vita_cross_build": true,
+  "vpk_validation": true,
+  "arena_host_test": "PASS",
+  "mapper_arena_integration": "PASS",
+  "vita_backing_candidate_called": false,
+  "vita_backing_hardware_tested": false,
+  "unity_started": false,
+  "simulated_capacity": 67108864,
+  "real_module_spans": [
+    24576,
+    13893632,
+    39088128
+  ]
+}
