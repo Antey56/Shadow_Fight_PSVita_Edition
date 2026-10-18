@@ -56,3 +56,6 @@ Reference: [JNI FatalError specification](https://docs.oracle.com/en/java/javase
 ## 2026-10-18: reference arrays
 
 Current source 0.7-objarrays2 adds three leaf object-array slots, bringing the table to 74 implemented entries. See [ownership, limits and tests](JNI-OBJECT-ARRAYS.md). Nested arrays, initialization and workers remain incomplete. 215 Python tests and 8 CTest targets pass; the new array probe has not been tested on Vita. Earlier 0.7 hardware results remain scoped to gfxtrace1.
+
+
+Hardware update 2026-10-18: 0.7-objarrays2 recorded OBJECT_ARRAY_PROBE PASS, successful core probes/draw/swap, touch IDs 0..4 and normal START exit after 211 frames. See [hardware report](../reports/HARDWARE-0.7-OBJECT-ARRAYS.md). This supersedes the pending-device wording above for this selected probe only; Unity was not started.

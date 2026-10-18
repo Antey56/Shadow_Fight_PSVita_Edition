@@ -17,3 +17,6 @@ Nested object arrays (including self-reference) are explicitly rejected, even in
 Diagnostic source 0.7-objarrays2 adds OBJECT_ARRAY_PROBE for a String array and retained element. This is a new source identity; hardware results for 0.7-gfxtrace1 do not certify it. The terminal FatalError path is deliberately not invoked by startup probes. No claim of Unity startup, engine rendering or gameplay is made.
 
 Reference: [Oracle JNI array operations](https://docs.oracle.com/en/java/javase/24/docs/specs/jni/functions.html#array-operations).
+
+
+Hardware update 2026-10-18: 0.7-objarrays2 recorded OBJECT_ARRAY_PROBE PASS, successful core probes/draw/swap, touch IDs 0..4 and normal START exit after 211 frames. See [hardware report](../reports/HARDWARE-0.7-OBJECT-ARRAYS.md). This supersedes the pending-device wording above for this selected probe only; Unity was not started.

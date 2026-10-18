@@ -29,8 +29,10 @@
   "xml_checked": true,
   "zip_crc_checked": true,
   "build_id": "0.7-objarrays2",
-  "device_tested": false,
+  "device_tested": true,
   "python_tests": 215,
   "ctest_targets": 8,
-  "unity_started": false
+  "unity_started": false,
+  "hardware_report": "HARDWARE-0.7-OBJECT-ARRAYS.md",
+  "hardware_scope": "Selected object-array startup probe, core probes, graphics draw/swap, recorded input and normal START exit"
 }

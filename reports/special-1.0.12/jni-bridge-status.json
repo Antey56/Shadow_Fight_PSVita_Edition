@@ -102,5 +102,5 @@
   "object_arrays": "restricted leaf-only references; 4096 elements/array, 8 MiB aggregate; nested arrays rejected",
   "direct_buffers": "borrowed native memory only; no Java buffer methods or audio driver",
   "fatal_error": "terminal abort; bounded diagnostic message; no recovery",
-  "object_arrays_device_tested": false
+  "object_arrays_device_tested": "Selected String-array startup probe PASS on 0.7-objarrays2; not full API certification"
 }
