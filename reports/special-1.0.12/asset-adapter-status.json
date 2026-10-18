@@ -1,0 +1,6 @@
+{
+  "candidate_functions": 11,
+  "direct_import_matches": [],
+  "runtime_certified": false,
+  "note": "Static imports only; dynamic lookup and Java asset access are not established."
+}

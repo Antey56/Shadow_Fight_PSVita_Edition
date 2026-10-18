@@ -2,11 +2,7 @@
 #define SF_ANDROID_LOG_ADAPTER_H
 #include <stdarg.h>
 #include "arm_scope.h"
-#if defined(__arm__) && defined(__GNUC__)
-#define SF_ANDROID_ABI __attribute__((pcs("aapcs")))
-#else
-#define SF_ANDROID_ABI
-#endif
+#include "android_abi.h"
 enum { SF_LOG_VERBOSE=2,SF_LOG_DEBUG=3,SF_LOG_INFO=4,SF_LOG_WARN=5,SF_LOG_ERROR=6,SF_LOG_FATAL=7,SF_LOG_SILENT=8 };
 typedef struct {int buffer,priority,truncated;const char *tag,*text;} SfLogRecord;
 /* Synchronous sink: return >0 on success, <=0 on failure. Pointers expire on

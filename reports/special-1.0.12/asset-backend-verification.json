@@ -1,0 +1,42 @@
+{
+  "samples": [
+    {
+      "asset": "assets/bin/Data/boot.config",
+      "bytes": 156,
+      "sha256": "38b71e4a3a6de033c4f243caa2421ee9c5e59d899fb87a0ca41a26ac25824a44",
+      "stream_matches_apk": true,
+      "seek_probes": 3,
+      "buffer_matches_apk": true,
+      "game_executed": false
+    },
+    {
+      "asset": "assets/bin/Data/globalgamemanagers",
+      "bytes": 761308,
+      "sha256": "a776ccde69158ed106cabdcfc43e76070a82e8a0d00e864fa8bd5b9e2b25177b",
+      "stream_matches_apk": true,
+      "seek_probes": 3,
+      "buffer_matches_apk": true,
+      "game_executed": false
+    },
+    {
+      "asset": "assets/bin/Data/globalgamemanagers.assets",
+      "bytes": 468640,
+      "sha256": "33c527d12f7fdf132ed949d17cdbc8432c78de2ab70196d84c1efb32d2012f3b",
+      "stream_matches_apk": true,
+      "seek_probes": 3,
+      "buffer_matches_apk": true,
+      "game_executed": false
+    },
+    {
+      "asset": "assets/bin/Data/Managed/Metadata/global-metadata.dat",
+      "bytes": 8969044,
+      "sha256": "af11bf4745f5767cfebf65312147244fadb59ebaf1a8d4708ec2b2dcbdd7d5e9",
+      "stream_matches_apk": true,
+      "seek_probes": 3,
+      "buffer_matches_apk": true,
+      "game_executed": false
+    }
+  ],
+  "sample_bytes": 10199148,
+  "note": "Only hashes/results published. Extracted samples were temporary and removed. No Android code executed."
+}
