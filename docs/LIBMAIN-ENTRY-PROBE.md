@@ -29,3 +29,6 @@ cmake --build build-vita -j2
 ```
 
 To disable embedding, reconfigure with -DSF2_LIBMAIN_PROBE_INPUT= (an existing build cache otherwise retains the path). Do not publish generated libmain_probe_image.h or the resulting game-containing VPK.
+
+
+Hardware completion: 0.9-libmain2 executed original JNI_OnLoad successfully on Vita, returned JNI_VERSION_1_6 and registered both expected NativeLoader methods. See [hardware report](../reports/HARDWARE-0.9.md). NativeLoader.load/unload, Unity and IL2CPP were not invoked.

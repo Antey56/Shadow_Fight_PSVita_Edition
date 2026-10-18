@@ -82,3 +82,6 @@ Runtime gate сейчас возвращает код 1 намеренно: за
 
 
 Текущий локальный эксперимент — [JNI_OnLoad оригинального libmain](docs/LIBMAIN-ENTRY-PROBE.md), сборка 0.9-libmain1. Он не вызывает NativeLoader.load и не запускает Unity. Включение оригинальной библиотеки требует явного локального пути и проверки SHA; бинарник с ней не публикуется.
+
+
+Hardware milestone: original libmain JNI_OnLoad passes on Vita in 0.9-libmain2; see [result and limits](reports/HARDWARE-0.9.md). Unity and gameplay have not started.

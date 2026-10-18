@@ -7,16 +7,28 @@
 #include <string.h>
 #include "arm_smoke_image.h"
 typedef struct {SceUID block;void *base;SfArmProbeTrace trace;} VmAllocation;
+/* Single owner thread, sequential probes only. Keep one VM allocation alive
+   across releases: firmware rejects a second allocation after freeing the first. */
+static SceUID shared_block=-1;
+static void *shared_base;
+static int shared_busy;
 static void trace(VmAllocation *a,const char *name,int rc){if(a->trace)a->trace(name,rc,(uint32_t)(uintptr_t)a->base);}
 static int reserve(void *context,size_t bytes,size_t alignment,uint32_t *base,uintptr_t *cookie){
     VmAllocation *a=context;
     if(bytes>16u*1024u*1024u||alignment>4096)return -40;
+    if(shared_busy)return -43;
+    if(shared_block>=0){
+        a->block=shared_block;a->base=shared_base;shared_busy=1;
+        trace(a,"reuse_vm_block",0);
+        *base=(uint32_t)(uintptr_t)a->base;*cookie=(uintptr_t)a->block;return 0;
+    }
     size_t rounded=16u*1024u*1024u; /* Known VM-domain allocation size used by so-loader. */
     a->block=sceKernelAllocMemBlockForVM("sf2-authored-arm",rounded);trace(a,"reserve",a->block);if(a->block<0)return a->block;
     int rc=sceKernelGetMemBlockBase(a->block,&a->base);
     if(rc<0){sceKernelFreeMemBlock(a->block);a->block=-1;return rc;}
     rc=sceKernelOpenVMDomain();trace(a,"open_before_write",rc);
     if(rc<0){sceKernelFreeMemBlock(a->block);a->block=-1;return rc;}
+    shared_block=a->block;shared_base=a->base;shared_busy=1;
     *base=(uint32_t)(uintptr_t)a->base;*cookie=(uintptr_t)a->block;return 0;
 }
 static int publish(void *context,uintptr_t cookie,const unsigned char *bytes,size_t count){
@@ -28,7 +40,17 @@ static int sync_code(void *context,uintptr_t cookie,size_t count){
     int rc=sceKernelSyncVMDomain((SceUID)cookie,a->base,count);trace(a,"after_cache_sync",rc);return rc;
 }
 static void release(void *context,uintptr_t cookie){
-    VmAllocation *a=context;sceKernelFreeMemBlock((SceUID)cookie);a->block=-1;a->base=0;
+    VmAllocation *a=context;
+    if((SceUID)cookie!=a->block||a->block!=shared_block)return;
+    trace(a,"release_vm_lease",0);shared_busy=0;a->block=-1;a->base=0;
+}
+int sf_arm_vm_probe_shutdown(SfArmProbeTrace reporter){
+    if(shared_busy)return -43;
+    if(shared_block<0)return 0;
+    int rc=sceKernelFreeMemBlock(shared_block);
+    if(reporter)reporter("free_vm_block",rc,(uint32_t)(uintptr_t)shared_base);
+    if(rc>=0){shared_block=-1;shared_base=0;}
+    return rc;
 }
 static SF_ANDROID_ABI float fixture_add(float a,float b){return a+b;}
 static int resolver(const char *name,unsigned binding,unsigned type,uint32_t *value,void *context){

@@ -123,7 +123,7 @@ static void sink(const TouchEvent *e,void *unused){
 }
 int main(void){
     FILE *reset=fopen("ux0:data/sf2vita-input.log","w");log_ready=reset!=0;if(reset)fclose(reset);
-    stage("SF2 diagnostic 0.9-libmain1; Unity NOT started");
+    stage("SF2 diagnostic 0.9-libmain2; Unity NOT started");
     memory_snapshot("entry",0);
     sf_log_configure(log_ready?android_log_to_file:0,0,SF_LOG_INFO);
     stage("BEFORE_CORE_PROBES");
@@ -150,7 +150,11 @@ int main(void){
     int main_ok=sf_libmain_entry_probe(&main_rc,&main_version,&main_load,&main_unload,arm_probe_trace);
     stage("ORIGINAL_LIBMAIN_ONLOAD %s rc=%d version=0x%08x load=0x%08x unload=0x%08x; Unity NOT started",
           main_ok?"PASS":"FAIL",main_rc,main_version,main_load,main_unload);
+    core_ok=core_ok&&main_ok;
 #endif
+    int vm_cleanup=sf_arm_vm_probe_shutdown(arm_probe_trace);
+    stage("VM_PROBE_CLEANUP rc=0x%08x",vm_cleanup);
+    core_ok=core_ok&&vm_cleanup>=0;
     memory_snapshot("before_vglInit",0);
     stage("BEFORE_VGL_INIT legacy=0 circular=1048576 buffers=2 resolution=960x544 MSAA=NONE");
     vglSetCircularPoolSize(1024*1024);vglSetDisplayBufferCount(2);

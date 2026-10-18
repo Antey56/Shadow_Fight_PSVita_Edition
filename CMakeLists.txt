@@ -52,3 +52,13 @@ add_test(NAME bionic_once COMMAND bionic_once_test)
 
 add_executable(cxa_runtime_test tests/cxa_runtime_test.c vita/src/libmain_runtime.c)
 add_test(NAME cxa_runtime COMMAND cxa_runtime_test)
+
+add_executable(bionic_math_test tests/bionic_math_test.c vita/src/bionic_math.c)
+target_link_libraries(bionic_math_test m)
+add_test(NAME bionic_math COMMAND bionic_math_test)
+
+add_executable(bionic_mutex_test tests/bionic_mutex_test.c vita/src/bionic_mutex.c)
+target_link_libraries(bionic_mutex_test Threads::Threads)
+add_test(NAME bionic_mutex COMMAND bionic_mutex_test)
+
+set_tests_properties(bionic_mutex PROPERTIES TIMEOUT 15)
