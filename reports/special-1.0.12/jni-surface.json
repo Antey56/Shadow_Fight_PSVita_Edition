@@ -1,0 +1,814 @@
+{
+  "apk_sha256": "ac570008f56922dd1df5bd66934cb4dd44ab3eff0e2961d4f7b02ca398fc969f",
+  "native_declarations": [
+    {
+      "class": "Lbitter/jnibridge/JNIBridge;",
+      "method": "delete",
+      "descriptor": "(J)V",
+      "static": true,
+      "flags": "0x108",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lbitter/jnibridge/JNIBridge;",
+      "method": "invoke",
+      "descriptor": "(JLjava/lang/Class;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;",
+      "static": true,
+      "flags": "0x108",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/google/androidgamesdk/ChoreographerCallback;",
+      "method": "nOnChoreographer",
+      "descriptor": "(JJ)V",
+      "static": false,
+      "flags": "0x101",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/google/androidgamesdk/SwappyDisplayManager;",
+      "method": "nOnRefreshRateChanged",
+      "descriptor": "(JJJJ)V",
+      "static": false,
+      "flags": "0x102",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/google/androidgamesdk/SwappyDisplayManager;",
+      "method": "nSetSupportedRefreshRates",
+      "descriptor": "(J[J[I)V",
+      "static": false,
+      "flags": "0x102",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/android/billingclient/api/zzat;",
+      "method": "nativeOnAcknowledgePurchaseResponse",
+      "descriptor": "(ILjava/lang/String;J)V",
+      "static": true,
+      "flags": "0x109",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/android/billingclient/api/zzat;",
+      "method": "nativeOnBillingServiceDisconnected",
+      "descriptor": "()V",
+      "static": true,
+      "flags": "0x109",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/android/billingclient/api/zzat;",
+      "method": "nativeOnBillingSetupFinished",
+      "descriptor": "(ILjava/lang/String;J)V",
+      "static": true,
+      "flags": "0x109",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/android/billingclient/api/zzat;",
+      "method": "nativeOnConsumePurchaseResponse",
+      "descriptor": "(ILjava/lang/String;Ljava/lang/String;J)V",
+      "static": true,
+      "flags": "0x109",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/android/billingclient/api/zzat;",
+      "method": "nativeOnPriceChangeConfirmationResult",
+      "descriptor": "(ILjava/lang/String;J)V",
+      "static": true,
+      "flags": "0x109",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/android/billingclient/api/zzat;",
+      "method": "nativeOnPurchaseHistoryResponse",
+      "descriptor": "(ILjava/lang/String;[Lcom/android/billingclient/api/PurchaseHistoryRecord;J)V",
+      "static": true,
+      "flags": "0x109",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/android/billingclient/api/zzat;",
+      "method": "nativeOnPurchasesUpdated",
+      "descriptor": "(ILjava/lang/String;[Lcom/android/billingclient/api/Purchase;)V",
+      "static": true,
+      "flags": "0x109",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/android/billingclient/api/zzat;",
+      "method": "nativeOnQueryPurchasesResponse",
+      "descriptor": "(ILjava/lang/String;[Lcom/android/billingclient/api/Purchase;J)V",
+      "static": true,
+      "flags": "0x109",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/android/billingclient/api/zzat;",
+      "method": "nativeOnSkuDetailsResponse",
+      "descriptor": "(ILjava/lang/String;[Lcom/android/billingclient/api/SkuDetails;J)V",
+      "static": true,
+      "flags": "0x109",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/google/android/gms/tasks/NativeOnCompleteListener;",
+      "method": "nativeOnComplete",
+      "descriptor": "(JLjava/lang/Object;ZZLjava/lang/String;)V",
+      "static": false,
+      "flags": "0x101",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Lcom/google/firebase/crashlytics/ndk/CrashpadMain;",
+      "method": "crashpadMain",
+      "descriptor": "([Ljava/lang/String;)V",
+      "static": true,
+      "flags": "0x109",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/google/firebase/crashlytics/ndk/JniNativeApi;",
+      "method": "nativeInit",
+      "descriptor": "([Ljava/lang/String;Ljava/lang/Object;)Z",
+      "static": false,
+      "flags": "0x102",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/google/games/bridge/NativeBridgeActivity;",
+      "method": "forwardActivityResult",
+      "descriptor": "(IILandroid/content/Intent;)V",
+      "static": false,
+      "flags": "0x102",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/AudioVolumeHandler;",
+      "method": "onAudioVolumeChanged",
+      "descriptor": "(I)V",
+      "static": false,
+      "flags": "0x111",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/Camera2Wrapper;",
+      "method": "deinitCamera2Jni",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/Camera2Wrapper;",
+      "method": "initCamera2Jni",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/Camera2Wrapper;",
+      "method": "nativeFrameReady",
+      "descriptor": "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;III)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/Camera2Wrapper;",
+      "method": "nativeSurfaceTextureReady",
+      "descriptor": "(Ljava/lang/Object;)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/GoogleARCoreApi;",
+      "method": "initializeARCore",
+      "descriptor": "(Landroid/app/Activity;)V",
+      "static": false,
+      "flags": "0x111",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/GoogleARCoreApi;",
+      "method": "pauseARCore",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x111",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/GoogleARCoreApi;",
+      "method": "resumeARCore",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x111",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/HFPStatus;",
+      "method": "deinitHFPStatusJni",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/HFPStatus;",
+      "method": "initHFPStatusJni",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/NativeLoader;",
+      "method": "load",
+      "descriptor": "(Ljava/lang/String;)Z",
+      "static": true,
+      "flags": "0x118",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/NativeLoader;",
+      "method": "unload",
+      "descriptor": "()Z",
+      "static": true,
+      "flags": "0x118",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/OrientationLockListener;",
+      "method": "nativeUpdateOrientationLockState",
+      "descriptor": "(I)V",
+      "static": false,
+      "flags": "0x111",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/ReflectionHelper;",
+      "method": "nativeProxyFinalize",
+      "descriptor": "(J)V",
+      "static": true,
+      "flags": "0x10a",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/ReflectionHelper;",
+      "method": "nativeProxyInvoke",
+      "descriptor": "(JLjava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;",
+      "static": true,
+      "flags": "0x10a",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/ReflectionHelper;",
+      "method": "nativeProxyLogJNIInvokeException",
+      "descriptor": "(J)V",
+      "static": true,
+      "flags": "0x10a",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityCoreAssetPacksStatusCallbacks;",
+      "method": "nativeStatusQueryResult",
+      "descriptor": "(Ljava/lang/String;II)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "initJni",
+      "descriptor": "(Landroid/content/Context;)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeApplicationUnload",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeDone",
+      "descriptor": "()Z",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeFocusChanged",
+      "descriptor": "(Z)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeInjectEvent",
+      "descriptor": "(Landroid/view/InputEvent;)Z",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeIsAutorotationOn",
+      "descriptor": "()Z",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeLowMemory",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeMuteMasterAudio",
+      "descriptor": "(Z)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeOrientationChanged",
+      "descriptor": "(II)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativePause",
+      "descriptor": "()Z",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeRecreateGfxState",
+      "descriptor": "(ILandroid/view/Surface;)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeRender",
+      "descriptor": "()Z",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeReportKeyboardConfigChanged",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeRestartActivityIndicator",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeResume",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeSendSurfaceChangedEvent",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeSetInputArea",
+      "descriptor": "(IIII)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeSetInputSelection",
+      "descriptor": "(II)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeSetInputString",
+      "descriptor": "(Ljava/lang/String;)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeSetKeyboardIsVisible",
+      "descriptor": "(Z)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeSetLaunchURL",
+      "descriptor": "(Ljava/lang/String;)V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeSoftInputCanceled",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeSoftInputClosed",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeSoftInputLostFocus",
+      "descriptor": "()V",
+      "static": false,
+      "flags": "0x112",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "nativeUnitySendMessage",
+      "descriptor": "(Ljava/lang/String;Ljava/lang/String;[B)V",
+      "static": true,
+      "flags": "0x10a",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lorg/fmod/FMODAudioDevice;",
+      "method": "fmodGetInfo",
+      "descriptor": "(I)I",
+      "static": false,
+      "flags": "0x102",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lorg/fmod/FMODAudioDevice;",
+      "method": "fmodProcess",
+      "descriptor": "(Ljava/nio/ByteBuffer;)I",
+      "static": false,
+      "flags": "0x102",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lorg/fmod/FMODAudioDevice;",
+      "method": "fmodProcessMicData",
+      "descriptor": "(Ljava/nio/ByteBuffer;I)I",
+      "static": false,
+      "flags": "0x100",
+      "dex": "classes2.dex"
+    }
+  ],
+  "framework_method_references": [
+    {
+      "class": "Landroid/app/Activity;",
+      "method": "getPackageName",
+      "descriptor": "()Ljava/lang/String;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/app/Fragment;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/ComponentName;",
+      "method": "getPackageName",
+      "descriptor": "()Ljava/lang/String;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getApplicationInfo",
+      "descriptor": "()Landroid/content/pm/ApplicationInfo;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getAssets",
+      "descriptor": "()Landroid/content/res/AssetManager;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getCacheDir",
+      "descriptor": "()Ljava/io/File;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getExternalFilesDir",
+      "descriptor": "(Ljava/lang/String;)Ljava/io/File;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getFilesDir",
+      "descriptor": "()Ljava/io/File;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getObbDir",
+      "descriptor": "()Ljava/io/File;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getPackageName",
+      "descriptor": "()Ljava/lang/String;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/ContextWrapper;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/pm/PackageManager;",
+      "method": "getApplicationInfo",
+      "descriptor": "(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/res/Resources$Theme;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/res/Resources;",
+      "method": "getAssets",
+      "descriptor": "()Landroid/content/res/AssetManager;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/content/res/TypedArray;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/os/ParcelFileDescriptor;",
+      "method": "open",
+      "descriptor": "(Ljava/io/File;I)Landroid/os/ParcelFileDescriptor;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/view/View;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/view/accessibility/AccessibilityNodeInfo;",
+      "method": "getPackageName",
+      "descriptor": "()Ljava/lang/CharSequence;",
+      "dex": "classes.dex"
+    },
+    {
+      "class": "Landroid/app/Activity;",
+      "method": "getPackageName",
+      "descriptor": "()Ljava/lang/String;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/ComponentName;",
+      "method": "getPackageName",
+      "descriptor": "()Ljava/lang/String;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getApplicationInfo",
+      "descriptor": "()Landroid/content/pm/ApplicationInfo;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getAssets",
+      "descriptor": "()Landroid/content/res/AssetManager;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getCacheDir",
+      "descriptor": "()Ljava/io/File;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getFilesDir",
+      "descriptor": "()Ljava/io/File;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getPackageName",
+      "descriptor": "()Ljava/lang/String;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/Context;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/pm/PackageManager;",
+      "method": "getApplicationInfo",
+      "descriptor": "(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/res/AssetManager;",
+      "method": "open",
+      "descriptor": "(Ljava/lang/String;)Ljava/io/InputStream;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/res/AssetManager;",
+      "method": "openFd",
+      "descriptor": "(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Landroid/content/res/Resources;",
+      "method": "getAssets",
+      "descriptor": "()Landroid/content/res/AssetManager;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "getApplicationInfo",
+      "descriptor": "()Landroid/content/pm/ApplicationInfo;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/UnityPlayer;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/h$a;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/j;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Lcom/unity3d/player/n;",
+      "method": "getResources",
+      "descriptor": "()Landroid/content/res/Resources;",
+      "dex": "classes2.dex"
+    },
+    {
+      "class": "Ljava/io/File;",
+      "method": "list",
+      "descriptor": "()[Ljava/lang/String;",
+      "dex": "classes2.dex"
+    }
+  ],
+  "native_string_evidence": [
+    {
+      "module": "lib/armeabi-v7a/libcrashlytics-common.so",
+      "exact_string_candidates": [
+        "open"
+      ]
+    },
+    {
+      "module": "lib/armeabi-v7a/libcrashlytics-handler.so",
+      "exact_string_candidates": [
+        "JNI_OnLoad"
+      ]
+    },
+    {
+      "module": "lib/armeabi-v7a/libcrashlytics-trampoline.so",
+      "exact_string_candidates": []
+    },
+    {
+      "module": "lib/armeabi-v7a/libcrashlytics.so",
+      "exact_string_candidates": [
+        "JNI_OnLoad"
+      ]
+    },
+    {
+      "module": "lib/armeabi-v7a/libFirebaseCppApp-10_2_0.so",
+      "exact_string_candidates": [
+        "android/content/Context",
+        "getFilesDir",
+        "getCacheDir",
+        "getPackageName",
+        "open",
+        "JNI_OnLoad"
+      ]
+    },
+    {
+      "module": "lib/armeabi-v7a/libFirebaseCppCrashlytics.so",
+      "exact_string_candidates": []
+    },
+    {
+      "module": "lib/armeabi-v7a/libFirebaseCppMessaging.so",
+      "exact_string_candidates": []
+    },
+    {
+      "module": "lib/armeabi-v7a/libil2cpp.so",
+      "exact_string_candidates": [
+        "open",
+        "JNI_OnLoad"
+      ]
+    },
+    {
+      "module": "lib/armeabi-v7a/libmain.so",
+      "exact_string_candidates": [
+        "open",
+        "JNI_OnLoad"
+      ]
+    },
+    {
+      "module": "lib/armeabi-v7a/libunity.so",
+      "exact_string_candidates": [
+        "android/content/res/AssetManager",
+        "android/content/Context",
+        "getAssets",
+        "getFilesDir",
+        "getCacheDir",
+        "getPackageCodePath",
+        "getPackageName",
+        "getExternalFilesDir",
+        "open",
+        "openFd",
+        "JNI_OnLoad"
+      ]
+    }
+  ],
+  "game_executed": false,
+  "runtime_ready": false,
+  "limitations": [
+    "DEX method IDs include definitions and references, not an executed call graph.",
+    "String presence is not proof of a JNI call or receiver/signature pairing.",
+    "String absence does not exclude constructed names or dynamic lookup.",
+    "No JNIEnv, JavaVM, class objects or Android lifecycle are implemented."
+  ]
+}
