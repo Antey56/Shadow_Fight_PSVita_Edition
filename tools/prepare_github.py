@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create an allowlisted publication stage; never include SDK/game binaries."""
+"""Stage source checkpoints; omit executable VPKs and SDK/game binaries."""
 from pathlib import Path
 import hashlib,json
 from public_report import public_report
@@ -11,9 +11,8 @@ for p in sorted(root.rglob('*')):
     if not p.is_file() or p.is_symlink() or '__pycache__' in p.parts:continue
     rel=p.relative_to(root)
     if rel.parts[0] not in allowed and p.parent!=root:continue
-    if p.suffix.lower() in {'.exe','.pyc','.so','.dll','.o','.obj','.a','.apk','.apkm','.apks','.zip','.gz'}:continue
+    if p.suffix.lower() in {'.exe','.pyc','.so','.dll','.o','.obj','.a','.apk','.apkm','.apks','.zip','.gz','.vpk'}:continue
     if p.name=='CHECKSUMS.sha256':continue
-    if p.suffix=='.vpk' and rel.as_posix()!='artifacts/sf2-diagnostic.vpk':raise ValueError('unexpected VPK')
     data=p.read_bytes();name=rel.as_posix()
     if p.suffix not in {'.png','.vpk'}:data=data.replace(b'\r\n',b'\n')
     if p.suffix=='.json' and len(data)>128*1024:
