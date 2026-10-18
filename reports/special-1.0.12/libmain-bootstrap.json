@@ -1,0 +1,88 @@
+{
+  "module": "libmain.so",
+  "sha256": "dad352d6cc2a8cf184d4e0a9dfe6d7f3768c329b4c684587c28e48eb01511d71",
+  "jni_onload_pointer": 4325,
+  "confirmed_registration_groups": [
+    {
+      "helper_vaddr": 4324,
+      "table_vaddr": 20484,
+      "count": 2,
+      "class": "com/unity3d/player/NativeLoader",
+      "methods": [
+        {
+          "table_vaddr": 20484,
+          "method": "load",
+          "descriptor": "(Ljava/lang/String;)Z",
+          "function_pointer": 4421,
+          "code_vaddr": 4420,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/NativeLoader;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/NativeLoader"
+        },
+        {
+          "table_vaddr": 20496,
+          "method": "unload",
+          "descriptor": "()Z",
+          "function_pointer": 4577,
+          "code_vaddr": 4576,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/NativeLoader;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/NativeLoader"
+        }
+      ]
+    }
+  ],
+  "confirmed_method_count": 2,
+  "observed_jni_slots": [
+    6,
+    18,
+    168,
+    169,
+    170,
+    215,
+    219
+  ],
+  "observed_vm_slots": [
+    4
+  ],
+  "dynamic_loader_evidence": [
+    {
+      "string": "libunity.so",
+      "vaddr": 14238,
+      "literal_vaddr": 4560,
+      "add_vaddr": 4514
+    },
+    {
+      "string": "libil2cpp.so",
+      "vaddr": 14250,
+      "literal_vaddr": 4568,
+      "add_vaddr": 4532
+    },
+    {
+      "string": "JNI_OnLoad",
+      "vaddr": 14328,
+      "literal_vaddr": 4988,
+      "add_vaddr": 4858
+    }
+  ],
+  "load_order": [
+    "libunity.so",
+    "libil2cpp.so"
+  ],
+  "profile_evidence": "Exact-hash profile from manual Thumb review; PC-relative strings, count, key slot instructions and relocated native table revalidated.",
+  "execution_allowed": false,
+  "game_executed": false,
+  "limitations": [
+    "Static metadata and instructions only; load order is not successful execution.",
+    "ELF constructors, dlopen/dlsym, dependency resolution, unwind/TLS/ABI and Java lifecycle remain required.",
+    "Observed JNI/VM slots are a lower bound, not a complete engine call graph."
+  ]
+}

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
   set(CMAKE_TOOLCHAIN_FILE "$ENV{VITASDK}/share/vita.toolchain.cmake" CACHE PATH "Vita toolchain")
 endif()
-project(sf2_vita_diagnostic C CXX)
+project(sf2_vita_diagnostic C CXX ASM)
 include("$ENV{VITASDK}/share/vita.cmake" REQUIRED)
 set(CMAKE_C_STANDARD 99)
 find_program(SF2_HOST_PYTHON NAMES python3 python REQUIRED NO_CMAKE_FIND_ROOT_PATH)
@@ -14,7 +14,7 @@ add_custom_command(OUTPUT ${LIVEAREA_FILES}
     --source "${CMAKE_CURRENT_SOURCE_DIR}/sce_sys" --out "${LIVEAREA_DIR}"
   DEPENDS ../tools/prepare_livearea.py sce_sys/icon0.png sce_sys/livearea/contents/bg.png
     sce_sys/livearea/contents/startup.png sce_sys/livearea/contents/template.xml VERBATIM)
-add_executable(sf2_diagnostic src/main.c src/diagnostic_ui.c src/touch.c src/loader_plan.c src/elf_preflight.c src/native_registry.c src/arm_reloc.c src/arm_dynamic.c src/arm_link.c src/arm_scope.c src/android_log_adapter.c src/android_asset_adapter.c src/jni_objects.c src/jni_bridge.c src/jni_vm.c src/bionic_memory.c src/jni_registration.c)
+add_executable(sf2_diagnostic src/main.c src/diagnostic_ui.c src/touch.c src/loader_plan.c src/elf_preflight.c src/native_registry.c src/arm_reloc.c src/arm_dynamic.c src/arm_link.c src/arm_scope.c src/android_log_adapter.c src/android_asset_adapter.c src/jni_objects.c src/jni_bridge.c src/jni_vm.c src/bionic_memory.c src/jni_registration.c src/aeabi_memory.c src/aeabi_memory.S)
 target_include_directories(sf2_diagnostic PRIVATE include)
 target_compile_options(sf2_diagnostic PRIVATE -Wall -Wextra)
 target_compile_definitions(sf2_diagnostic PRIVATE SF2_VITA_TARGET=1)

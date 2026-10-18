@@ -202,7 +202,7 @@ int sf_jni_kind(SfJniObjects *e,SfJniRef r){
     RefSlot *s=resolve(e,r);return s?s->kind:0;
 }
 SfJniRef sf_jni_class(SfJniObjects *e,int kind){
-    if(kind!=52&&kind!=3&&kind!=4&&kind!=18&&kind!=20&&(kind<6||kind>16)&&(kind<41||kind>50)){fail(e,SF_JNI_BAD_TYPE);return 0;}
+    if(kind!=53&&kind!=52&&kind!=3&&kind!=4&&kind!=18&&kind!=20&&(kind<6||kind>16)&&(kind<41||kind>50)){fail(e,SF_JNI_BAD_TYPE);return 0;}
     return allocate(e,(unsigned)kind,0);
 }
 SfJniRef sf_jni_class_loader(SfJniObjects *e){return allocate(e,17,0);}
@@ -264,7 +264,7 @@ AAssetManager *sf_jni_asset_manager(SfJniObjects *e,SfJniRef r){
 /* Restricted reference arrays: leaf values only. Reject nested object arrays
    rather than building reference-counted cycles or pretending to have a GC. */
 static int component_kind(int kind){
-    return kind==52||kind==3||kind==4||kind==16||kind==18||kind==20||kind==41||kind==42||
+    return kind==53||kind==52||kind==3||kind==4||kind==16||kind==18||kind==20||kind==41||kind==42||
            (kind>=6&&kind<=15)||(kind>=43&&kind<=50);
 }
 static int value_class(int kind){

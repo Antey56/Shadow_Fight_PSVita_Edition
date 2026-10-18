@@ -59,3 +59,8 @@ Current source 0.7-objarrays2 adds three leaf object-array slots, bringing the t
 
 
 Hardware update 2026-10-18: 0.7-objarrays2 recorded OBJECT_ARRAY_PROBE PASS, successful core probes/draw/swap, touch IDs 0..4 and normal START exit after 211 frames. See [hardware report](../reports/HARDWARE-0.7-OBJECT-ARRAYS.md). This supersedes the pending-device wording above for this selected probe only; Unity was not started.
+
+
+## 2026-10-18: libmain bootstrap and ARM RTABI helpers
+
+Confirmed NativeLoader load/unload registrations and added its policy-gated class token. Added twelve integer-only Thumb RTABI memory helpers and a separate target address catalog, with host semantic tests. See [engine boundary](ENGINE-BOOTSTRAP.md). 217 Python tests and 9 CTest targets pass; 0.7-bootstrap1 cross-build/package checks pass. The new ARM_MEMORY_PROBE is not yet device tested. Actual executable ELF loading and Android dynamic-loader/runtime contracts remain absent; Unity has not executed.

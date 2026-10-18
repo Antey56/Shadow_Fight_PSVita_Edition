@@ -1,0 +1,147 @@
+{
+  "implemented_candidate_symbols": [
+    "__aeabi_memcpy",
+    "__aeabi_memcpy4",
+    "__aeabi_memcpy8",
+    "__aeabi_memmove",
+    "__aeabi_memmove4",
+    "__aeabi_memmove8",
+    "__aeabi_memset",
+    "__aeabi_memset4",
+    "__aeabi_memset8",
+    "__aeabi_memclr",
+    "__aeabi_memclr4",
+    "__aeabi_memclr8"
+  ],
+  "matched_required_symbols": [
+    "__aeabi_memclr",
+    "__aeabi_memclr4",
+    "__aeabi_memclr8",
+    "__aeabi_memcpy",
+    "__aeabi_memcpy4",
+    "__aeabi_memcpy8",
+    "__aeabi_memmove",
+    "__aeabi_memmove4",
+    "__aeabi_memmove8",
+    "__aeabi_memset",
+    "__aeabi_memset4",
+    "__aeabi_memset8"
+  ],
+  "modules": [
+    {
+      "module": "libcrashlytics-common.so",
+      "matched": [
+        "__aeabi_memclr",
+        "__aeabi_memclr4",
+        "__aeabi_memclr8",
+        "__aeabi_memcpy",
+        "__aeabi_memcpy4",
+        "__aeabi_memcpy8",
+        "__aeabi_memmove",
+        "__aeabi_memmove4",
+        "__aeabi_memset",
+        "__aeabi_memset4"
+      ]
+    },
+    {
+      "module": "libcrashlytics-handler.so",
+      "matched": [
+        "__aeabi_memclr",
+        "__aeabi_memclr8",
+        "__aeabi_memcpy",
+        "__aeabi_memcpy4",
+        "__aeabi_memmove",
+        "__aeabi_memmove4"
+      ]
+    },
+    {
+      "module": "libcrashlytics-trampoline.so",
+      "matched": []
+    },
+    {
+      "module": "libcrashlytics.so",
+      "matched": [
+        "__aeabi_memclr",
+        "__aeabi_memclr8",
+        "__aeabi_memcpy",
+        "__aeabi_memcpy4",
+        "__aeabi_memmove",
+        "__aeabi_memmove4"
+      ]
+    },
+    {
+      "module": "libFirebaseCppApp-10_2_0.so",
+      "matched": [
+        "__aeabi_memclr",
+        "__aeabi_memclr4",
+        "__aeabi_memclr8",
+        "__aeabi_memcpy",
+        "__aeabi_memcpy4",
+        "__aeabi_memcpy8",
+        "__aeabi_memmove",
+        "__aeabi_memmove4",
+        "__aeabi_memset"
+      ]
+    },
+    {
+      "module": "libFirebaseCppCrashlytics.so",
+      "matched": [
+        "__aeabi_memcpy4",
+        "__aeabi_memmove4"
+      ]
+    },
+    {
+      "module": "libFirebaseCppMessaging.so",
+      "matched": [
+        "__aeabi_memcpy",
+        "__aeabi_memmove",
+        "__aeabi_memmove4"
+      ]
+    },
+    {
+      "module": "libil2cpp.so",
+      "matched": [
+        "__aeabi_memclr",
+        "__aeabi_memclr4",
+        "__aeabi_memclr8",
+        "__aeabi_memcpy",
+        "__aeabi_memcpy4",
+        "__aeabi_memcpy8",
+        "__aeabi_memmove",
+        "__aeabi_memmove4",
+        "__aeabi_memmove8",
+        "__aeabi_memset",
+        "__aeabi_memset4",
+        "__aeabi_memset8"
+      ]
+    },
+    {
+      "module": "libmain.so",
+      "matched": [
+        "__aeabi_memclr8",
+        "__aeabi_memcpy"
+      ]
+    },
+    {
+      "module": "libunity.so",
+      "matched": [
+        "__aeabi_memclr",
+        "__aeabi_memclr4",
+        "__aeabi_memclr8",
+        "__aeabi_memcpy",
+        "__aeabi_memcpy4",
+        "__aeabi_memcpy8",
+        "__aeabi_memmove",
+        "__aeabi_memmove4",
+        "__aeabi_memmove8",
+        "__aeabi_memset",
+        "__aeabi_memset4",
+        "__aeabi_memset8"
+      ]
+    }
+  ],
+  "target_implementation": "Thumb integer-only assembly; no libc/VFP calls; host C is semantic reference only",
+  "device_tested": false,
+  "execution_allowed": false,
+  "unique_certified_import_count_unchanged": true
+}

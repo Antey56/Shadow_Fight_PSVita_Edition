@@ -9,7 +9,8 @@ from registration_host import Declaration,CodeRange,Method,load,functions
 
 def verify(unity,profile,host_library):
     data=unity.read_bytes()
-    if hashlib.sha256(data).hexdigest()!=profile['unity_sha256']:raise ValueError('Unity SHA mismatch')
+    expected=profile.get('unity_sha256',profile.get('sha256'))
+    if not expected or hashlib.sha256(data).hexdigest()!=expected:raise ValueError('Module SHA mismatch')
     elf=DynamicELF(data);groups=profile['confirmed_registration_groups']
     declarations=[Declaration(g['class'].encode(),m['method'].encode(),m['descriptor'].encode())
                   for g in groups for m in g['methods']]
@@ -35,7 +36,8 @@ def verify(unity,profile,host_library):
     finally:lib.sf_jni_bridge_destroy(env)
     return {'groups':verified,'methods_verified':sum(g['methods_verified'] for g in verified),
             'arm_code_executed':False,'addresses':'link-time ARM32 VA stored as integers only',
-            'registration_metadata_replayed_on_host':True,'unity_sha256':profile['unity_sha256'],
+            'registration_metadata_replayed_on_host':True,'module_sha256':expected,
+            **({'unity_sha256':expected} if 'unity_sha256' in profile else {'module':profile.get('module')}),
             'execution_allowed':False}
 
 if __name__=='__main__':

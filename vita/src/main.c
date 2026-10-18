@@ -13,6 +13,7 @@
 #include "android_log_adapter.h"
 #include "jni_vm.h"
 #include "bionic_memory.h"
+#include "aeabi_memory.h"
 int _newlib_heap_size_user=32*1024*1024;
 /* Diagnostic renderer only. kubridge is a memory/cache bridge, NOT graphics. */
 static int log_ready;
@@ -44,11 +45,17 @@ static int android_log_to_file(const SfLogRecord *record,void *context){
 }
 static void probe(void){}
 static int runtime_selftest(void){
-    ArmScopeEntry entries[20];ArmSymbolScope scope;
+    ArmScopeEntry entries[32];ArmSymbolScope scope;
     int32_t values[4]={1,-2,3,4}; /* Borrowed buffer remains live through VM cleanup. */
-    if(sf_bionic_memory_catalog(entries,20)!=20||arm_scope_init(&scope,entries,20))return 0;
+    if(sf_bionic_memory_catalog(entries,20)!=20||sf_aeabi_memory_catalog(entries+20,12)!=12||arm_scope_init(&scope,entries,32))return 0;
+    unsigned char rt_source[8]={1,2,3,4,5,6,7,8},rt_dest[8]={0};
+    sf_aeabi_memcpy(rt_dest,rt_source,7);
+    sf_aeabi_memmove(rt_dest+1,rt_dest,6);
+    sf_aeabi_memset(rt_dest,1,0xab);sf_aeabi_memclr(rt_dest+6,1);
+    int rt_ok=rt_dest[0]==0xab&&rt_dest[1]==1&&rt_dest[5]==5&&rt_dest[6]==0&&rt_dest[7]==0;
+    stage("ARM_MEMORY_PROBE %s",rt_ok?"PASS":"FAIL");
     char *copy=sf_bionic_strdup("vita-abi-probe");
-    int ok=copy&&sf_bionic_strlen(copy)==14;sf_bionic_free(copy);
+    int ok=rt_ok&&copy&&sf_bionic_strlen(copy)==14;sf_bionic_free(copy);
     SfJavaVM *vm=sf_jni_vm_create("ux0:data/sf2vita/assets",4096);if(!vm)return 0;
     SfJniEnv *env=0;
     ok=ok&&(*vm)->GetEnv(vm,(void **)&env,0x10006)==0;
@@ -112,7 +119,7 @@ static void sink(const TouchEvent *e,void *unused){
 }
 int main(void){
     FILE *reset=fopen("ux0:data/sf2vita-input.log","w");log_ready=reset!=0;if(reset)fclose(reset);
-    stage("SF2 diagnostic 0.7-objarrays2; Unity NOT started");
+    stage("SF2 diagnostic 0.7-bootstrap1; Unity NOT started");
     memory_snapshot("entry",0);
     sf_log_configure(log_ready?android_log_to_file:0,0,SF_LOG_INFO);
     stage("BEFORE_CORE_PROBES");

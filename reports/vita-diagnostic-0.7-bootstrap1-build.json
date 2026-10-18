@@ -1,0 +1,36 @@
+{
+  "file": "sf2-diagnostic-0.7-bootstrap1.vpk",
+  "sha256": "d75fe31828dfe9a473438fd42ab0851d60ce259e92797fd649954e8dbef21c1f",
+  "pngs": [
+    {
+      "path": "sce_sys/icon0.png",
+      "width": 128,
+      "height": 128,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/bg.png",
+      "width": 840,
+      "height": 500,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/startup.png",
+      "width": 280,
+      "height": 158,
+      "bit_depth": 8,
+      "color_type": 3
+    }
+  ],
+  "title_id": "SF2AUD001",
+  "app_version": "00.07",
+  "xml_checked": true,
+  "zip_crc_checked": true,
+  "build_id": "0.7-bootstrap1",
+  "device_tested": false,
+  "python_tests": 217,
+  "ctest_targets": 9,
+  "unity_started": false
+}

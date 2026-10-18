@@ -36,3 +36,6 @@ add_test(NAME jni_vm COMMAND jni_vm_test)
 
 add_executable(bionic_memory_test tests/bionic_memory_test.c vita/src/bionic_memory.c)
 add_test(NAME bionic_memory COMMAND bionic_memory_test)
+
+add_executable(aeabi_memory_test tests/aeabi_memory_test.c vita/src/aeabi_memory.c)
+add_test(NAME aeabi_memory COMMAND aeabi_memory_test)

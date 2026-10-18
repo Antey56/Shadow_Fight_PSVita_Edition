@@ -32,3 +32,6 @@ initJni вызывает GetJavaVM (219), затем helper 0x25cb90. В helper 
 Также наблюдается GetObjectClass, применённый к class object. Наш ограниченный bridge поддерживает GetObjectClass только для Context/AssetManager и не создаёт java/lang/Class: даже реализованный номер слота ещё не означает нужную семантику. JNI_OnLoad требует UnityPlayer и Android Game SDK классы и RegisterNatives, которых текущая таблица ещё не предоставляет. FatalError (18) встречается в failure ветках.
 
 Следовательно, передача текущего JNIEnv в настоящий JNI_OnLoad привела бы к отсутствующим методам или NULL slot calls. Запуск отключён по реальной зависимости, а не только из-за отсутствия теста. Требуются классы/методы reflection, статические вызовы, registry ABI, strings/arrays и полноценный потоковый контракт. Нельзя заменять их массовым успешным return 0.
+
+
+Update 2026-10-18: the missing-slot/class statements above describe the original bridge. Current restricted JNI supports those observed slots, the three Unity registration groups, and the newly verified NativeLoader group in libmain. This is metadata/semantic harness coverage, not a complete runtime. See [current engine boundary](ENGINE-BOOTSTRAP.md).

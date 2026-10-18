@@ -15,6 +15,7 @@ static const char *extra_classes[]={
     "com/unity3d/player/AudioVolumeHandler","com/unity3d/player/OrientationLockListener",
     "com/unity3d/player/UnityCoreAssetPacksStatusCallbacks","com/unity3d/player/GoogleARCoreApi"};
 static const char *class_name(int kind){
+    if(kind==53)return "com/unity3d/player/NativeLoader";
     if(kind==3)return "android/content/Context";
     if(kind==4)return "android/content/res/AssetManager";
     return kind>=6&&kind<=15?extra_classes[kind-6]:0;
@@ -23,7 +24,7 @@ static const SfJniTable table;
 static char get_assets_method;
 static char get_class_loader_method;
 static char for_name_method;
-static int is_class(int kind){return kind==52||kind==3||kind==4||(kind>=6&&kind<=16)||kind==18||kind==20||(kind>=41&&kind<=50);}
+static int is_class(int kind){return kind==53||kind==52||kind==3||kind==4||(kind>=6&&kind<=16)||kind==18||kind==20||(kind>=41&&kind<=50);}
 #define SLOT_CHECK(field,n) typedef char check_##field[(offsetof(SfJniTable,field)==(n)*sizeof(SfJniUnused))?1:-1]
 SLOT_CHECK(GetVersion,4);SLOT_CHECK(FindClass,6);SLOT_CHECK(ExceptionClear,17);
 SLOT_CHECK(FatalError,18);
@@ -71,6 +72,8 @@ static SF_ANDROID_ABI SfJObject find_class(SfJniEnv *e,const char *name){
     Bridge *b=(Bridge *)e;
     if(name&&b->natives)for(unsigned i=0;i<10;i++)if(!strcmp(name,extra_classes[i]))
         for(size_t j=0;j<b->declaration_count;j++)if(!strcmp(name,b->declarations[j].class_name))kind=(int)i+6;
+    if(name&&b->natives&&!strcmp(name,"com/unity3d/player/NativeLoader"))
+        for(size_t j=0;j<b->declaration_count;j++)if(!strcmp(name,b->declarations[j].class_name))kind=53;
     if(!kind){sf_jni_error(o,SF_JNI_BAD_TYPE);return 0;}
     return encode(sf_jni_class(o,kind));
 }

@@ -61,3 +61,18 @@ class RegistrationTests(unittest.TestCase):
         self.assertEqual(self.lookup(),0x1001)
     def test_reconfigure_rejected(self):
         self.assertLess(self.lib.sf_jni_bridge_configure_natives(self.env,self.decl,2,self.ranges,1),0)
+
+    def test_native_loader_class_and_registration(self):
+        lib=self.lib;env=lib.sf_jni_bridge_create(b'.',4096)
+        clsname=b'com/unity3d/player/NativeLoader'
+        declarations=(Declaration*2)(Declaration(clsname,b'load',b'(Ljava/lang/String;)Z'),Declaration(clsname,b'unload',b'()Z'))
+        ranges=(CodeRange*1)(CodeRange(0x1000,0x2000))
+        try:
+            f=functions(env)
+            self.assertFalse(f['find'](env,clsname));self.assertTrue(f['check'](env));f['clear'](env)
+            self.assertEqual(lib.sf_jni_bridge_configure_natives(env,declarations,2,ranges,1),0)
+            cls=f['find'](env,clsname);self.assertTrue(cls)
+            methods=(Method*2)(Method(b'load',b'(Ljava/lang/String;)Z',0x1145),Method(b'unload',b'()Z',0x11e1))
+            self.assertEqual(f['register'](env,cls,methods,2),0)
+            self.assertEqual(lib.sf_jni_bridge_registered(env,clsname,b'load',b'(Ljava/lang/String;)Z'),0x1145)
+        finally:lib.sf_jni_bridge_destroy(env)

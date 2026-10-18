@@ -1,0 +1,15 @@
+{
+  "groups": [
+    {
+      "class": "com/unity3d/player/NativeLoader",
+      "methods_verified": 2
+    }
+  ],
+  "methods_verified": 2,
+  "arm_code_executed": false,
+  "addresses": "link-time ARM32 VA stored as integers only",
+  "registration_metadata_replayed_on_host": true,
+  "module_sha256": "dad352d6cc2a8cf184d4e0a9dfe6d7f3768c329b4c684587c28e48eb01511d71",
+  "module": "libmain.so",
+  "execution_allowed": false
+}
