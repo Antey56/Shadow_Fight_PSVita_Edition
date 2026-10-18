@@ -33,3 +33,6 @@ target_link_libraries(jni_objects_host Threads::Threads)
 add_executable(jni_vm_test tests/jni_vm_test.c vita/src/jni_vm.c vita/src/jni_bridge.c vita/src/jni_objects.c vita/src/android_asset_adapter.c)
 target_link_libraries(jni_vm_test Threads::Threads)
 add_test(NAME jni_vm COMMAND jni_vm_test)
+
+add_executable(bionic_memory_test tests/bionic_memory_test.c vita/src/bionic_memory.c)
+add_test(NAME bionic_memory COMMAND bionic_memory_test)

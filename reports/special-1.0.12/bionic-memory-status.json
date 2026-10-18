@@ -1,0 +1,233 @@
+{
+  "candidates": [
+    {
+      "symbol": "malloc",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libcrashlytics-handler.so",
+        "libcrashlytics.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libmain.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "calloc",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libcrashlytics-handler.so",
+        "libcrashlytics.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "realloc",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libcrashlytics-handler.so",
+        "libcrashlytics.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "free",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libcrashlytics-handler.so",
+        "libcrashlytics.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libmain.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "memcpy",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "memmove",
+      "required_by": [],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "memset",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "memcmp",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libFirebaseCppMessaging.so",
+        "libil2cpp.so",
+        "libmain.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "memchr",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libmain.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strlen",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libcrashlytics-handler.so",
+        "libcrashlytics.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libFirebaseCppCrashlytics.so",
+        "libFirebaseCppMessaging.so",
+        "libil2cpp.so",
+        "libmain.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strcmp",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libcrashlytics-handler.so",
+        "libcrashlytics.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libmain.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strncmp",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strchr",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strrchr",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strstr",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strcpy",
+      "required_by": [
+        "libFirebaseCppApp-10_2_0.so",
+        "libFirebaseCppCrashlytics.so",
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strncpy",
+      "required_by": [
+        "libcrashlytics-common.so",
+        "libFirebaseCppApp-10_2_0.so",
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strcat",
+      "required_by": [
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strncat",
+      "required_by": [
+        "libFirebaseCppApp-10_2_0.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    },
+    {
+      "symbol": "strdup",
+      "required_by": [
+        "libil2cpp.so",
+        "libunity.so"
+      ],
+      "host_tested": true,
+      "device_certified": false
+    }
+  ],
+  "execution_allowed": false,
+  "note": "Newlib backed ARM AAPCS candidates; all modules must use one allocator family. No FILE/pthread/stat structs forwarded."
+}

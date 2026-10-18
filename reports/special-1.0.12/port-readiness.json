@@ -1,0 +1,488 @@
+{
+  "execution_allowed": false,
+  "stages": [
+    {
+      "stage": 1,
+      "name": "JNI registration discovery",
+      "status": "partial_verified",
+      "confirmed_static_methods": 28,
+      "note": "Three groups statically traced; remaining registrations/lifecycle not fully traced."
+    },
+    {
+      "stage": 2,
+      "name": "JNI runtime semantics",
+      "status": "blocked",
+      "observed_missing_slots": [
+        18,
+        113,
+        215
+      ],
+      "note": "ClassLoader/Class reflection, strings, arrays, registration and worker threads remain incomplete."
+    },
+    {
+      "stage": 3,
+      "name": "Android and bionic dependencies",
+      "status": "blocked",
+      "unique_required_unimplemented": 451,
+      "note": "Candidate adapters are not device-certified ABI implementations."
+    },
+    {
+      "stage": 4,
+      "name": "Executable ELF loading and ARM ABI",
+      "status": "blocked",
+      "note": "Current linker produces a data buffer only. Missing imports and services block constructors/JNI_OnLoad."
+    },
+    {
+      "stage": 5,
+      "name": "Graphics audio lifecycle integration",
+      "status": "blocked",
+      "note": "Diagnostic vitaGL output is not a Unity surface, EGL context lifecycle or engine audio backend."
+    },
+    {
+      "stage": 6,
+      "name": "Physical Vita validation",
+      "status": "not_run",
+      "note": "No accessible connected Vita; successful cross-build is not device execution."
+    }
+  ],
+  "core_modules": [
+    {
+      "module": "libil2cpp.so",
+      "required_unimplemented_count": 265,
+      "platform_imports": [
+        "pthread_mutex_trylock",
+        "pthread_equal",
+        "pthread_attr_getdetachstate",
+        "pthread_getattr_np",
+        "pthread_attr_getstack",
+        "pthread_kill",
+        "pthread_join",
+        "pthread_sigmask",
+        "pthread_attr_setstacksize",
+        "pthread_key_delete",
+        "pthread_key_create",
+        "pthread_mutex_init",
+        "pthread_mutex_destroy",
+        "pthread_mutex_unlock",
+        "pthread_mutex_lock",
+        "pthread_mutexattr_init",
+        "pthread_mutexattr_destroy",
+        "pthread_once",
+        "pthread_mutexattr_settype",
+        "pthread_rwlock_init",
+        "pthread_rwlock_destroy",
+        "pthread_rwlock_unlock",
+        "pthread_rwlock_rdlock",
+        "pthread_self",
+        "pthread_rwlock_wrlock",
+        "pthread_attr_init",
+        "pthread_attr_destroy",
+        "pthread_cond_destroy",
+        "pthread_cond_broadcast",
+        "pthread_cond_signal",
+        "pthread_cond_init",
+        "pthread_cond_timedwait_relative_np",
+        "pthread_cond_timedwait",
+        "pthread_create",
+        "pthread_cond_wait",
+        "pthread_getspecific",
+        "pthread_detach",
+        "pthread_setspecific",
+        "pthread_setname_np"
+      ],
+      "external_libraries": [
+        "liblog.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    },
+    {
+      "module": "libmain.so",
+      "required_unimplemented_count": 30,
+      "platform_imports": [
+        "pthread_once"
+      ],
+      "external_libraries": [
+        "liblog.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    },
+    {
+      "module": "libunity.so",
+      "required_unimplemented_count": 372,
+      "platform_imports": [
+        "pthread_equal",
+        "eglCreateContext",
+        "eglCreatePbufferSurface",
+        "eglDestroyContext",
+        "eglDestroySurface",
+        "eglGetError",
+        "eglMakeCurrent",
+        "eglChooseConfig",
+        "eglGetConfigAttrib",
+        "eglGetDisplay",
+        "eglInitialize",
+        "eglQueryString",
+        "eglTerminate",
+        "ANativeWindow_getHeight",
+        "ANativeWindow_getWidth",
+        "eglCreateWindowSurface",
+        "eglGetCurrentContext",
+        "eglGetCurrentSurface",
+        "eglQuerySurface",
+        "eglSwapInterval",
+        "pthread_getspecific",
+        "pthread_setspecific",
+        "pthread_cond_broadcast",
+        "pthread_cond_destroy",
+        "pthread_cond_init",
+        "pthread_cond_timedwait_relative_np",
+        "pthread_cond_wait",
+        "pthread_mutex_destroy",
+        "pthread_mutex_init",
+        "pthread_mutex_lock",
+        "pthread_mutex_unlock",
+        "pthread_mutexattr_destroy",
+        "pthread_mutexattr_init",
+        "pthread_mutexattr_settype",
+        "pthread_getcpuclockid",
+        "eglSwapBuffers",
+        "pthread_cond_signal",
+        "ANativeWindow_setBuffersGeometry",
+        "eglSurfaceAttrib",
+        "pthread_once",
+        "ANativeWindow_fromSurface",
+        "ANativeWindow_release",
+        "ANativeWindow_acquire",
+        "pthread_attr_init",
+        "pthread_attr_setstacksize",
+        "pthread_create",
+        "pthread_exit",
+        "pthread_join",
+        "pthread_self",
+        "pthread_detach",
+        "eglGetProcAddress",
+        "pthread_mutex_trylock",
+        "pthread_kill",
+        "pthread_attr_setdetachstate",
+        "pthread_setname_np",
+        "pthread_attr_destroy",
+        "pthread_key_create",
+        "pthread_key_delete",
+        "pthread_cond_timedwait",
+        "pthread_setschedparam",
+        "pthread_getschedparam"
+      ],
+      "external_libraries": [
+        "libandroid.so",
+        "liblog.so",
+        "libz.so",
+        "libEGL.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    }
+  ],
+  "all_modules": [
+    {
+      "module": "libcrashlytics-common.so",
+      "required_unimplemented_count": 204,
+      "platform_imports": [
+        "pthread_mutexattr_init",
+        "pthread_mutexattr_settype",
+        "pthread_equal",
+        "pthread_mutexattr_destroy",
+        "pthread_self",
+        "pthread_detach",
+        "pthread_once",
+        "pthread_getspecific",
+        "pthread_setspecific",
+        "pthread_key_create",
+        "pthread_create",
+        "pthread_join",
+        "pthread_mutex_init",
+        "pthread_mutex_destroy",
+        "pthread_mutex_trylock",
+        "pthread_mutex_lock",
+        "pthread_mutex_unlock",
+        "pthread_cond_broadcast",
+        "pthread_cond_signal",
+        "pthread_cond_timedwait",
+        "pthread_cond_wait",
+        "pthread_cond_destroy"
+      ],
+      "external_libraries": [
+        "libdl.so",
+        "liblog.so",
+        "libz.so",
+        "libc.so",
+        "libm.so"
+      ]
+    },
+    {
+      "module": "libcrashlytics-handler.so",
+      "required_unimplemented_count": 40,
+      "platform_imports": [
+        "pthread_getspecific",
+        "pthread_key_create",
+        "pthread_once",
+        "pthread_setspecific",
+        "pthread_mutex_lock",
+        "pthread_mutex_unlock"
+      ],
+      "external_libraries": [
+        "libdl.so",
+        "liblog.so",
+        "libz.so",
+        "libc.so",
+        "libm.so"
+      ]
+    },
+    {
+      "module": "libcrashlytics-trampoline.so",
+      "required_unimplemented_count": 6,
+      "platform_imports": [],
+      "external_libraries": [
+        "libdl.so",
+        "liblog.so",
+        "libc.so",
+        "libm.so"
+      ]
+    },
+    {
+      "module": "libcrashlytics.so",
+      "required_unimplemented_count": 46,
+      "platform_imports": [
+        "pthread_getspecific",
+        "pthread_key_create",
+        "pthread_once",
+        "pthread_setspecific",
+        "pthread_cond_broadcast",
+        "pthread_cond_wait",
+        "pthread_mutex_lock",
+        "pthread_mutex_unlock"
+      ],
+      "external_libraries": [
+        "libdl.so",
+        "liblog.so",
+        "libc.so",
+        "libm.so"
+      ]
+    },
+    {
+      "module": "libFirebaseCppApp-10_2_0.so",
+      "required_unimplemented_count": 143,
+      "platform_imports": [
+        "pthread_cond_broadcast",
+        "pthread_cond_timedwait",
+        "pthread_cond_wait",
+        "pthread_getspecific",
+        "pthread_key_create",
+        "pthread_mutex_destroy",
+        "pthread_mutex_lock",
+        "pthread_mutex_unlock",
+        "pthread_once",
+        "pthread_setspecific",
+        "pthread_equal",
+        "pthread_self",
+        "pthread_mutex_init",
+        "pthread_mutexattr_destroy",
+        "pthread_mutexattr_init",
+        "pthread_mutexattr_settype",
+        "pthread_join",
+        "pthread_cond_destroy",
+        "pthread_cond_signal",
+        "pthread_create",
+        "pthread_detach",
+        "pthread_mutex_trylock"
+      ],
+      "external_libraries": [
+        "liblog.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    },
+    {
+      "module": "libFirebaseCppCrashlytics.so",
+      "required_unimplemented_count": 8,
+      "platform_imports": [],
+      "external_libraries": [
+        "liblog.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    },
+    {
+      "module": "libFirebaseCppMessaging.so",
+      "required_unimplemented_count": 9,
+      "platform_imports": [],
+      "external_libraries": [
+        "liblog.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    },
+    {
+      "module": "libil2cpp.so",
+      "required_unimplemented_count": 265,
+      "platform_imports": [
+        "pthread_mutex_trylock",
+        "pthread_equal",
+        "pthread_attr_getdetachstate",
+        "pthread_getattr_np",
+        "pthread_attr_getstack",
+        "pthread_kill",
+        "pthread_join",
+        "pthread_sigmask",
+        "pthread_attr_setstacksize",
+        "pthread_key_delete",
+        "pthread_key_create",
+        "pthread_mutex_init",
+        "pthread_mutex_destroy",
+        "pthread_mutex_unlock",
+        "pthread_mutex_lock",
+        "pthread_mutexattr_init",
+        "pthread_mutexattr_destroy",
+        "pthread_once",
+        "pthread_mutexattr_settype",
+        "pthread_rwlock_init",
+        "pthread_rwlock_destroy",
+        "pthread_rwlock_unlock",
+        "pthread_rwlock_rdlock",
+        "pthread_self",
+        "pthread_rwlock_wrlock",
+        "pthread_attr_init",
+        "pthread_attr_destroy",
+        "pthread_cond_destroy",
+        "pthread_cond_broadcast",
+        "pthread_cond_signal",
+        "pthread_cond_init",
+        "pthread_cond_timedwait_relative_np",
+        "pthread_cond_timedwait",
+        "pthread_create",
+        "pthread_cond_wait",
+        "pthread_getspecific",
+        "pthread_detach",
+        "pthread_setspecific",
+        "pthread_setname_np"
+      ],
+      "external_libraries": [
+        "liblog.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    },
+    {
+      "module": "libmain.so",
+      "required_unimplemented_count": 30,
+      "platform_imports": [
+        "pthread_once"
+      ],
+      "external_libraries": [
+        "liblog.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    },
+    {
+      "module": "libunity.so",
+      "required_unimplemented_count": 372,
+      "platform_imports": [
+        "pthread_equal",
+        "eglCreateContext",
+        "eglCreatePbufferSurface",
+        "eglDestroyContext",
+        "eglDestroySurface",
+        "eglGetError",
+        "eglMakeCurrent",
+        "eglChooseConfig",
+        "eglGetConfigAttrib",
+        "eglGetDisplay",
+        "eglInitialize",
+        "eglQueryString",
+        "eglTerminate",
+        "ANativeWindow_getHeight",
+        "ANativeWindow_getWidth",
+        "eglCreateWindowSurface",
+        "eglGetCurrentContext",
+        "eglGetCurrentSurface",
+        "eglQuerySurface",
+        "eglSwapInterval",
+        "pthread_getspecific",
+        "pthread_setspecific",
+        "pthread_cond_broadcast",
+        "pthread_cond_destroy",
+        "pthread_cond_init",
+        "pthread_cond_timedwait_relative_np",
+        "pthread_cond_wait",
+        "pthread_mutex_destroy",
+        "pthread_mutex_init",
+        "pthread_mutex_lock",
+        "pthread_mutex_unlock",
+        "pthread_mutexattr_destroy",
+        "pthread_mutexattr_init",
+        "pthread_mutexattr_settype",
+        "pthread_getcpuclockid",
+        "eglSwapBuffers",
+        "pthread_cond_signal",
+        "ANativeWindow_setBuffersGeometry",
+        "eglSurfaceAttrib",
+        "pthread_once",
+        "ANativeWindow_fromSurface",
+        "ANativeWindow_release",
+        "ANativeWindow_acquire",
+        "pthread_attr_init",
+        "pthread_attr_setstacksize",
+        "pthread_create",
+        "pthread_exit",
+        "pthread_join",
+        "pthread_self",
+        "pthread_detach",
+        "eglGetProcAddress",
+        "pthread_mutex_trylock",
+        "pthread_kill",
+        "pthread_attr_setdetachstate",
+        "pthread_setname_np",
+        "pthread_attr_destroy",
+        "pthread_key_create",
+        "pthread_key_delete",
+        "pthread_cond_timedwait",
+        "pthread_setschedparam",
+        "pthread_getschedparam"
+      ],
+      "external_libraries": [
+        "libandroid.so",
+        "liblog.so",
+        "libz.so",
+        "libEGL.so",
+        "libm.so",
+        "libdl.so",
+        "libc.so"
+      ]
+    }
+  ],
+  "dynamic_api_string_counts": {
+    "AMedia": 50,
+    "egl": 28,
+    "gl": 306,
+    "vk": 179
+  },
+  "string_evidence_caveat": "Backend/API name presence does not prove runtime use; Vulkan and codec strings alone are not requirements.",
+  "next_required_work": [
+    "Implement real RegisterNatives/class semantics against the verified Unity groups.",
+    "Implement and test each required bionic/Android adapter with correct ABI and ownership.",
+    "Validate executable memory/cache and complete symbol resolution before constructors.",
+    "Integrate EGL/audio/lifecycle and validate on hardware."
+  ],
+  "drm_bypassed": false,
+  "game_executed": false
+}

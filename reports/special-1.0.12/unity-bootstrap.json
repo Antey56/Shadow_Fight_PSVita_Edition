@@ -1,0 +1,490 @@
+{
+  "unity_sha256": "82e24ba84e18a85beb7b81f221d4405b8f3befd94fc7025d8b8282c8d1d9535b",
+  "profile_evidence": "Manual Thumb disassembly reviewed; exact ELF hash and PC-relative data revalidated by script.",
+  "jni_onload_pointer": 2542105,
+  "init_jni_pointer": 2540141,
+  "confirmed_registration_groups": [
+    {
+      "helper_vaddr": 2542208,
+      "class": "com/unity3d/player/UnityPlayer",
+      "count": 25,
+      "table_vaddr": 13180492,
+      "methods": [
+        {
+          "table_vaddr": 13180492,
+          "method": "initJni",
+          "descriptor": "(Landroid/content/Context;)V",
+          "function_pointer": 2540141,
+          "code_vaddr": 2540140,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180504,
+          "method": "nativeDone",
+          "descriptor": "()Z",
+          "function_pointer": 2540205,
+          "code_vaddr": 2540204,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180516,
+          "method": "nativePause",
+          "descriptor": "()Z",
+          "function_pointer": 2540293,
+          "code_vaddr": 2540292,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180528,
+          "method": "nativeRecreateGfxState",
+          "descriptor": "(ILandroid/view/Surface;)V",
+          "function_pointer": 2540537,
+          "code_vaddr": 2540536,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180540,
+          "method": "nativeSendSurfaceChangedEvent",
+          "descriptor": "()V",
+          "function_pointer": 2540593,
+          "code_vaddr": 2540592,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180552,
+          "method": "nativeRender",
+          "descriptor": "()Z",
+          "function_pointer": 2540645,
+          "code_vaddr": 2540644,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180564,
+          "method": "nativeResume",
+          "descriptor": "()V",
+          "function_pointer": 2540343,
+          "code_vaddr": 2540342,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180576,
+          "method": "nativeLowMemory",
+          "descriptor": "()V",
+          "function_pointer": 2540385,
+          "code_vaddr": 2540384,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180588,
+          "method": "nativeApplicationUnload",
+          "descriptor": "()V",
+          "function_pointer": 2540425,
+          "code_vaddr": 2540424,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180600,
+          "method": "nativeFocusChanged",
+          "descriptor": "(Z)V",
+          "function_pointer": 2540471,
+          "code_vaddr": 2540470,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180612,
+          "method": "nativeSetInputArea",
+          "descriptor": "(IIII)V",
+          "function_pointer": 2540953,
+          "code_vaddr": 2540952,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180624,
+          "method": "nativeSetKeyboardIsVisible",
+          "descriptor": "(Z)V",
+          "function_pointer": 2541011,
+          "code_vaddr": 2541010,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180636,
+          "method": "nativeSetInputString",
+          "descriptor": "(Ljava/lang/String;)V",
+          "function_pointer": 2541061,
+          "code_vaddr": 2541060,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180648,
+          "method": "nativeSetInputSelection",
+          "descriptor": "(II)V",
+          "function_pointer": 2541177,
+          "code_vaddr": 2541176,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180660,
+          "method": "nativeSoftInputClosed",
+          "descriptor": "()V",
+          "function_pointer": 2541363,
+          "code_vaddr": 2541362,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180672,
+          "method": "nativeSoftInputCanceled",
+          "descriptor": "()V",
+          "function_pointer": 2541231,
+          "code_vaddr": 2541230,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180684,
+          "method": "nativeReportKeyboardConfigChanged",
+          "descriptor": "()V",
+          "function_pointer": 2541323,
+          "code_vaddr": 2541322,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180696,
+          "method": "nativeSoftInputLostFocus",
+          "descriptor": "()V",
+          "function_pointer": 2541277,
+          "code_vaddr": 2541276,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180708,
+          "method": "nativeInjectEvent",
+          "descriptor": "(Landroid/view/InputEvent;)Z",
+          "function_pointer": 2540693,
+          "code_vaddr": 2540692,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180720,
+          "method": "nativeUnitySendMessage",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;[B)V",
+          "function_pointer": 2541409,
+          "code_vaddr": 2541408,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180732,
+          "method": "nativeIsAutorotationOn",
+          "descriptor": "()Z",
+          "function_pointer": 2541685,
+          "code_vaddr": 2541684,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180744,
+          "method": "nativeMuteMasterAudio",
+          "descriptor": "(Z)V",
+          "function_pointer": 2541741,
+          "code_vaddr": 2541740,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180756,
+          "method": "nativeRestartActivityIndicator",
+          "descriptor": "()V",
+          "function_pointer": 2541809,
+          "code_vaddr": 2541808,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180768,
+          "method": "nativeSetLaunchURL",
+          "descriptor": "(Ljava/lang/String;)V",
+          "function_pointer": 2541849,
+          "code_vaddr": 2541848,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        },
+        {
+          "table_vaddr": 13180780,
+          "method": "nativeOrientationChanged",
+          "descriptor": "(II)V",
+          "function_pointer": 2542057,
+          "code_vaddr": 2542056,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityPlayer;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityPlayer"
+        }
+      ]
+    },
+    {
+      "helper_vaddr": 2542276,
+      "class": "com/google/androidgamesdk/ChoreographerCallback",
+      "count": 1,
+      "table_vaddr": 13180792,
+      "methods": [
+        {
+          "table_vaddr": 13180792,
+          "method": "nOnChoreographer",
+          "descriptor": "(JJ)V",
+          "function_pointer": 6575951,
+          "code_vaddr": 6575950,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/google/androidgamesdk/ChoreographerCallback;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/google/androidgamesdk/ChoreographerCallback"
+        }
+      ]
+    },
+    {
+      "helper_vaddr": 2542344,
+      "class": "com/google/androidgamesdk/SwappyDisplayManager",
+      "count": 2,
+      "table_vaddr": 13180804,
+      "methods": [
+        {
+          "table_vaddr": 13180804,
+          "method": "nOnRefreshRateChanged",
+          "descriptor": "(JJJJ)V",
+          "function_pointer": 6582529,
+          "code_vaddr": 6582528,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/google/androidgamesdk/SwappyDisplayManager;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/google/androidgamesdk/SwappyDisplayManager"
+        },
+        {
+          "table_vaddr": 13180816,
+          "method": "nSetSupportedRefreshRates",
+          "descriptor": "(J[J[I)V",
+          "function_pointer": 6582193,
+          "code_vaddr": 6582192,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/google/androidgamesdk/SwappyDisplayManager;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/google/androidgamesdk/SwappyDisplayManager"
+        }
+      ]
+    }
+  ],
+  "confirmed_method_count": 28,
+  "init_helper_vaddr": 2476944,
+  "reflection_evidence": [
+    {
+      "string": "java/lang/ClassLoader",
+      "vaddr": 11751516,
+      "literal_vaddr": 2477144
+    },
+    {
+      "string": "getClassLoader",
+      "vaddr": 11751538,
+      "literal_vaddr": 2477148
+    },
+    {
+      "string": "()Ljava/lang/ClassLoader;",
+      "vaddr": 11751553,
+      "literal_vaddr": 2477152
+    },
+    {
+      "string": "forName",
+      "vaddr": 11751579,
+      "literal_vaddr": 2477160
+    },
+    {
+      "string": "(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;",
+      "vaddr": 11751587,
+      "literal_vaddr": 2477164
+    }
+  ],
+  "observed_jni_slots": [
+    6,
+    18,
+    21,
+    31,
+    33,
+    113,
+    215,
+    219
+  ],
+  "slot_observations": [
+    {
+      "function": "JNI_OnLoad registration helpers",
+      "slot": 215,
+      "load_instruction_vaddr": 2542234,
+      "table_offset_bytes": 860
+    },
+    {
+      "function": "initJni",
+      "slot": 219,
+      "load_instruction_vaddr": 2540158,
+      "table_offset_bytes": 876
+    },
+    {
+      "function": "init helper",
+      "slot": 113,
+      "load_instruction_vaddr": 2477084,
+      "table_offset_bytes": 452
+    }
+  ],
+  "limitations": [
+    "Observed slots are a lower bound, not a complete call graph.",
+    "FatalError slot 18 is observed on failure branches, not necessarily normal startup.",
+    "The profile confirms static class/table/count wiring for three groups only; Android code was never called.",
+    "ELF virtual function pointers require validated relocation, executable mapping and runtime before use."
+  ],
+  "execution_allowed": false
+}

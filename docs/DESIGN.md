@@ -2,7 +2,7 @@
 
 ## Статус и границы
 
-Текущий входной APK останавливается на этапе ABI. Ни одна его библиотека не вызывается. `sf2_preflight()` возвращает -3 для ELF64 и -4 для ещё не сертифицированного ELF32. Это предохранитель интеграции, не реализация so_util. Основной CMake target — графика и input diagnostics; настоящие so_util/JNI адаптеры требуют подходящего бинарника и проверенных сигнатур.
+Текущая исследуемая сборка Special Edition 1.0.12 содержит ARMv7 ELF32 и Unity 2020.3.48f1/IL2CPP. Её библиотеки не вызываются: выполнение блокируют незавершённые JNI, bionic, graphics/audio и executable-loader слои. `sf2_preflight()` возвращает -3 для ELF64 и -4 для ещё не сертифицированного ELF32. Это предохранитель интеграции, не реализация so_util. Основной target — диагностический VPK. Актуальная оценка шести направлений и подтверждённые ограничения описаны в INTEGRATION-STATUS.md; прежний ARM64/Mod аудит не следует смешивать с этим APK.
 
 ## Слои
 
@@ -22,7 +22,7 @@ Vita eboot → платформа/журнал → vitaGL/GXM и audio → bioni
 
 Проинвентаризировать фактические классы, методы и descriptors, включая RegisterNatives. Таблица JNIEnv должна иметь корректные индексы и функции, поддерживать local/global references, exception semantics, GetStringUTFChars/Release, primitive arrays, threading Attach/Detach и thread-local env. Угадывать подписи Java_* нельзя. JNI_OnLoad получает совместимый JavaVM, не NULL.
 
-Восстановить реальные вызовы Activity/Surface/Input из Java-кода законной неупакованной сборки и тестовых логов. Графика должна существовать к нужному lifecycle событию, input доставляться на нужном потоке. NativeActivity-only bootstrap не заменяет UnityPlayer. Для Unity понадобятся также runtime/services, IL2CPP metadata matching и Burst dependencies. Этот проект не содержит Java VM и не обещает запустить Unity одной JNI_OnLoad.
+Восстановить реальные вызовы Activity/Surface/Input из Java-кода законной неупакованной сборки и тестовых логов. Графика должна существовать к нужному lifecycle событию, input доставляться на нужном потоке. NativeActivity-only bootstrap не заменяет UnityPlayer. Для Unity понадобятся также runtime/services, IL2CPP metadata matching и Burst dependencies. Проект содержит только ограниченный JavaVM/JNIEnv harness, без Java bytecode execution, и не запускает Unity одной JNI_OnLoad.
 
 ### Graphics, assets, audio
 

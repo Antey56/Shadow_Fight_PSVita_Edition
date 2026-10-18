@@ -20,8 +20,8 @@
     228
   ],
   "unsupported_slots": "NULL; reject through capability gate before use",
-  "python_tests": 112,
-  "ctest_targets": 7,
+  "python_tests": 126,
+  "ctest_targets": 8,
   "unity_executed": false,
   "device_tested": false,
   "runtime_ready": false,

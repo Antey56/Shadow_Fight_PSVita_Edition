@@ -1,0 +1,11 @@
+{
+  "version": "0.4",
+  "title_id": "SF2AUD001",
+  "sha256": "4ddf390afcc52cee6e39e4383bc0cb29e3eab776fc5c2dc8e887fbfbb39b7425",
+  "bytes": 480160,
+  "cross_build": "passed",
+  "device_executed": false,
+  "unity_executed": false,
+  "new_probe": "restricted JavaVM/JNIEnv/exception and memory adapters",
+  "binary_publication": "local only"
+}
