@@ -22,6 +22,7 @@ static int android_log_to_file(const SfLogRecord *record,void *context){
 static void probe(void){}
 static int runtime_selftest(void){
     ArmScopeEntry entries[20];ArmSymbolScope scope;
+    int32_t values[4]={1,-2,3,4}; /* Borrowed buffer remains live through VM cleanup. */
     if(sf_bionic_memory_catalog(entries,20)!=20||arm_scope_init(&scope,entries,20))return 0;
     char *copy=sf_bionic_strdup("vita-abi-probe");
     int ok=copy&&sf_bionic_strlen(copy)==14;sf_bionic_free(copy);
@@ -42,6 +43,20 @@ static int runtime_selftest(void){
         const char *chars=(*env)->GetStringUTFChars(env,name,0);
         ok=ok&&string_class&&chars&&sf_bionic_strcmp(chars,"java.lang.String")==0;
         if(chars)(*env)->ReleaseStringUTFChars(env,name,chars);
+        SfJObject numbers=(*env)->NewIntArray(env,4);
+        int32_t readback[4]={0};
+        (*env)->SetIntArrayRegion(env,numbers,0,4,values);
+        int32_t *elements=(*env)->GetIntArrayElements(env,numbers,0);
+        ok=ok&&numbers&&elements&&(*env)->GetArrayLength(env,numbers)==4;
+        if(elements){
+            elements[1]=-9;(*env)->ReleaseIntArrayElements(env,numbers,elements,1);
+            (*env)->GetIntArrayRegion(env,numbers,0,4,readback);
+            ok=ok&&readback[0]==1&&readback[1]==-9&&readback[3]==4;
+            (*env)->ReleaseIntArrayElements(env,numbers,elements,2);
+        }
+        SfJObject buffer=(*env)->NewDirectByteBuffer(env,values,sizeof values);
+        ok=ok&&buffer&&(*env)->GetDirectBufferAddress(env,buffer)==values&&
+            (*env)->GetDirectBufferCapacity(env,buffer)==sizeof values;
         (*env)->FindClass(env,"diagnostic/UnsupportedClass");
         SfJObject error=(*env)->ExceptionOccurred(env);
         ok=ok&&error&&(*env)->ExceptionCheck(env);
@@ -76,7 +91,7 @@ int main(void){
     core_ok=core_ok&&sf_log_target_catalog(log_entries,5)==5&&arm_scope_init(&log_scope,log_entries,5)==0;
     int logger_ok=__android_log_print(SF_LOG_INFO,"sf2vita","adapter check i=%d d=%.2f",7,1.25)==1;
     core_ok=core_ok&&logger_ok;
-    if(logfile){fprintf(logfile,"SF2 diagnostic 0.5; Unity NOT started; core check=%s; JNI/memory/reflection probe=%s\n",core_ok?"PASS":"FAIL",runtime_ok?"PASS":"FAIL");fflush(logfile);}
+    if(logfile){fprintf(logfile,"SF2 diagnostic 0.6; Unity NOT started; core check=%s; JNI/memory/reflection/arrays probe=%s\n",core_ok?"PASS":"FAIL",runtime_ok?"PASS":"FAIL");fflush(logfile);}
     sceCtrlSetSamplingMode(SCE_CTRL_MODE_ANALOG);
     if(!vglInit(8*1024*1024)){if(logfile)fclose(logfile);return 1;}
     TouchState state={0};SceCtrlData pad={0};

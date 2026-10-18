@@ -15,7 +15,7 @@
       "observed_missing_slots": [
         18
       ],
-      "note": "Class initialization, arrays and worker threads remain incomplete; implemented JNI slots have restricted semantics."
+      "note": "Class initialization, object arrays and worker threads remain incomplete; primitive arrays/direct buffers are bounded harness implementations."
     },
     {
       "stage": 3,

@@ -12,6 +12,7 @@ typedef const struct SfJniTable *SfJniEnv;
 struct SfJavaVMTable;
 typedef const struct SfJavaVMTable *SfJavaVM;
 typedef void (*SfJniUnused)(void);
+#define SF_JNI_ARRAY_TYPES(X) X(Boolean,uint8_t,0) X(Byte,int8_t,1) X(Char,uint16_t,2) X(Short,int16_t,3) X(Int,int32_t,4) X(Long,int64_t,5) X(Float,float,6) X(Double,double,7)
 /* JNI 1.6 slot layout; NULL entries are UNSUPPORTED, never callable.
    This restricted harness MUST NOT be passed to Unity/JNI_OnLoad yet. */
 typedef struct SfJniTable {
@@ -50,13 +51,32 @@ typedef struct SfJniTable {
     int32_t (SF_ANDROID_ABI *GetStringUTFLength)(SfJniEnv *,SfJObject); /* 168 */
     const char *(SF_ANDROID_ABI *GetStringUTFChars)(SfJniEnv *,SfJObject,uint8_t *); /* 169 */
     void (SF_ANDROID_ABI *ReleaseStringUTFChars)(SfJniEnv *,SfJObject,const char *); /* 170 */
-    SfJniUnused unused171_214[44];
+    int32_t (SF_ANDROID_ABI *GetArrayLength)(SfJniEnv *,SfJObject); /* 171 */
+    SfJniUnused unused172_174[3];
+#define SF_ARRAY_NEW(n,t,i) SfJObject (SF_ANDROID_ABI *New##n##Array)(SfJniEnv *,int32_t);
+    SF_JNI_ARRAY_TYPES(SF_ARRAY_NEW) /* 175..182 */
+#undef SF_ARRAY_NEW
+#define SF_ARRAY_GET(n,t,i) t *(SF_ANDROID_ABI *Get##n##ArrayElements)(SfJniEnv *,SfJObject,uint8_t *);
+    SF_JNI_ARRAY_TYPES(SF_ARRAY_GET) /* 183..190 */
+#undef SF_ARRAY_GET
+#define SF_ARRAY_RELEASE(n,t,i) void (SF_ANDROID_ABI *Release##n##ArrayElements)(SfJniEnv *,SfJObject,t *,int32_t);
+    SF_JNI_ARRAY_TYPES(SF_ARRAY_RELEASE) /* 191..198 */
+#undef SF_ARRAY_RELEASE
+#define SF_ARRAY_GET_REGION(n,t,i) void (SF_ANDROID_ABI *Get##n##ArrayRegion)(SfJniEnv *,SfJObject,int32_t,int32_t,t *);
+    SF_JNI_ARRAY_TYPES(SF_ARRAY_GET_REGION) /* 199..206 */
+#undef SF_ARRAY_GET_REGION
+#define SF_ARRAY_SET_REGION(n,t,i) void (SF_ANDROID_ABI *Set##n##ArrayRegion)(SfJniEnv *,SfJObject,int32_t,int32_t,const t *);
+    SF_JNI_ARRAY_TYPES(SF_ARRAY_SET_REGION) /* 207..214 */
+#undef SF_ARRAY_SET_REGION
     int32_t (SF_ANDROID_ABI *RegisterNatives)(SfJniEnv *,SfJObject,const SfJniNativeMethod *,int32_t); /* 215 */
     SfJniUnused unused216_218[3];
     int32_t (SF_ANDROID_ABI *GetJavaVM)(SfJniEnv *,SfJavaVM **); /* 219 */
     SfJniUnused unused220_227[8];
     uint8_t (SF_ANDROID_ABI *ExceptionCheck)(SfJniEnv *); /* 228 */
-    SfJniUnused unused229_232[4];
+    SfJObject (SF_ANDROID_ABI *NewDirectByteBuffer)(SfJniEnv *,void *,int64_t); /* 229 */
+    void *(SF_ANDROID_ABI *GetDirectBufferAddress)(SfJniEnv *,SfJObject); /* 230 */
+    int64_t (SF_ANDROID_ABI *GetDirectBufferCapacity)(SfJniEnv *,SfJObject); /* 231 */
+    SfJniUnused GetObjectRefType; /* 232 unsupported */
 } SfJniTable;
 /* Returned env address is owned, single-thread; no cross-env object transfer. */
 SfJniEnv *sf_jni_bridge_create(const char *,size_t);

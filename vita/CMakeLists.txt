@@ -14,7 +14,7 @@ target_link_libraries(sf2_diagnostic vitaGL vitashark SceShaccCgExt mathneon Sce
   SceGxm_stub SceDisplay_stub SceCtrl_stub SceAppMgr_stub SceSysmodule_stub
   SceCommonDialog_stub SceKernelDmacMgr_stub SceIofilemgr_stub m)
 vita_create_self(eboot.bin sf2_diagnostic UNSAFE)
-vita_create_vpk(sf2-diagnostic.vpk SF2AUD001 eboot.bin VERSION 00.05 NAME "SF2 Input Diagnostic"
+vita_create_vpk(sf2-diagnostic.vpk SF2AUD001 eboot.bin VERSION 00.06 NAME "SF2 Input Diagnostic"
   FILE sce_sys/icon0.png sce_sys/icon0.png
   FILE sce_sys/livearea/contents/bg.png sce_sys/livearea/contents/bg.png
   FILE sce_sys/livearea/contents/startup.png sce_sys/livearea/contents/startup.png

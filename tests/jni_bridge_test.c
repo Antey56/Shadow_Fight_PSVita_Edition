@@ -41,5 +41,12 @@ int main(void){
     SfJObject name=(*e)->NewStringUTF(e,"java.lang.String");assert(name);
     assert((*e)->CallStaticObjectMethod(e,meta,lookup,name,0,(SfJObject)0));
     assert(invoke_static_v(e,meta,lookup,name,0,(SfJObject)0));
+    SfJObject longs=(*e)->NewLongArray(e,2);assert(longs);
+    int64_t values[2]={INT64_C(-1099511627776),INT64_C(1099511627776)},output[2]={0};
+    (*e)->SetLongArrayRegion(e,longs,0,2,values);
+    (*e)->GetLongArrayRegion(e,longs,0,2,output);assert(output[0]==values[0]&&output[1]==values[1]);
+    SfJObject buffer=(*e)->NewDirectByteBuffer(e,values,sizeof values);assert(buffer);
+    assert((*e)->GetDirectBufferCapacity(e,buffer)==sizeof values);
+    assert((*e)->GetDirectBufferAddress(e,buffer)==values);
     sf_jni_bridge_destroy(e);puts("restricted JNI table PASS");return 0;
 }

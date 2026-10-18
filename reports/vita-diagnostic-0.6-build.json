@@ -1,0 +1,10 @@
+{
+  "version": "0.6",
+  "sha256": "8b358e591ced323a643eea9c2e76f483d47aacff0211add9802a53f990cd0d9b",
+  "bytes": 491049,
+  "cross_build": "passed",
+  "device_executed": false,
+  "unity_executed": false,
+  "new_probe": "primitive array COMMIT/readback and borrowed direct buffer",
+  "binary_publication": "local only"
+}

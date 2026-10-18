@@ -8,7 +8,7 @@
 typedef struct SfJniObjects SfJniObjects;
 typedef uint32_t SfJniRef;
 enum { SF_JNI_OK=0, SF_JNI_BAD_REF=1, SF_JNI_BAD_TYPE=2,
-       SF_JNI_CAPACITY=3, SF_JNI_BAD_METHOD=4 };
+       SF_JNI_CAPACITY=3, SF_JNI_BAD_METHOD=4, SF_JNI_BOUNDS=5 };
 SfJniObjects *sf_jni_objects_create(const char *,size_t);
 void sf_jni_objects_destroy(SfJniObjects *);
 SfJniRef sf_jni_context(SfJniObjects *);
@@ -32,4 +32,13 @@ SfJniRef sf_jni_string_utf(SfJniObjects *,const char *);
 /* Borrowed view, including during pending error for release validation.
    Not usable after the last reference is deleted. Identity never wraps. */
 int sf_jni_string_view(SfJniObjects *,SfJniRef,const char **,size_t *,size_t *,uint64_t *);
+/* Primitive types 0..7: boolean, byte, char, short, int, long, float, double.
+   View is borrowed; expected=-1 accepts any primitive type. */
+SfJniRef sf_jni_array_new(SfJniObjects *,int,int32_t);
+int sf_jni_array_view(SfJniObjects *,SfJniRef,int,int *,void **,int32_t *,uint64_t *);
+SfJniRef sf_jni_direct_buffer(SfJniObjects *,void *,int64_t);
+int sf_jni_direct_view(SfJniObjects *,SfJniRef,void **,int64_t *);
+void *sf_jni_array_elements(SfJniObjects *,SfJniRef,int,uint8_t *);
+void sf_jni_array_release(SfJniObjects *,SfJniRef,int,void *,int32_t);
+void sf_jni_array_region(SfJniObjects *,SfJniRef,int,int32_t,int32_t,void *,int);
 #endif
