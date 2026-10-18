@@ -6,7 +6,10 @@ import json
 import pathlib
 
 
-def assess(gate,deep,bootstrap,bridge):
+def assess(gate,deep,bootstrap,bridge,hardware=None):
+    diagnostic_verified = bool(hardware and hardware.get("build_id")=="0.7-gfxtrace1"
+                               and all(hardware.get(k) is True for k in
+                                       ("probes_passed","draw_returned","swap_returned","input_recorded","start_exit_recorded")))
     implemented=set(bridge['implemented_slots'])
     observed=set(bootstrap['observed_jni_slots'])
     missing=sorted(observed-implemented)
@@ -33,11 +36,13 @@ def assess(gate,deep,bootstrap,bridge):
          'note':'Current linker produces a data buffer only. Missing imports and services block constructors/JNI_OnLoad.'},
         {'stage':5,'name':'Graphics audio lifecycle integration','status':'blocked',
          'note':'Diagnostic vitaGL output is not a Unity surface, EGL context lifecycle or engine audio backend.'},
-        {'stage':6,'name':'Physical Vita validation','status':'not_run',
-         'note':'No accessible connected Vita; successful cross-build is not device execution.'}],
+        {'stage':6,'name':'Physical Vita validation','status':'diagnostic_verified' if diagnostic_verified else 'not_run',
+         'engine_validated':False,
+         'note':('0.7 diagnostic probes, draw/swap, input and normal START exit recorded on Vita; Unity not started.'
+                 if diagnostic_verified else 'No complete diagnostic hardware evidence supplied; cross-build alone is not device execution.')}],
         'core_modules':core,'all_modules':modules,'dynamic_api_string_counts':dict(dynamic),
         'string_evidence_caveat':'Backend/API name presence does not prove runtime use; Vulkan and codec strings alone are not requirements.',
-        'next_required_work':['Implement real RegisterNatives/class semantics against the verified Unity groups.',
+        'next_required_work':['Complete Java class initialization and worker-thread JNI semantics; registration is currently a bounded harness.',
                               'Implement and test each required bionic/Android adapter with correct ABI and ownership.',
                               'Validate executable memory/cache and complete symbol resolution before constructors.',
                               'Integrate EGL/audio/lifecycle and validate on hardware.'],
@@ -46,9 +51,12 @@ def assess(gate,deep,bootstrap,bridge):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('report_directory',type=pathlib.Path)
-    p.add_argument('--out',type=pathlib.Path,required=True);a=p.parse_args()
+    p.add_argument('--out',type=pathlib.Path,required=True)
+    p.add_argument('--hardware',type=pathlib.Path,help='Reviewed diagnostic evidence JSON; never enables engine execution')
+    a=p.parse_args()
     def load(name):return json.loads((a.report_directory/name).read_text(encoding='utf-8'))
-    r=assess(load('runtime-gate.json'),load('deep-audit.json'),load('unity-bootstrap.json'),load('jni-bridge-status.json'))
+    r=assess(load('runtime-gate.json'),load('deep-audit.json'),load('unity-bootstrap.json'),load('jni-bridge-status.json'),
+             json.loads(a.hardware.read_text(encoding='utf-8')) if a.hardware else None)
     a.out.parent.mkdir(parents=True,exist_ok=True);a.out.write_text(json.dumps(r,indent=2),encoding='utf-8')
     print('Execution blocked; missing observed JNI slots:',r['stages'][1]['observed_missing_slots'],
           '; required unique runtime imports:',r['stages'][2]['unique_required_unimplemented'])

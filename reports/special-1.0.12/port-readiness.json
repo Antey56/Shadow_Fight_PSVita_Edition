@@ -12,9 +12,7 @@
       "stage": 2,
       "name": "JNI runtime semantics",
       "status": "blocked",
-      "observed_missing_slots": [
-        18
-      ],
+      "observed_missing_slots": [],
       "note": "Class initialization, object arrays and worker threads remain incomplete; primitive arrays/direct buffers are bounded harness implementations."
     },
     {
@@ -39,8 +37,9 @@
     {
       "stage": 6,
       "name": "Physical Vita validation",
-      "status": "not_run",
-      "note": "No accessible connected Vita; successful cross-build is not device execution."
+      "status": "diagnostic_verified",
+      "engine_validated": false,
+      "note": "0.7 diagnostic probes, draw/swap, input and normal START exit recorded on Vita; Unity not started."
     }
   ],
   "core_modules": [
@@ -476,7 +475,7 @@
   },
   "string_evidence_caveat": "Backend/API name presence does not prove runtime use; Vulkan and codec strings alone are not requirements.",
   "next_required_work": [
-    "Implement real RegisterNatives/class semantics against the verified Unity groups.",
+    "Complete Java class initialization and worker-thread JNI semantics; registration is currently a bounded harness.",
     "Implement and test each required bionic/Android adapter with correct ABI and ownership.",
     "Validate executable memory/cache and complete symbol resolution before constructors.",
     "Integrate EGL/audio/lifecycle and validate on hardware."

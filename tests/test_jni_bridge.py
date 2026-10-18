@@ -3,6 +3,7 @@ import os
 import pathlib
 import sys
 import tempfile
+import subprocess
 import unittest
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tools'))
@@ -52,7 +53,7 @@ class BridgeTests(unittest.TestCase):
         finally:self.lib.AAsset_close(a)
 
     def test_slots_and_gate(self):
-        slots=(4,6,13,15,17,21,22,23,25,31,33,34,35,36,113,114,115,116,164,167,168,169,170,171,*range(175,215),215,219,228,229,230,231)
+        slots=(4,6,13,15,17,18,21,22,23,25,31,33,34,35,36,113,114,115,116,164,167,168,169,170,171,*range(175,215),215,219,228,229,230,231)
         self.assertEqual({i for i in range(233) if self.table[i]},set(slots))
         self.assertEqual(self.lib.sf_jni_bridge_require((C.c_uint*len(slots))(*slots),len(slots)),0)
         self.assertLess(self.lib.sf_jni_bridge_require((C.c_uint*2)(36,94),2),0)
@@ -167,3 +168,28 @@ class BridgeTests(unittest.TestCase):
     def test_class_loader_class_available(self):
         cls=self.fn(6,P,C.c_char_p)(self.env,b'java/lang/ClassLoader');self.assertTrue(cls)
         self.assertTrue(self.fn(31,P,P)(self.env,cls))
+
+    def test_fatal_error_terminates_child(self):
+        script = r"""
+import ctypes as C, sys
+if sys.platform == 'win32':
+    C.windll.kernel32.SetErrorMode(0x0001 | 0x0002 | 0x8000)
+else:
+    import resource
+    resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
+lib=C.CDLL(sys.argv[1]); lib.sf_jni_bridge_create.argtypes=[C.c_char_p,C.c_size_t]
+lib.sf_jni_bridge_create.restype=C.c_void_p
+e=lib.sf_jni_bridge_create(b'.',4096)
+if not e: sys.exit(99)
+t=C.cast(C.cast(e,C.POINTER(C.c_void_p))[0],C.POINTER(C.c_void_p))
+C.CFUNCTYPE(None,C.c_void_p,C.c_char_p)(t[18])(e,None if sys.argv[2]=='null' else b'bootstrap %s failure')
+print('UNREACHABLE',flush=True)
+sys.exit(0)
+"""
+        for case, expected in [('message',b'bootstrap %s failure'),('null',b'(null)')]:
+            with self.subTest(case=case):
+                child=subprocess.run([sys.executable,'-c',script,str(DLL.resolve()),case],
+                                     capture_output=True,timeout=15)
+                self.assertNotIn(child.returncode,(0,99))
+                self.assertIn(b'JNI_FATAL: '+expected,child.stderr)
+                self.assertNotIn(b'UNREACHABLE',child.stdout)

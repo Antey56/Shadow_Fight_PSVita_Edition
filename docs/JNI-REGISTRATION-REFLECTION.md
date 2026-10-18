@@ -39,3 +39,6 @@ initialize=true **отклоняется**: Java initializers/bytecode не ре
 161 Python/integration tests и 8 CTest targets проходят; Vita cross-build без предупреждений успешен. Проверены 28 реальные metadata bindings, атомарность/ошибки регистрации, lifetime copied strings, Unicode lengths, malformed encodings, char leases, reflection receivers и static A/V/varargs calls. Диагностический VPK 0.5 дополнительно вызывает string/forName цепочку в Vita-коде, но аппаратный результат ещё не получен.
 
 Числовое отсутствие RegisterNatives/GetStaticMethodID slots устранено; полнота Unity bootstrap не доказана. FatalError остаётся неподдержанным failure slot. Конструкторы/JNI_OnLoad/игровой код отключены: реальная Java initialization, worker JNI, EGL/audio, bionic structs и executable loader остаются незавершёнными. Счётчик сертифицированных внешних импортов не изменён.
+
+
+Update 2026-10-18: FatalError slot 18 is now terminal (bounded log + abort), tested in isolated host processes. Earlier unsupported-slot wording above is historical. This does not complete Unity bootstrap. See INTEGRATION-STATUS.md.

@@ -7,13 +7,13 @@ from audit_unity_bootstrap import audit
 
 
 class ReadinessTests(unittest.TestCase):
-    def report(self,slots=()):
+    def report(self,slots=(),hardware=None):
         return assess({'modules':[{'name':'libunity.so','missing_required_imports':['eglGetDisplay','malloc'],
                                   'external_dependencies':['libEGL.so']}],
                        'unique_missing_required':['eglGetDisplay','malloc']},
                       {'dynamic_api_strings':{'libunity.so':['glDrawArrays','vkCreateInstance']}},
                       {'observed_jni_slots':[113,215,219],'confirmed_method_count':28},
-                      {'implemented_slots':list(slots)})
+                      {'implemented_slots':list(slots)},hardware)
 
     def test_missing_slots(self):
         self.assertEqual(self.report([219])['stages'][1]['observed_missing_slots'],[113,215])
@@ -33,3 +33,14 @@ class ReadinessTests(unittest.TestCase):
 
     def test_profile_refuses_other_binary(self):
         with self.assertRaisesRegex(ValueError,'SHA-256 mismatch'):audit(b'other-build',[])
+
+    def test_diagnostic_evidence_never_unlocks_engine(self):
+        evidence=dict(build_id='0.7-gfxtrace1',probes_passed=True,draw_returned=True,
+                      swap_returned=True,input_recorded=True,start_exit_recorded=True)
+        r=self.report([113,215,219],evidence)
+        self.assertEqual(r['stages'][5]['status'],'diagnostic_verified')
+        self.assertFalse(r['stages'][5]['engine_validated'])
+        self.assertFalse(r['execution_allowed'])
+        for key in ('draw_returned','start_exit_recorded'):
+            bad=dict(evidence);bad[key]=False
+            self.assertEqual(self.report(hardware=bad)['stages'][5]['status'],'not_run')

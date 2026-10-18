@@ -40,3 +40,14 @@ The same Vita executable now runs a small owned JavaVM/JNIEnv probe before graph
 Build locally using README. Binaries remain local. Original APK, game libraries, assets and executable-memory shortcuts are not published. The next actionable implementation is exact JNI registration/class semantics against the verified tables, followed by separately verified bionic/platform adapters; constructors must remain disabled while dependencies are missing.
 
 Validation: 126 Python/integration tests, 8 CTest targets, successful Vita cross-build. Host tests include table relocation evidence, hash mismatch rejection, read/write overlap and allocator boundaries. Hardware tests, first frame, sound and gameplay are not complete.
+
+
+## 2026-10-18: diagnostic hardware and terminal JNI failure path
+
+See [hardware evidence](../reports/HARDWARE-0.7.md): 0.7-gfxtrace1 returned from drawing/swapping and recorded control events and normal START exit on Vita. This supersedes historical statements above that no diagnostic hardware test has run. Unity and engine integration remain untested.
+
+Current source identity is 0.7-jni-fatal1, distinct from the tested executable. The JNI table now has 71 implemented slots. Slot 18, FatalError, logs a bounded message and calls abort without returning; on Vita it also appends to the diagnostic log. It is not a recoverable exception, optional service fallback or license workaround. Host child-process tests verify termination for text and NULL messages and literal format characters. The fatal path itself has not been invoked on Vita. No new VPK installation is necessary to reproduce the earlier graphics result.
+
+195 Python tests and 8 CTest targets pass. Vita cross-build/package validation pass. Zero missing slots in the statically observed subset does not imply complete JNI semantics: worker threads, initialization, object arrays, executable loading and 451 uncertified required imports still block Unity execution.
+
+Reference: [JNI FatalError specification](https://docs.oracle.com/en/java/javase/24/docs/specs/jni/functions.html#fatalerror).

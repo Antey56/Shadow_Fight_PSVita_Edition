@@ -26,7 +26,8 @@ typedef struct SfJniTable {
     SfJObject (SF_ANDROID_ABI *ExceptionOccurred)(SfJniEnv *); /* 15 */
     SfJniUnused ExceptionDescribe; /* 16: unsupported */
     void (SF_ANDROID_ABI *ExceptionClear)(SfJniEnv *); /* 17 */
-    SfJniUnused unused18_20[3];
+    void (SF_ANDROID_ABI *FatalError)(SfJniEnv *,const char *); /* 18: does not return */
+    SfJniUnused unused19_20[2];
     SfJObject (SF_ANDROID_ABI *NewGlobalRef)(SfJniEnv *,SfJObject); /* 21 */
     void (SF_ANDROID_ABI *DeleteGlobalRef)(SfJniEnv *,SfJObject); /* 22 */
     void (SF_ANDROID_ABI *DeleteLocalRef)(SfJniEnv *,SfJObject); /* 23 */

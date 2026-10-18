@@ -1,0 +1,12 @@
+{
+  "build_id": "0.7-gfxtrace1",
+  "date": "2026-10-18",
+  "evidence": "HARDWARE-0.7.md",
+  "probes_passed": true,
+  "draw_returned": true,
+  "swap_returned": true,
+  "input_recorded": true,
+  "start_exit_recorded": true,
+  "unity_started": false,
+  "frames_before_exit": 239
+}

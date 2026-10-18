@@ -1,6 +1,7 @@
 #include "jni_bridge.h"
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 typedef struct {SfJniEnv table;SfJniObjects *objects;SfJavaVM *vm;
                 int (*guard)(void *);void *guard_context;
@@ -25,6 +26,7 @@ static char for_name_method;
 static int is_class(int kind){return kind==3||kind==4||(kind>=6&&kind<=16)||kind==18||kind==20||(kind>=41&&kind<=50);}
 #define SLOT_CHECK(field,n) typedef char check_##field[(offsetof(SfJniTable,field)==(n)*sizeof(SfJniUnused))?1:-1]
 SLOT_CHECK(GetVersion,4);SLOT_CHECK(FindClass,6);SLOT_CHECK(ExceptionClear,17);
+SLOT_CHECK(FatalError,18);
 SLOT_CHECK(NewGlobalRef,21);SLOT_CHECK(NewLocalRef,25);SLOT_CHECK(GetObjectClass,31);
 SLOT_CHECK(GetMethodID,33);SLOT_CHECK(CallObjectMethod,34);SLOT_CHECK(CallObjectMethodV,35);
 SLOT_CHECK(CallObjectMethodA,36);SLOT_CHECK(ExceptionCheck,228);
@@ -232,9 +234,21 @@ static SF_ANDROID_ABI int64_t direct_capacity(SfJniEnv *e,SfJObject a){
     if(!o||sf_jni_exception(o)||sf_jni_direct_view(o,decode(o,a),0,&capacity))return -1;
     return capacity;
 }
+/* FatalError is terminal even with a pending exception or invalid env.
+   Bound diagnostic output; never interpret the supplied message as a format. */
+static SF_ANDROID_ABI void fatal_error(SfJniEnv *e,const char *message){
+    (void)e;
+    const char *text=message?message:"(null)";
+#ifdef __vita__
+    FILE *file=fopen("ux0:data/sf2vita-input.log","a");
+    if(file){fprintf(file,"JNI_FATAL: %.1024s\n",text);fflush(file);fclose(file);}
+#endif
+    fprintf(stderr,"JNI_FATAL: %.1024s\n",text);fflush(stderr);
+    abort();
+}
 static const SfJniTable table={
     .GetVersion=version,.FindClass=find_class,.ExceptionClear=clear,
-    .Throw=throw_object,.ExceptionOccurred=occurred,
+    .Throw=throw_object,.ExceptionOccurred=occurred,.FatalError=fatal_error,
     .NewGlobalRef=global_ref,.DeleteGlobalRef=delete_global,.DeleteLocalRef=delete_local,
     .NewLocalRef=local_ref,.GetObjectClass=object_class,.GetMethodID=method,
     .CallObjectMethod=call,.CallObjectMethodV=call_v,.CallObjectMethodA=call_a,
@@ -282,7 +296,7 @@ AAssetManager *sf_jni_bridge_assets(SfJniEnv *e,SfJObject r){
 int sf_jni_bridge_require(const unsigned *slots,size_t count){
     if(!slots||!count)return -1;
     for(size_t i=0;i<count;i++)switch(slots[i]){
-        case 4:case 6:case 13:case 15:case 17:case 21:case 22:case 23:case 25:case 31:
+        case 4:case 6:case 13:case 15:case 17:case 18:case 21:case 22:case 23:case 25:case 31:
         case 33:case 34:case 35:case 36:case 215:case 219:case 228:break;
         case 113:case 114:case 115:case 116:case 164:case 167:case 168:case 169:case 170:break;
         case 171:case 229:case 230:case 231:break;
