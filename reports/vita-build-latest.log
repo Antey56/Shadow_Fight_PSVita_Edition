@@ -1,12 +1,13 @@
 [0/1] Re-running CMake...
--- Configuring done (0.0s)
+-- Configuring done (0.1s)
 -- Generating done (0.0s)
 -- Build files have been written to: <WORKSPACE>/sf2-vita/build-vita
-[1/9] Building C object CMakeFiles/sf2_diagnostic.dir/src/jni_objects.c.obj
-[2/9] Linking CXX executable sf2_diagnostic
-[3/9] Converting to Sony ELF sf2_diagnostic.velf
-[4/9] Creating SELF eboot.bin
-[5/9] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/eboot.bin.out eboot.bin"
-[6/9] Generating param.sfo for sf2-diagnostic.vpk
-[7/9] Building vpk sf2-diagnostic.vpk
-[8/9] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/sf2-diagnostic.vpk.out sf2-diagnostic.vpk"
+[1/10] Building C object CMakeFiles/sf2_diagnostic.dir/src/jni_bridge.c.obj
+[2/10] Building C object CMakeFiles/sf2_diagnostic.dir/src/jni_objects.c.obj
+[3/10] Linking CXX executable sf2_diagnostic
+[4/10] Converting to Sony ELF sf2_diagnostic.velf
+[5/10] Creating SELF eboot.bin
+[6/10] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/eboot.bin.out eboot.bin"
+[7/10] Generating param.sfo for sf2-diagnostic.vpk
+[8/10] Building vpk sf2-diagnostic.vpk
+[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/sf2-diagnostic.vpk.out sf2-diagnostic.vpk"

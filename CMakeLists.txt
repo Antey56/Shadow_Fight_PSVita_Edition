@@ -22,5 +22,8 @@ add_executable(android_log_test tests/android_log_test.c vita/src/android_log_ad
 add_test(NAME android_logging COMMAND android_log_test)
 add_library(android_asset_host SHARED vita/src/android_asset_adapter.c)
 set_target_properties(android_asset_host PROPERTIES PREFIX "")
-add_library(jni_objects_host SHARED vita/src/jni_objects.c vita/src/android_asset_adapter.c)
+add_library(jni_objects_host SHARED vita/src/jni_objects.c vita/src/android_asset_adapter.c vita/src/jni_bridge.c)
 set_target_properties(jni_objects_host PROPERTIES PREFIX "")
+
+add_executable(jni_bridge_test tests/jni_bridge_test.c vita/src/jni_bridge.c vita/src/jni_objects.c vita/src/android_asset_adapter.c)
+add_test(NAME jni_bridge COMMAND jni_bridge_test)

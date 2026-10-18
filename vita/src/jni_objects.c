@@ -24,6 +24,15 @@ static SfJniRef allocate(SfJniObjects *e,unsigned kind,int global){
     }
     fail(e,SF_JNI_CAPACITY);return 0;
 }
+int sf_jni_kind(SfJniObjects *e,SfJniRef r){
+    if(!e||e->exception)return 0;
+    RefSlot *s=resolve(e,r);return s?s->kind:0;
+}
+SfJniRef sf_jni_class(SfJniObjects *e,int kind){
+    if(kind!=3&&kind!=4){fail(e,SF_JNI_BAD_TYPE);return 0;}
+    return allocate(e,(unsigned)kind,0);
+}
+void sf_jni_error(SfJniObjects *e,int error){fail(e,error);}
 SfJniObjects *sf_jni_objects_create(const char *root,size_t limit){
     SfJniObjects *e=calloc(1,sizeof(*e));if(!e)return 0;
     e->manager=sf_asset_manager_create(root,limit);

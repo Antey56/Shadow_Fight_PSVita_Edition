@@ -1,0 +1,35 @@
+#include "jni_bridge.h"
+#include <assert.h>
+#include <stdio.h>
+static SfJObject invoke_v(SfJniEnv *e,SfJObject o,SfJMethod m,...){
+    va_list args;va_start(args,m);
+    SfJObject result=(*e)->CallObjectMethodV(e,o,m,args);va_end(args);return result;
+}
+int main(void){
+    unsigned required[]={4,6,17,21,22,23,25,31,33,34,35,36,228};
+    assert(!sf_jni_bridge_require(required,13));
+    unsigned missing[]={4,113};assert(sf_jni_bridge_require(missing,2)<0);
+    assert(sf_jni_bridge_require(0,0)<0);
+    SfJniEnv *e=sf_jni_bridge_create(".",4096);assert(e);
+    assert((*e)->GetVersion(e)==0x10006);
+    SfJObject context=sf_jni_bridge_context(e);assert(context);
+    SfJObject cls=(*e)->FindClass(e,"android/content/Context");assert(cls);
+    SfJMethod m=(*e)->GetMethodID(e,cls,"getAssets","()Landroid/content/res/AssetManager;");assert(m);
+    SfJObject a=(*e)->CallObjectMethod(e,context,m);assert(a);
+    SfJObject av=invoke_v(e,context,m);assert(av);
+    SfJObject aa=(*e)->CallObjectMethodA(e,context,m,0);assert(aa);
+    assert(sf_jni_bridge_assets(e,a)==sf_jni_bridge_assets(e,av));
+    assert(sf_jni_bridge_assets(e,a)==sf_jni_bridge_assets(e,aa));
+    assert((*e)->GetObjectClass(e,a));
+    SfJObject g=(*e)->NewGlobalRef(e,context);assert(g);
+    (*e)->DeleteLocalRef(e,context);
+    assert((*e)->CallObjectMethodA(e,g,m,0));
+    (*e)->DeleteGlobalRef(e,g);
+    assert(!(*e)->CallObjectMethodA(e,g,m,0));assert((*e)->ExceptionCheck(e));
+    (*e)->ExceptionClear(e);assert(!(*e)->ExceptionCheck(e));
+    assert(!(*e)->FindClass(e,"unknown/Class"));assert((*e)->ExceptionCheck(e));
+    assert(!(*e)->CallObjectMethodA(e,aa,m,0));
+    (*e)->ExceptionClear(e);
+    assert(!(*e)->CallObjectMethodA(e,aa,m,0));assert((*e)->ExceptionCheck(e));
+    sf_jni_bridge_destroy(e);puts("restricted JNI table PASS");return 0;
+}

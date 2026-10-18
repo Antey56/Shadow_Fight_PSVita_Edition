@@ -1,0 +1,27 @@
+{
+  "layout": "JNI 1.6 restricted harness",
+  "slots": 233,
+  "implemented_slots": [
+    4,
+    6,
+    17,
+    21,
+    22,
+    23,
+    25,
+    31,
+    33,
+    34,
+    35,
+    36,
+    228
+  ],
+  "unsupported_slots": "NULL; reject through capability gate before use",
+  "python_tests": 102,
+  "ctest_targets": 6,
+  "unity_executed": false,
+  "device_tested": false,
+  "runtime_ready": false,
+  "real_java_exceptions": false,
+  "java_vm": false
+}

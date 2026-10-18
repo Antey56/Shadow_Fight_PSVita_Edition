@@ -19,4 +19,8 @@ int sf_jni_exception(const SfJniObjects *);
 void sf_jni_exception_clear(SfJniObjects *);
 SfJniRef sf_jni_context_call(SfJniObjects *,SfJniRef,const char *,const char *);
 AAssetManager *sf_jni_asset_manager(SfJniObjects *,SfJniRef);
+/* Internal bridge helpers. Kinds: 1 Context, 2 AssetManager, 3/4 classes. */
+int sf_jni_kind(SfJniObjects *,SfJniRef);
+SfJniRef sf_jni_class(SfJniObjects *,int);
+void sf_jni_error(SfJniObjects *,int);
 #endif
