@@ -33,7 +33,7 @@ def assess(gate,deep,bootstrap,bridge,hardware=None):
          'unique_required_unimplemented':len(gate['unique_missing_required']),
          'note':'Candidate adapters are not device-certified ABI implementations.'},
         {'stage':4,'name':'Executable ELF loading and ARM ABI','status':'blocked',
-         'note':'Current linker produces a data buffer only. Missing imports and services block constructors/JNI_OnLoad.'},
+         'note':'Executable mapper/VM smoke path exists for constructor-free authored ELF; hardware execution pending. Missing imports, TLS and constructor/runtime services still block game JNI_OnLoad.'},
         {'stage':5,'name':'Graphics audio lifecycle integration','status':'blocked',
          'note':'Diagnostic vitaGL output is not a Unity surface, EGL context lifecycle or engine audio backend.'},
         {'stage':6,'name':'Physical Vita validation','status':'diagnostic_verified' if diagnostic_verified else 'not_run',

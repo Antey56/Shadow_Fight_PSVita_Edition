@@ -10,7 +10,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Vita CMake configuration failed.' }
 cmake --build "$taskRoot/build-vita" -j2
 if ($LASTEXITCODE -ne 0) { throw 'Vita build failed.' }
 $taskPython = (Get-Command python -ErrorAction Stop).Source
-& $taskPython "$taskRoot/tools/validate_vpk.py" "$taskRoot/build-vita/sf2-diagnostic.vpk" --version 00.07
+& $taskPython "$taskRoot/tools/validate_vpk.py" "$taskRoot/build-vita/sf2-diagnostic.vpk" --version 00.08
 if ($LASTEXITCODE -ne 0) { throw 'VPK resource/identity validation failed.' }
-Write-Output "VPK 0.7-bootstrap1: $taskRoot/build-vita/sf2-diagnostic.vpk"
+Write-Output "VPK 0.8-elfsmoke4: $taskRoot/build-vita/sf2-diagnostic.vpk"
 Get-FileHash -Algorithm SHA256 -LiteralPath "$taskRoot/build-vita/sf2-diagnostic.vpk"

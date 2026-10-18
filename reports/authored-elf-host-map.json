@@ -1,0 +1,18 @@
+{
+  "fixture_sha256": "5c269dc20971ee42bb1c41714ad864ff7c0a6a40cf8e38d0fa1c9928e6aac837",
+  "fixture_imports": [
+    [
+      "sf_fixture_add",
+      0
+    ]
+  ],
+  "backend_order": [
+    "reserve",
+    "publish",
+    "sync",
+    "release"
+  ],
+  "relative_pointer_verified": true,
+  "jump_slot_verified": true,
+  "arm_code_executed": false
+}

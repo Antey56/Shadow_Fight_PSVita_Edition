@@ -1,0 +1,36 @@
+{
+  "file": "sf2-diagnostic-0.8-elfsmoke4.vpk",
+  "sha256": "81cc81a11ec3ccc20d7b4fefb87967b444ea8f2cf2248db4c51846e9d0af2002",
+  "pngs": [
+    {
+      "path": "sce_sys/icon0.png",
+      "width": 128,
+      "height": 128,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/bg.png",
+      "width": 840,
+      "height": 500,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/startup.png",
+      "width": 280,
+      "height": 158,
+      "bit_depth": 8,
+      "color_type": 3
+    }
+  ],
+  "title_id": "SF2AUD001",
+  "app_version": "00.08",
+  "xml_checked": true,
+  "zip_crc_checked": true,
+  "build_id": "0.8-elfsmoke4",
+  "device_tested": false,
+  "python_tests": 245,
+  "ctest_targets": 10,
+  "unity_started": false
+}

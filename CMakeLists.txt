@@ -39,3 +39,13 @@ add_test(NAME bionic_memory COMMAND bionic_memory_test)
 
 add_executable(aeabi_memory_test tests/aeabi_memory_test.c vita/src/aeabi_memory.c)
 add_test(NAME aeabi_memory COMMAND aeabi_memory_test)
+
+add_library(arm_exec_host SHARED vita/src/arm_exec.c vita/src/arm_link.c vita/src/arm_dynamic.c vita/src/arm_reloc.c)
+set_target_properties(arm_exec_host PROPERTIES PREFIX "")
+
+add_library(arm_symbols_host SHARED vita/src/arm_symbols.c vita/src/arm_dynamic.c)
+set_target_properties(arm_symbols_host PROPERTIES PREFIX "")
+
+add_executable(bionic_once_test tests/bionic_once_test.c vita/src/bionic_once.c)
+target_link_libraries(bionic_once_test Threads::Threads)
+add_test(NAME bionic_once COMMAND bionic_once_test)

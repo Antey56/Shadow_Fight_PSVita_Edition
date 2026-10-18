@@ -1,0 +1,38 @@
+{
+  "file": "sf2-diagnostic-0.8-elfsmoke3.vpk",
+  "sha256": "a915cbc19452ce7a26143f3ab0504e8bfe2b83c20da5d6929736a2f7befa905e",
+  "pngs": [
+    {
+      "path": "sce_sys/icon0.png",
+      "width": 128,
+      "height": 128,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/bg.png",
+      "width": 840,
+      "height": 500,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/startup.png",
+      "width": 280,
+      "height": 158,
+      "bit_depth": 8,
+      "color_type": 3
+    }
+  ],
+  "title_id": "SF2AUD001",
+  "app_version": "00.08",
+  "xml_checked": true,
+  "zip_crc_checked": true,
+  "build_id": "0.8-elfsmoke3",
+  "device_tested": true,
+  "python_tests": 245,
+  "ctest_targets": 9,
+  "unity_started": false,
+  "hardware_result": "C2-12828-1 data abort during VM ELF copy; fixture not called",
+  "hardware_report": "HARDWARE-0.8.md"
+}

@@ -47,3 +47,10 @@ class LinkTests(unittest.TestCase):
     def test_invalid_definition(self):
         b=external_fixture(0);struct.pack_into('<I',b,292,10000);struct.pack_into('<H',b,302,1)
         self.assertEqual(self.execute(b)[0],-14)
+
+    def test_notype_import_preserves_thumb_callback(self):
+        b=external_fixture();b[300]=0x10
+        def resolver(name,bind,typ,value,ctx):
+            self.assertEqual(typ,0);value[0]=0x20000001;return 1
+        rc,data,_=self.execute(b,resolver)
+        self.assertEqual(rc,0);self.assertEqual(struct.unpack_from('<I',data,320)[0],0x20000001)

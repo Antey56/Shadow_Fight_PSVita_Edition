@@ -1,0 +1,38 @@
+{
+  "file": "sf2-diagnostic-0.8-elfsmoke1.vpk",
+  "sha256": "52fa88e7dbd387d2c3666eab8456130d718fd3ba997b26b267ca229eaae0d582",
+  "pngs": [
+    {
+      "path": "sce_sys/icon0.png",
+      "width": 128,
+      "height": 128,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/bg.png",
+      "width": 840,
+      "height": 500,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/startup.png",
+      "width": 280,
+      "height": 158,
+      "bit_depth": 8,
+      "color_type": 3
+    }
+  ],
+  "title_id": "SF2AUD001",
+  "app_version": "00.08",
+  "xml_checked": true,
+  "zip_crc_checked": true,
+  "build_id": "0.8-elfsmoke1",
+  "device_tested": true,
+  "python_tests": 229,
+  "ctest_targets": 9,
+  "unity_started": false,
+  "hardware_result": "ARM_MEMORY_PROBE and OBJECT_ARRAY_PROBE PASS; AUTHORED_ELF_EXEC failed before publication with unresolved STT_NOTYPE import, rc=-20; normal exit after 164 frames",
+  "hardware_report": "HARDWARE-0.8.md"
+}

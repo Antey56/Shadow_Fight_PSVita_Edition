@@ -27,3 +27,6 @@ The existing count of 451 unique uncertified required imports is unchanged: new 
 The nearest execution milestone is a validated executable-mapping/cache/ABI smoke test using authored ARM code, followed by completely resolved libmain and its real dynamic-loader contract. Unity JNI_OnLoad comes after that, with constructors and lifecycle dependencies accounted for. A successful menu frame and playable combat are separate later observations, not consequences of passing diagnostic probes.
 
 Local validation: 217 Python tests, 9 CTest targets, Vita cross-build and VPK validation pass. Current source/build identity: 0.7-bootstrap1. Device-tested identity remains 0.7-objarrays2. APK, game libraries and assets are kept local; DRM/license checks are not bypassed.
+
+
+Update: an executable mapper and Vita VM-domain path for a constructor-free authored fixture now exist; see [execution contract and limits](EXECUTABLE-ELF.md). 0.8-elfsmoke1 has been transferred for hardware testing; current source 0.8-elfsmoke2 adds dynamic export lookup. No engine ARM code has executed. Earlier statements that all ELF loading is data-only describe the previous checkpoint; actual game loading remains blocked.

@@ -1,3 +1,4 @@
+#include "arm_vm_probe.h"
 #include <psp2/kernel/processmgr.h>
 #include <psp2/ctrl.h>
 #include <psp2/io/fcntl.h>
@@ -42,6 +43,9 @@ static int android_log_to_file(const SfLogRecord *record,void *context){
     (void)context;
     stage("[android %d/%d] %s: %s%s",record->buffer,record->priority,record->tag,record->text,record->truncated?" [truncated]":"");
     return log_ready;
+}
+static void arm_probe_trace(const char *name,int rc,uint32_t address){
+    stage("ARM_EXEC_STAGE %s rc=0x%08x address=0x%08x",name,(unsigned)rc,address);
 }
 static void probe(void){}
 static int runtime_selftest(void){
@@ -119,7 +123,7 @@ static void sink(const TouchEvent *e,void *unused){
 }
 int main(void){
     FILE *reset=fopen("ux0:data/sf2vita-input.log","w");log_ready=reset!=0;if(reset)fclose(reset);
-    stage("SF2 diagnostic 0.7-bootstrap1; Unity NOT started");
+    stage("SF2 diagnostic 0.8-elfsmoke4; Unity NOT started");
     memory_snapshot("entry",0);
     sf_log_configure(log_ready?android_log_to_file:0,0,SF_LOG_INFO);
     stage("BEFORE_CORE_PROBES");
@@ -133,6 +137,13 @@ int main(void){
     SceUID watcher=sceKernelCreateThread("sf2_start_exit",start_watcher,sceKernelGetThreadCurrentPriority(),8192,0,0,0);
     int watcher_rc=watcher<0?watcher:sceKernelStartThread(watcher,0,0);
     stage("START_WATCHER thread=%d start_rc=0x%08x; independent of graphics",watcher,(unsigned)watcher_rc);
+    stage("BEFORE_AUTHORED_ELF_EXEC");
+    int exec_rc=0;uint32_t exec_entry=0;float exec_first=0,exec_second=0;
+    char missing[128]={0};
+    int exec_ok=sf_arm_vm_probe(&exec_rc,&exec_entry,&exec_first,&exec_second,missing,sizeof missing,arm_probe_trace);
+    stage("AUTHORED_ELF_EXEC %s rc=%d entry=0x%08x first=%.2f second=%.2f missing=%.127s; game NOT executed",
+          exec_ok?"PASS":"FAIL",exec_rc,exec_entry,(double)exec_first,(double)exec_second,missing);
+    core_ok=core_ok&&exec_ok;
     memory_snapshot("before_vglInit",0);
     stage("BEFORE_VGL_INIT legacy=0 circular=1048576 buffers=2 resolution=960x544 MSAA=NONE");
     vglSetCircularPoolSize(1024*1024);vglSetDisplayBufferCount(2);
