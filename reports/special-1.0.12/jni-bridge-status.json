@@ -4,6 +4,8 @@
   "implemented_slots": [
     4,
     6,
+    13,
+    15,
     17,
     21,
     22,
@@ -18,7 +20,7 @@
     228
   ],
   "unsupported_slots": "NULL; reject through capability gate before use",
-  "python_tests": 102,
+  "python_tests": 112,
   "ctest_targets": 7,
   "unity_executed": false,
   "device_tested": false,
@@ -33,5 +35,6 @@
     7
   ],
   "worker_attachment": false,
-  "real_worker_rejection_tested_on_host": true
+  "real_worker_rejection_tested_on_host": true,
+  "exception_objects": "synthetic immutable error payload; no Java Throwable class/unwind"
 }

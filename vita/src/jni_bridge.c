@@ -12,6 +12,7 @@ SLOT_CHECK(NewGlobalRef,21);SLOT_CHECK(NewLocalRef,25);SLOT_CHECK(GetObjectClass
 SLOT_CHECK(GetMethodID,33);SLOT_CHECK(CallObjectMethod,34);SLOT_CHECK(CallObjectMethodV,35);
 SLOT_CHECK(CallObjectMethodA,36);SLOT_CHECK(ExceptionCheck,228);
 SLOT_CHECK(GetJavaVM,219);
+SLOT_CHECK(Throw,13);SLOT_CHECK(ExceptionOccurred,15);
 typedef char check_table_size[sizeof(SfJniTable)==233*sizeof(SfJniUnused)?1:-1];
 static SfJniObjects *objects(SfJniEnv *e){
     if(!e||*e!=&table)return 0;
@@ -35,6 +36,10 @@ static SF_ANDROID_ABI SfJObject find_class(SfJniEnv *e,const char *name){
 }
 static SF_ANDROID_ABI void clear(SfJniEnv *e){sf_jni_exception_clear(objects(e));}
 static SF_ANDROID_ABI uint8_t check(SfJniEnv *e){return sf_jni_exception(objects(e))!=0;}
+static SF_ANDROID_ABI SfJObject occurred(SfJniEnv *e){return encode(sf_jni_exception_ref(objects(e)));}
+static SF_ANDROID_ABI int32_t throw_object(SfJniEnv *e,SfJObject r){
+    SfJniObjects *o=objects(e);return sf_jni_throw(o,decode(o,r));
+}
 static SF_ANDROID_ABI int32_t get_vm(SfJniEnv *e,SfJavaVM **out){
     if(!out)return -1;
     *out=0;
@@ -79,6 +84,7 @@ static SF_ANDROID_ABI SfJObject call(SfJniEnv *e,SfJObject receiver,SfJMethod id
 }
 static const SfJniTable table={
     .GetVersion=version,.FindClass=find_class,.ExceptionClear=clear,
+    .Throw=throw_object,.ExceptionOccurred=occurred,
     .NewGlobalRef=global_ref,.DeleteGlobalRef=delete_global,.DeleteLocalRef=delete_local,
     .NewLocalRef=local_ref,.GetObjectClass=object_class,.GetMethodID=method,
     .CallObjectMethod=call,.CallObjectMethodV=call_v,.CallObjectMethodA=call_a,
@@ -103,7 +109,7 @@ AAssetManager *sf_jni_bridge_assets(SfJniEnv *e,SfJObject r){
 int sf_jni_bridge_require(const unsigned *slots,size_t count){
     if(!slots||!count)return -1;
     for(size_t i=0;i<count;i++)switch(slots[i]){
-        case 4:case 6:case 17:case 21:case 22:case 23:case 25:case 31:
+        case 4:case 6:case 13:case 15:case 17:case 21:case 22:case 23:case 25:case 31:
         case 33:case 34:case 35:case 36:case 219:case 228:break;
         default:return -1;
     }

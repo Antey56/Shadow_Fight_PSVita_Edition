@@ -38,6 +38,10 @@ int main(void){
     SfJObject global=(*env)->NewGlobalRef(env,local);assert(global);
     SfJObject cls=(*env)->GetObjectClass(env,global);
     SfJMethod m=(*env)->GetMethodID(env,cls,"getAssets","()Landroid/content/res/AssetManager;");assert(m);
+    assert(!(*env)->FindClass(env,"unknown/Class"));
+    SfJObject error=(*env)->ExceptionOccurred(env);assert(error);
+    (*env)->ExceptionClear(env);
+    SfJObject saved_error=(*env)->NewGlobalRef(env,error);assert(saved_error);
     out=0;assert((*vm)->AttachCurrentThread(vm,&out,0)==0&&out==env);
     assert((*vm)->DetachCurrentThread(vm)==0);assert((*vm)->DetachCurrentThread(vm)==0);
     out=(void *)1;assert((*vm)->GetEnv(vm,&out,0x10006)==SF_JNI_EDETACHED&&!out);
@@ -47,6 +51,8 @@ int main(void){
     args.version=0x10006;args.name="unsupported";
     assert((*vm)->AttachCurrentThread(vm,&out,&args)==SF_JNI_ERR&&!out);
     args.name=0;assert((*vm)->AttachCurrentThreadAsDaemon(vm,&out,&args)==0&&out==env);
+    assert((*env)->Throw(env,saved_error)==0);assert((*env)->ExceptionCheck(env));
+    (*env)->ExceptionClear(env);(*env)->DeleteGlobalRef(env,saved_error);
     assert((*env)->CallObjectMethodA(env,global,m,0));
     assert(!(*env)->CallObjectMethodA(env,local,m,0));assert((*env)->ExceptionCheck(env));
     (*env)->ExceptionClear(env);(*env)->DeleteGlobalRef(env,global);

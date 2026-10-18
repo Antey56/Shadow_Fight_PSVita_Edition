@@ -18,7 +18,11 @@ typedef struct SfJniTable {
     int32_t (SF_ANDROID_ABI *GetVersion)(SfJniEnv *); /* 4 */
     SfJniUnused DefineClass; /* 5 */
     SfJObject (SF_ANDROID_ABI *FindClass)(SfJniEnv *,const char *); /* 6 */
-    SfJniUnused unused7_16[10];
+    SfJniUnused unused7_12[6];
+    int32_t (SF_ANDROID_ABI *Throw)(SfJniEnv *,SfJObject); /* 13 */
+    SfJniUnused ThrowNew; /* 14: unsupported */
+    SfJObject (SF_ANDROID_ABI *ExceptionOccurred)(SfJniEnv *); /* 15 */
+    SfJniUnused ExceptionDescribe; /* 16: unsupported */
     void (SF_ANDROID_ABI *ExceptionClear)(SfJniEnv *); /* 17 */
     SfJniUnused unused18_20[3];
     SfJObject (SF_ANDROID_ABI *NewGlobalRef)(SfJniEnv *,SfJObject); /* 21 */

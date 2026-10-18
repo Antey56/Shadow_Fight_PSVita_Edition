@@ -23,6 +23,8 @@ class ObjectsTests(unittest.TestCase):
             'sf_jni_new_ref': ([P, R, I], R), 'sf_jni_delete_ref': ([P, R, I], I),
             'sf_jni_clear_locals': ([P], None), 'sf_jni_exception': ([P], I),
             'sf_jni_exception_clear': ([P], None),
+            'sf_jni_exception_ref': ([P], R), 'sf_jni_throw': ([P, R], I),
+            'sf_jni_throwable_code': ([P, R], I),
             'sf_jni_context_call': ([P, R, C.c_char_p, C.c_char_p], R),
             'sf_jni_asset_manager': ([P, R], P)}
         for name, (args, result) in signatures.items():
@@ -116,3 +118,22 @@ class ObjectsTests(unittest.TestCase):
         copy = self.lib.sf_jni_new_ref(self.e, self.context, 0)
         self.lib.sf_jni_delete_ref(self.e, self.context, 0)
         self.assertTrue(self.assets(copy))
+
+    def test_exception_snapshot_keeps_original_code(self):
+        self.assets(name=b'unknown')
+        error=self.lib.sf_jni_exception_ref(self.e)
+        self.assertEqual(self.lib.sf_jni_throwable_code(self.e,error),4)
+        self.lib.sf_jni_exception_clear(self.e)
+        self.lib.sf_jni_asset_manager(self.e,self.context)
+        self.assertEqual(self.lib.sf_jni_exception(self.e),2)
+        self.lib.sf_jni_exception_clear(self.e)
+        self.assertEqual(self.lib.sf_jni_throw(self.e,error),0)
+        self.assertEqual(self.lib.sf_jni_exception(self.e),4)
+
+    def test_exception_copy_keeps_payload(self):
+        self.assets(name=b'unknown');error=self.lib.sf_jni_exception_ref(self.e)
+        self.lib.sf_jni_exception_clear(self.e)
+        copy=self.lib.sf_jni_new_ref(self.e,error,1)
+        self.lib.sf_jni_delete_ref(self.e,error,0)
+        self.assertEqual(self.lib.sf_jni_throwable_code(self.e,copy),4)
+        self.assertEqual(self.lib.sf_jni_throw(self.e,copy),0)

@@ -8,7 +8,7 @@
 - Это проверка графики vitaGL, физических контролов, журнала ввода и небольших внутренних self-checks. **Shadow Fight / Unity не запускаются.**
 - Цель исследования: Shadow Fight 2 Special Edition **1.0.12 / 30000019**, ARMv7, Unity 2020.3.48f1.
 - Реализованы C-проверка ELF, PT_DYNAMIC parser, ARM REL relocation core и подготовка data image с resolver callback.
-- 102 Python/integration test и 7 CTest targets проходят локально. 333366 записей релокаций реального APK совпали с независимым анализом; арифметика 317859 RELATIVE записей проверена отдельно.
+- 112 Python/integration test и 7 CTest targets проходят локально. 333366 записей релокаций реального APK совпали с независимым анализом; арифметика 317859 RELATIVE записей проверена отдельно.
 - 451 уникальный обязательный внешний импорт пока требует реализации/проверки. Android bionic/JNI adapters, Unity lifecycle и запуск игры ещё впереди.
 
 APK, игровые .so, assets, DRM/лицензионные патчи и установленный SDK в этот репозиторий не входят. Имена импортов, манифест и технические отчёты получены статическим анализом предоставленных APK. Подпись/происхождение этих APK не сертифицированы.
@@ -67,6 +67,7 @@ Runtime gate сейчас возвращает код 1 намеренно: за
 - [Модель Context и AssetManager](docs/JNI-OBJECTS.md)
 - [Ограниченная таблица JNIEnv](docs/JNI-BRIDGE.md)
 - [JavaVM и привязка потока](docs/JNI-VM.md)
+- [Объекты ожидающих исключений](docs/JNI-EXCEPTIONS.md)
 - [Участники и роль ИИ](CONTRIBUTORS.md)
 - [Исходники и лицензии зависимостей](THIRD_PARTY.md)
 

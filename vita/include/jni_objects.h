@@ -23,4 +23,8 @@ AAssetManager *sf_jni_asset_manager(SfJniObjects *,SfJniRef);
 int sf_jni_kind(SfJniObjects *,SfJniRef);
 SfJniRef sf_jni_class(SfJniObjects *,int);
 void sf_jni_error(SfJniObjects *,int);
+SfJniRef sf_jni_exception_ref(SfJniObjects *);
+int sf_jni_throw(SfJniObjects *,SfJniRef);
+/* Internal diagnostic only; error code carried by a synthetic throwable. */
+int sf_jni_throwable_code(SfJniObjects *,SfJniRef);
 #endif

@@ -52,7 +52,7 @@ class BridgeTests(unittest.TestCase):
         finally:self.lib.AAsset_close(a)
 
     def test_slots_and_gate(self):
-        slots=(4,6,17,21,22,23,25,31,33,34,35,36,219,228)
+        slots=(4,6,13,15,17,21,22,23,25,31,33,34,35,36,219,228)
         self.assertEqual({i for i in range(233) if self.table[i]},set(slots))
         self.assertEqual(self.lib.sf_jni_bridge_require((C.c_uint*len(slots))(*slots),len(slots)),0)
         self.assertLess(self.lib.sf_jni_bridge_require((C.c_uint*2)(36,113),2),0)
@@ -90,3 +90,56 @@ class BridgeTests(unittest.TestCase):
         m=self.method();copy=self.fn(25,P,P)(self.env,self.context)
         self.fn(23,None,P)(self.env,self.context)
         self.assertTrue(self.fn(36,P,P,P,P)(self.env,copy,m,None))
+
+    def pending_object(self):
+        self.assertFalse(self.fn(6,P,C.c_char_p)(self.env,b'unknown/Class'))
+        error=self.fn(15,P)(self.env);self.assertTrue(error)
+        return error
+
+    def test_exception_round_trip(self):
+        error=self.pending_object()
+        self.assertTrue(self.fn(228,C.c_uint8)(self.env))
+        self.fn(17,None)(self.env)
+        self.assertEqual(self.fn(13,C.c_int32,P)(self.env,error),0)
+        self.assertTrue(self.fn(228,C.c_uint8)(self.env))
+        self.assertTrue(self.fn(15,P)(self.env))
+
+    def test_exception_absent(self):
+        self.assertFalse(self.fn(15,P)(self.env))
+        self.assertFalse(self.fn(228,C.c_uint8)(self.env))
+
+    def test_throw_wrong_type(self):
+        self.assertLess(self.fn(13,C.c_int32,P)(self.env,self.context),0)
+        self.assertTrue(self.fn(15,P)(self.env))
+
+    def test_throw_null(self):
+        self.assertLess(self.fn(13,C.c_int32,P)(self.env,None),0)
+        self.assertTrue(self.fn(228,C.c_uint8)(self.env))
+
+    def test_throw_deleted_error(self):
+        error=self.pending_object();self.fn(17,None)(self.env)
+        self.fn(23,None,P)(self.env,error)
+        self.assertLess(self.fn(13,C.c_int32,P)(self.env,error),0)
+        self.assertTrue(self.fn(228,C.c_uint8)(self.env))
+
+    def test_global_error_survives_clear_and_local_delete(self):
+        error=self.pending_object();self.fn(17,None)(self.env)
+        glob=self.fn(21,P,P)(self.env,error);self.assertTrue(glob)
+        self.fn(23,None,P)(self.env,error)
+        self.assertEqual(self.fn(13,C.c_int32,P)(self.env,glob),0)
+        self.fn(22,None,P)(self.env,glob)
+        self.assertTrue(self.fn(15,P)(self.env))
+
+    def test_pending_error_preserved_on_throw(self):
+        error=self.pending_object()
+        self.assertLess(self.fn(13,C.c_int32,P)(self.env,self.context),0)
+        self.fn(17,None)(self.env)
+        self.assertEqual(self.fn(13,C.c_int32,P)(self.env,error),0)
+
+    def test_exception_reference_capacity(self):
+        for _ in range(63):self.assertTrue(self.lib.sf_jni_bridge_context(self.env))
+        self.fn(6,P,C.c_char_p)(self.env,b'unknown/Class')
+        self.assertFalse(self.fn(15,P)(self.env))
+        self.assertTrue(self.fn(228,C.c_uint8)(self.env))
+        self.fn(23,None,P)(self.env,self.context)
+        self.assertTrue(self.fn(15,P)(self.env))
