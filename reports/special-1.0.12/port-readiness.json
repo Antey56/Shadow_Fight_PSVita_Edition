@@ -13,7 +13,7 @@
       "name": "JNI runtime semantics",
       "status": "blocked",
       "observed_missing_slots": [],
-      "note": "Class initialization, object arrays and worker threads remain incomplete; primitive arrays/direct buffers are bounded harness implementations."
+      "note": "Class initialization, nested object arrays and worker threads remain incomplete; leaf object arrays, primitive arrays and direct buffers are bounded harness implementations."
     },
     {
       "stage": 3,

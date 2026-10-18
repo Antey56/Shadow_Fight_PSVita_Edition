@@ -23,7 +23,7 @@ static const SfJniTable table;
 static char get_assets_method;
 static char get_class_loader_method;
 static char for_name_method;
-static int is_class(int kind){return kind==3||kind==4||(kind>=6&&kind<=16)||kind==18||kind==20||(kind>=41&&kind<=50);}
+static int is_class(int kind){return kind==52||kind==3||kind==4||(kind>=6&&kind<=16)||kind==18||kind==20||(kind>=41&&kind<=50);}
 #define SLOT_CHECK(field,n) typedef char check_##field[(offsetof(SfJniTable,field)==(n)*sizeof(SfJniUnused))?1:-1]
 SLOT_CHECK(GetVersion,4);SLOT_CHECK(FindClass,6);SLOT_CHECK(ExceptionClear,17);
 SLOT_CHECK(FatalError,18);
@@ -35,7 +35,7 @@ SLOT_CHECK(Throw,13);SLOT_CHECK(ExceptionOccurred,15);
 SLOT_CHECK(RegisterNatives,215);
 SLOT_CHECK(GetStaticMethodID,113);SLOT_CHECK(CallStaticObjectMethodA,116);
 SLOT_CHECK(GetStringLength,164);SLOT_CHECK(NewStringUTF,167);SLOT_CHECK(ReleaseStringUTFChars,170);
-SLOT_CHECK(GetArrayLength,171);SLOT_CHECK(NewBooleanArray,175);SLOT_CHECK(NewDoubleArray,182);
+SLOT_CHECK(GetArrayLength,171);SLOT_CHECK(NewObjectArray,172);SLOT_CHECK(GetObjectArrayElement,173);SLOT_CHECK(SetObjectArrayElement,174);SLOT_CHECK(NewBooleanArray,175);SLOT_CHECK(NewDoubleArray,182);
 SLOT_CHECK(GetBooleanArrayElements,183);SLOT_CHECK(ReleaseBooleanArrayElements,191);
 SLOT_CHECK(GetBooleanArrayRegion,199);SLOT_CHECK(SetBooleanArrayRegion,207);
 SLOT_CHECK(NewDirectByteBuffer,229);SLOT_CHECK(GetDirectBufferCapacity,231);
@@ -58,6 +58,7 @@ static SF_ANDROID_ABI int32_t version(SfJniEnv *e){return objects(e)?0x10006:0;}
 static SF_ANDROID_ABI SfJObject find_class(SfJniEnv *e,const char *name){
     SfJniObjects *o=objects(e);if(!o||sf_jni_exception(o))return 0;
     int kind=0;
+    if(name&&!strcmp(name,"java/lang/Object"))kind=52;
     if(name&&!strcmp(name,"android/content/Context"))kind=3;
     if(name&&!strcmp(name,"android/content/res/AssetManager"))kind=4;
     if(name&&!strcmp(name,"java/lang/Class"))kind=16;
@@ -219,9 +220,16 @@ static SF_ANDROID_ABI void set_region_##n(SfJniEnv *e,SfJObject a,int32_t start,
 SF_JNI_ARRAY_TYPES(ARRAY_CALLBACKS)
 #undef ARRAY_CALLBACKS
 static SF_ANDROID_ABI int32_t array_length(SfJniEnv *e,SfJObject a){
-    SfJniObjects *o=objects(e);int32_t length=0;
-    if(!o||sf_jni_exception(o)||sf_jni_array_view(o,decode(o,a),-1,0,0,&length,0))return 0;
-    return length;
+    SfJniObjects *o=objects(e);return sf_jni_array_length(o,decode(o,a));
+}
+static SF_ANDROID_ABI SfJObject new_objects(SfJniEnv *e,int32_t n,SfJObject cls,SfJObject initial){
+    SfJniObjects *o=objects(e);return encode(sf_jni_object_array_new(o,n,decode(o,cls),decode(o,initial)));
+}
+static SF_ANDROID_ABI SfJObject get_object(SfJniEnv *e,SfJObject a,int32_t index){
+    SfJniObjects *o=objects(e);return encode(sf_jni_object_array_get(o,decode(o,a),index));
+}
+static SF_ANDROID_ABI void set_object(SfJniEnv *e,SfJObject a,int32_t index,SfJObject value){
+    SfJniObjects *o=objects(e);sf_jni_object_array_set(o,decode(o,a),index,decode(o,value));
 }
 static SF_ANDROID_ABI SfJObject new_direct(SfJniEnv *e,void *address,int64_t capacity){return encode(sf_jni_direct_buffer(objects(e),address,capacity));}
 static SF_ANDROID_ABI void *direct_address(SfJniEnv *e,SfJObject a){
@@ -257,7 +265,8 @@ static const SfJniTable table={
     .CallStaticObjectMethodV=static_call_v,.CallStaticObjectMethodA=static_call_a,
     .GetStringLength=utf16_length,.NewStringUTF=new_string,.GetStringUTFLength=utf_length,
     .GetStringUTFChars=utf_chars,.ReleaseStringUTFChars=release_utf,
-    .GetArrayLength=array_length,
+    .GetArrayLength=array_length,.NewObjectArray=new_objects,
+    .GetObjectArrayElement=get_object,.SetObjectArrayElement=set_object,
 #define ARRAY_INITIALIZERS(n,t,i) .New##n##Array=new_##n,.Get##n##ArrayElements=elements_##n,.Release##n##ArrayElements=release_##n,.Get##n##ArrayRegion=get_region_##n,.Set##n##ArrayRegion=set_region_##n,
     SF_JNI_ARRAY_TYPES(ARRAY_INITIALIZERS)
 #undef ARRAY_INITIALIZERS
@@ -299,7 +308,7 @@ int sf_jni_bridge_require(const unsigned *slots,size_t count){
         case 4:case 6:case 13:case 15:case 17:case 18:case 21:case 22:case 23:case 25:case 31:
         case 33:case 34:case 35:case 36:case 215:case 219:case 228:break;
         case 113:case 114:case 115:case 116:case 164:case 167:case 168:case 169:case 170:break;
-        case 171:case 229:case 230:case 231:break;
+        case 171:case 172:case 173:case 174:case 229:case 230:case 231:break;
         default:if(slots[i]<175||slots[i]>214)return -1;break;
     }
     return 0;

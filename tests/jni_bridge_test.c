@@ -48,5 +48,14 @@ int main(void){
     SfJObject buffer=(*e)->NewDirectByteBuffer(e,values,sizeof values);assert(buffer);
     assert((*e)->GetDirectBufferCapacity(e,buffer)==sizeof values);
     assert((*e)->GetDirectBufferAddress(e,buffer)==values);
+    SfJObject string_class=(*e)->FindClass(e,"java/lang/String");assert(string_class);
+    SfJObject text=(*e)->NewStringUTF(e,"array element");assert(text);
+    SfJObject refs=(*e)->NewObjectArray(e,2,string_class,text);assert(refs);
+    (*e)->DeleteLocalRef(e,text);
+    SfJObject element=(*e)->GetObjectArrayElement(e,refs,1);assert(element);
+    assert((*e)->GetStringUTFLength(e,element)==13);
+    (*e)->SetObjectArrayElement(e,refs,1,0);
+    assert(!(*e)->GetObjectArrayElement(e,refs,1));
+    assert((*e)->GetStringUTFLength(e,element)==13);
     sf_jni_bridge_destroy(e);puts("restricted JNI table PASS");return 0;
 }

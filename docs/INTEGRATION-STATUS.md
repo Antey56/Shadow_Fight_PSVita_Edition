@@ -51,3 +51,8 @@ Current source identity is 0.7-jni-fatal1, distinct from the tested executable. 
 195 Python tests and 8 CTest targets pass. Vita cross-build/package validation pass. Zero missing slots in the statically observed subset does not imply complete JNI semantics: worker threads, initialization, object arrays, executable loading and 451 uncertified required imports still block Unity execution.
 
 Reference: [JNI FatalError specification](https://docs.oracle.com/en/java/javase/24/docs/specs/jni/functions.html#fatalerror).
+
+
+## 2026-10-18: reference arrays
+
+Current source 0.7-objarrays1 adds three leaf object-array slots, bringing the table to 74 implemented entries. See [ownership, limits and tests](JNI-OBJECT-ARRAYS.md). Nested arrays, initialization and workers remain incomplete. 214 Python tests and 8 CTest targets pass; the new array probe has not been tested on Vita. Earlier 0.7 hardware results remain scoped to gfxtrace1.

@@ -80,6 +80,14 @@ static int runtime_selftest(void){
         SfJObject buffer=(*env)->NewDirectByteBuffer(env,values,sizeof values);
         ok=ok&&buffer&&(*env)->GetDirectBufferAddress(env,buffer)==values&&
             (*env)->GetDirectBufferCapacity(env,buffer)==sizeof values;
+        SfJObject references=(*env)->NewObjectArray(env,2,string_class,name);
+        SfJObject saved=(*env)->GetObjectArrayElement(env,references,1);
+        (*env)->SetObjectArrayElement(env,references,1,0);
+        (*env)->DeleteLocalRef(env,name);
+        ok=ok&&references&&saved&&(*env)->GetArrayLength(env,references)==2&&
+            (*env)->GetStringUTFLength(env,saved)==16&&
+            !(*env)->GetObjectArrayElement(env,references,1)&&!(*env)->ExceptionCheck(env);
+        stage("OBJECT_ARRAY_PROBE %s",ok?"PASS":"FAIL");
         (*env)->FindClass(env,"diagnostic/UnsupportedClass");
         SfJObject error=(*env)->ExceptionOccurred(env);
         ok=ok&&error&&(*env)->ExceptionCheck(env);
@@ -104,7 +112,7 @@ static void sink(const TouchEvent *e,void *unused){
 }
 int main(void){
     FILE *reset=fopen("ux0:data/sf2vita-input.log","w");log_ready=reset!=0;if(reset)fclose(reset);
-    stage("SF2 diagnostic 0.7-jni-fatal1; Unity NOT started");
+    stage("SF2 diagnostic 0.7-objarrays1; Unity NOT started");
     memory_snapshot("entry",0);
     sf_log_configure(log_ready?android_log_to_file:0,0,SF_LOG_INFO);
     stage("BEFORE_CORE_PROBES");

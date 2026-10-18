@@ -41,4 +41,10 @@ int sf_jni_direct_view(SfJniObjects *,SfJniRef,void **,int64_t *);
 void *sf_jni_array_elements(SfJniObjects *,SfJniRef,int,uint8_t *);
 void sf_jni_array_release(SfJniObjects *,SfJniRef,int,void *,int32_t);
 void sf_jni_array_region(SfJniObjects *,SfJniRef,int,int32_t,int32_t,void *,int);
+/* Leaf-only object arrays, max 4096 elements and 8 MiB aggregate storage.
+   Nested object arrays and arbitrary class hierarchies are unsupported. */
+SfJniRef sf_jni_object_array_new(SfJniObjects *,int32_t,SfJniRef,SfJniRef);
+SfJniRef sf_jni_object_array_get(SfJniObjects *,SfJniRef,int32_t);
+void sf_jni_object_array_set(SfJniObjects *,SfJniRef,int32_t,SfJniRef);
+int32_t sf_jni_array_length(SfJniObjects *,SfJniRef);
 #endif

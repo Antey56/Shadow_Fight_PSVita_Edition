@@ -53,7 +53,9 @@ typedef struct SfJniTable {
     const char *(SF_ANDROID_ABI *GetStringUTFChars)(SfJniEnv *,SfJObject,uint8_t *); /* 169 */
     void (SF_ANDROID_ABI *ReleaseStringUTFChars)(SfJniEnv *,SfJObject,const char *); /* 170 */
     int32_t (SF_ANDROID_ABI *GetArrayLength)(SfJniEnv *,SfJObject); /* 171 */
-    SfJniUnused unused172_174[3];
+    SfJObject (SF_ANDROID_ABI *NewObjectArray)(SfJniEnv *,int32_t,SfJObject,SfJObject); /* 172 */
+    SfJObject (SF_ANDROID_ABI *GetObjectArrayElement)(SfJniEnv *,SfJObject,int32_t); /* 173 */
+    void (SF_ANDROID_ABI *SetObjectArrayElement)(SfJniEnv *,SfJObject,int32_t,SfJObject); /* 174 */
 #define SF_ARRAY_NEW(n,t,i) SfJObject (SF_ANDROID_ABI *New##n##Array)(SfJniEnv *,int32_t);
     SF_JNI_ARRAY_TYPES(SF_ARRAY_NEW) /* 175..182 */
 #undef SF_ARRAY_NEW

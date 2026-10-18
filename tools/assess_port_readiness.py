@@ -28,7 +28,7 @@ def assess(gate,deep,bootstrap,bridge,hardware=None):
          'confirmed_static_methods':bootstrap['confirmed_method_count'],
          'note':'Three groups statically traced; remaining registrations/lifecycle not fully traced.'},
         {'stage':2,'name':'JNI runtime semantics','status':'blocked','observed_missing_slots':missing,
-         'note':'Class initialization, object arrays and worker threads remain incomplete; primitive arrays/direct buffers are bounded harness implementations.'},
+         'note':'Class initialization, nested object arrays and worker threads remain incomplete; leaf object arrays, primitive arrays and direct buffers are bounded harness implementations.'},
         {'stage':3,'name':'Android and bionic dependencies','status':'blocked',
          'unique_required_unimplemented':len(gate['unique_missing_required']),
          'note':'Candidate adapters are not device-certified ABI implementations.'},
