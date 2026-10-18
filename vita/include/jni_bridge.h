@@ -8,6 +8,8 @@ typedef union {uint8_t z;int8_t b;uint16_t c;int16_t s;int32_t i;
                int64_t j;float f;double d;SfJObject l;} SfJValue;
 struct SfJniTable;
 typedef const struct SfJniTable *SfJniEnv;
+struct SfJavaVMTable;
+typedef const struct SfJavaVMTable *SfJavaVM;
 typedef void (*SfJniUnused)(void);
 /* JNI 1.6 slot layout; NULL entries are UNSUPPORTED, never callable.
    This restricted harness MUST NOT be passed to Unity/JNI_OnLoad yet. */
@@ -31,7 +33,9 @@ typedef struct SfJniTable {
     SfJObject (SF_ANDROID_ABI *CallObjectMethod)(SfJniEnv *,SfJObject,SfJMethod,...); /* 34 */
     SfJObject (SF_ANDROID_ABI *CallObjectMethodV)(SfJniEnv *,SfJObject,SfJMethod,va_list); /* 35 */
     SfJObject (SF_ANDROID_ABI *CallObjectMethodA)(SfJniEnv *,SfJObject,SfJMethod,const SfJValue *); /* 36 */
-    SfJniUnused unused37_227[191];
+    SfJniUnused unused37_218[182];
+    int32_t (SF_ANDROID_ABI *GetJavaVM)(SfJniEnv *,SfJavaVM **); /* 219 */
+    SfJniUnused unused220_227[8];
     uint8_t (SF_ANDROID_ABI *ExceptionCheck)(SfJniEnv *); /* 228 */
     SfJniUnused unused229_232[4];
 } SfJniTable;
@@ -43,4 +47,7 @@ AAssetManager *sf_jni_bridge_assets(SfJniEnv *,SfJObject);
 /* Capability allowlist gate: rejects absent/unimplemented slots, not a proof
    of Unity readiness. Caller must list all slots it intends to exercise. */
 int sf_jni_bridge_require(const unsigned *,size_t);
+/* Internal owner-thread VM integration; not for application use. */
+void sf_jni_bridge_bind_vm(SfJniEnv *,SfJavaVM *,int (*)(void *),void *);
+void sf_jni_bridge_clear_locals(SfJniEnv *);
 #endif

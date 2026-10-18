@@ -14,14 +14,24 @@
     34,
     35,
     36,
+    219,
     228
   ],
   "unsupported_slots": "NULL; reject through capability gate before use",
   "python_tests": 102,
-  "ctest_targets": 6,
+  "ctest_targets": 7,
   "unity_executed": false,
   "device_tested": false,
   "runtime_ready": false,
   "real_java_exceptions": false,
-  "java_vm": false
+  "java_vm": "restricted owner-thread harness",
+  "vm_slots": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "worker_attachment": false,
+  "real_worker_rejection_tested_on_host": true
 }

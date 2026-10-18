@@ -52,7 +52,7 @@ class BridgeTests(unittest.TestCase):
         finally:self.lib.AAsset_close(a)
 
     def test_slots_and_gate(self):
-        slots=(4,6,17,21,22,23,25,31,33,34,35,36,228)
+        slots=(4,6,17,21,22,23,25,31,33,34,35,36,219,228)
         self.assertEqual({i for i in range(233) if self.table[i]},set(slots))
         self.assertEqual(self.lib.sf_jni_bridge_require((C.c_uint*len(slots))(*slots),len(slots)),0)
         self.assertLess(self.lib.sf_jni_bridge_require((C.c_uint*2)(36,113),2),0)

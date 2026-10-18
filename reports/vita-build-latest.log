@@ -1,9 +1,9 @@
 [0/1] Re-running CMake...
 -- Configuring done (0.1s)
--- Generating done (0.0s)
+-- Generating done (0.1s)
 -- Build files have been written to: <WORKSPACE>/sf2-vita/build-vita
-[1/10] Building C object CMakeFiles/sf2_diagnostic.dir/src/jni_bridge.c.obj
-[2/10] Building C object CMakeFiles/sf2_diagnostic.dir/src/jni_objects.c.obj
+[1/10] Building C object CMakeFiles/sf2_diagnostic.dir/src/jni_vm.c.obj
+[2/10] Building C object CMakeFiles/sf2_diagnostic.dir/src/jni_bridge.c.obj
 [3/10] Linking CXX executable sf2_diagnostic
 [4/10] Converting to Sony ELF sf2_diagnostic.velf
 [5/10] Creating SELF eboot.bin
