@@ -30,8 +30,12 @@
   "zip_crc_checked": true,
   "build_id": "0.9-services1",
   "ftp_readback_verified": true,
-  "device_tested": false,
+  "device_tested": true,
   "unity_started": false,
   "original_libmain_embedded": true,
-  "binary_publication": "local and user Vita only"
+  "binary_publication": "local and user Vita only",
+  "math_abi_probe": "PASS",
+  "mutex_abi_probe": "PASS",
+  "original_libmain_onload": "PASS",
+  "normal_start_exit_frames": 143
 }

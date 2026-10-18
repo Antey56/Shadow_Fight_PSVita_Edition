@@ -1,0 +1,95 @@
+{
+  "sha256": "4f416f6992684f4a003f6baab7e5b33969f7cbff7f289b48a11e2fbe494f79b8",
+  "base": "0x90000000",
+  "load_span": 39084628,
+  "init_count": 9,
+  "fini_count": 2,
+  "init_order": [
+    {
+      "vaddr": "0x259984",
+      "runtime": "0x90259984",
+      "thumb": false,
+      "array_index": 0,
+      "slot_vaddr": "0x23a6ed0"
+    },
+    {
+      "vaddr": "0x259da0",
+      "runtime": "0x90259da0",
+      "thumb": false,
+      "array_index": 1,
+      "slot_vaddr": "0x23a6ed4"
+    },
+    {
+      "vaddr": "0x259e40",
+      "runtime": "0x90259e40",
+      "thumb": false,
+      "array_index": 2,
+      "slot_vaddr": "0x23a6ed8"
+    },
+    {
+      "vaddr": "0x25a4a0",
+      "runtime": "0x9025a4a0",
+      "thumb": false,
+      "array_index": 3,
+      "slot_vaddr": "0x23a6edc"
+    },
+    {
+      "vaddr": "0x25a618",
+      "runtime": "0x9025a618",
+      "thumb": false,
+      "array_index": 4,
+      "slot_vaddr": "0x23a6ee0"
+    },
+    {
+      "vaddr": "0x25a728",
+      "runtime": "0x9025a728",
+      "thumb": false,
+      "array_index": 5,
+      "slot_vaddr": "0x23a6ee4"
+    },
+    {
+      "vaddr": "0x25a7c8",
+      "runtime": "0x9025a7c8",
+      "thumb": false,
+      "array_index": 6,
+      "slot_vaddr": "0x23a6ee8"
+    },
+    {
+      "vaddr": "0x25a92d",
+      "runtime": "0x9025a92d",
+      "thumb": true,
+      "array_index": 7,
+      "slot_vaddr": "0x23a6eec"
+    },
+    {
+      "vaddr": "0x25a965",
+      "runtime": "0x9025a965",
+      "thumb": true,
+      "array_index": 8,
+      "slot_vaddr": "0x23a6ef0"
+    }
+  ],
+  "fini_order": [
+    {
+      "vaddr": "0x25aa60",
+      "runtime": "0x9025aa60",
+      "thumb": false,
+      "array_index": 1,
+      "slot_vaddr": "0x2326084"
+    },
+    {
+      "vaddr": "0x25aa74",
+      "runtime": "0x9025aa74",
+      "thumb": false,
+      "array_index": 0,
+      "slot_vaddr": "0x2326080"
+    }
+  ],
+  "execution_allowed": false,
+  "dependencies_initialized": false,
+  "limitations": [
+    "Local relative lifecycle entries only; no namespace binding.",
+    "Planning does not resolve imports, certify ABI, or execute constructors.",
+    "Dependencies must initialize before this module; TLS and thread lifecycle remain unsupported."
+  ]
+}

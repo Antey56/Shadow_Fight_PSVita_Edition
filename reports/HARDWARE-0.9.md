@@ -37,3 +37,16 @@ The block was reused, cache synchronization succeeded, final free returned 0,
 and pre-graphics user memory returned to 225443840 bytes. Three traced frames
 reported GL error 0; physical controls generated touch events; START exited
 normally after 109 frames. No Unity or gameplay execution is claimed.
+
+
+## 0.9-services1: hardware PASS
+
+MATH_ABI_PROBE PASS: pow=8, ldexp=0.25, sqrtf=2.5, modf=-0.25,
+integer=-3. MUTEX_ABI_PROBE PASS: normal lock/trylock/busy-destroy/unlock/
+destroy returned 0,16,16,0,0; recursive calls all 0; errorcheck sequence
+0,35,0,0. These selected single-thread checks do not certify the complete
+math catalog, floating-point environment or concurrent Vita contention.
+Authored ELF and original libmain JNI_OnLoad both passed again. VM cleanup
+returned 0, free user memory restored to 225443840 bytes before graphics.
+GL error 0 in the three traced frames; controls emitted touch events;
+START exited normally after 143 frames. Unity remains unstarted.

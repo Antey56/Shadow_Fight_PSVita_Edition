@@ -32,3 +32,5 @@ hardware semantic probe; the host contention test does not establish Vita
 contention behavior. Full math catalog, fenv and engine integration remain
 uncertified. The VPK also repeats original libmain JNI_OnLoad without invoking
 NativeLoader.load. Device results are pending.
+
+Hardware result: services1 passed the selected math and mutex checks on Vita, plus original libmain JNI_OnLoad. START exited normally after 143 frames; see [hardware evidence](../reports/HARDWARE-0.9.md). Earlier pending statements describe the pre-test state.
