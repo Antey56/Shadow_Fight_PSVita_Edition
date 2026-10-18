@@ -1,12 +1,22 @@
 [0/1] Re-running CMake...
--- Configuring done (0.0s)
+-- Configuring done (0.1s)
 -- Generating done (0.0s)
 -- Build files have been written to: <WORKSPACE>/sf2-vita/build-vita
-[1/9] Building C object CMakeFiles/sf2_diagnostic.dir/src/arm_scope.c.obj
-[2/9] Linking CXX executable sf2_diagnostic
-[3/9] Converting to Sony ELF sf2_diagnostic.velf
-[4/9] Creating SELF eboot.bin
-[5/9] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/eboot.bin.out eboot.bin"
-[6/9] Generating param.sfo for sf2-diagnostic.vpk
-[7/9] Building vpk sf2-diagnostic.vpk
-[8/9] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/sf2-diagnostic.vpk.out sf2-diagnostic.vpk"
+[1/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/diagnostic_ui.c.obj
+[2/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/main.c.obj
+[3/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/loader_plan.c.obj
+[4/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/touch.c.obj
+[5/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/native_registry.c.obj
+[6/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/elf_preflight.c.obj
+[7/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/arm_reloc.c.obj
+[8/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/arm_link.c.obj
+[9/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/arm_dynamic.c.obj
+[10/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/arm_scope.c.obj
+[11/19] Building C object CMakeFiles/sf2_diagnostic.dir/src/android_log_adapter.c.obj
+[12/19] Linking CXX executable sf2_diagnostic
+[13/19] Converting to Sony ELF sf2_diagnostic.velf
+[14/19] Creating SELF eboot.bin
+[15/19] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/eboot.bin.out eboot.bin"
+[16/19] Generating param.sfo for sf2-diagnostic.vpk
+[17/19] Building vpk sf2-diagnostic.vpk
+[18/19] C:\WINDOWS\system32\cmd.exe /C "cd /D <WORKSPACE>\sf2-vita\build-vita && C:\msys64\mingw64\bin\cmake.exe -E copy <WORKSPACE>/sf2-vita/build-vita/sf2-diagnostic.vpk.out sf2-diagnostic.vpk"

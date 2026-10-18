@@ -1,0 +1,67 @@
+{
+  "adapters": [
+    {
+      "symbol": "__android_log_write",
+      "source": "vita/src/android_log_adapter.c",
+      "imported_by": [
+        "lib/armeabi-v7a/libcrashlytics-common.so",
+        "lib/armeabi-v7a/libunity.so"
+      ],
+      "host_behavior_tests": "pass",
+      "vita_compilation": "pass",
+      "device_abi_validation": "pending",
+      "runtime_certified": false
+    },
+    {
+      "symbol": "__android_log_buf_write",
+      "source": "vita/src/android_log_adapter.c",
+      "imported_by": [
+        "lib/armeabi-v7a/libcrashlytics-common.so",
+        "lib/armeabi-v7a/libunity.so"
+      ],
+      "host_behavior_tests": "pass",
+      "vita_compilation": "pass",
+      "device_abi_validation": "pending",
+      "runtime_certified": false
+    },
+    {
+      "symbol": "__android_log_print",
+      "source": "vita/src/android_log_adapter.c",
+      "imported_by": [
+        "lib/armeabi-v7a/libcrashlytics-handler.so",
+        "lib/armeabi-v7a/libcrashlytics-trampoline.so",
+        "lib/armeabi-v7a/libcrashlytics.so",
+        "lib/armeabi-v7a/libil2cpp.so",
+        "lib/armeabi-v7a/libunity.so"
+      ],
+      "host_behavior_tests": "pass",
+      "vita_compilation": "pass",
+      "device_abi_validation": "pending",
+      "runtime_certified": false
+    },
+    {
+      "symbol": "__android_log_buf_print",
+      "source": "vita/src/android_log_adapter.c",
+      "imported_by": [],
+      "host_behavior_tests": "pass",
+      "vita_compilation": "pass",
+      "device_abi_validation": "pending",
+      "runtime_certified": false
+    },
+    {
+      "symbol": "__android_log_vprint",
+      "source": "vita/src/android_log_adapter.c",
+      "imported_by": [
+        "lib/armeabi-v7a/libFirebaseCppApp-10_2_0.so",
+        "lib/armeabi-v7a/libunity.so"
+      ],
+      "host_behavior_tests": "pass",
+      "vita_compilation": "pass",
+      "device_abi_validation": "pending",
+      "runtime_certified": false
+    }
+  ],
+  "imported_names_with_implementation": 4,
+  "execution_allowed": false,
+  "note": "Candidate implementations are not certified imports; this does not reduce the runtime gate missing-symbol count."
+}

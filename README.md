@@ -4,11 +4,11 @@
 
 ## Текущий результат
 
-- **Собран диагностический VPK 0.2.** Бинарный файл пока хранится локально и не опубликован; исходники сборки доступны в этом репозитории.
+- **Собран диагностический VPK 0.3.** Бинарный файл пока хранится локально и не опубликован; исходники сборки доступны в этом репозитории.
 - Это проверка графики vitaGL, физических контролов, журнала ввода и небольших внутренних self-checks. **Shadow Fight / Unity не запускаются.**
 - Цель исследования: Shadow Fight 2 Special Edition **1.0.12 / 30000019**, ARMv7, Unity 2020.3.48f1.
 - Реализованы C-проверка ELF, PT_DYNAMIC parser, ARM REL relocation core и подготовка data image с resolver callback.
-- 61 Python/integration test и 4 CTest targets проходят локально. 333366 записей релокаций реального APK совпали с независимым анализом; арифметика 317859 RELATIVE записей проверена отдельно.
+- 61 Python/integration test и 5 CTest targets проходят локально. 333366 записей релокаций реального APK совпали с независимым анализом; арифметика 317859 RELATIVE записей проверена отдельно.
 - 451 уникальный обязательный внешний импорт пока требует реализации/проверки. Android bionic/JNI adapters, Unity lifecycle и запуск игры ещё впереди.
 
 APK, игровые .so, assets, DRM/лицензионные патчи и установленный SDK в этот репозиторий не входят. Имена импортов, манифест и технические отчёты получены статическим анализом предоставленных APK. Подпись/происхождение этих APK не сертифицированы.
@@ -40,7 +40,7 @@ cmake -S vita -B build-vita -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build-vita -j2
 ```
 
-На Windows также можно: `./tools/build_vita.ps1 -SdkPath C:/path/to/vitasdk`. Результат: `build-vita/sf2-diagnostic.vpk`. Точные версии и SHA-256 артефакта — [отчёт сборки](reports/VITA-BUILD.md). Текущий диагностический VPK собран в обычном SDK ABI; будущая интеграция Android softfp потребует согласованного toolchain/адаптеров. Диагностическую сборку нельзя считать подтверждением ABI игры.
+На Windows также можно: `./tools/build_vita.ps1 -SdkPath C:/path/to/vitasdk`. Результат: `build-vita/sf2-diagnostic.vpk`. Историческая сборка 0.2 и её SHA-256 — [отчёт сборки](reports/VITA-BUILD.md). Текущие исходники собирают диагностическую версию 0.3; бинарники пока остаются локальными. Текущий диагностический VPK собран в обычном SDK ABI; будущая интеграция Android softfp потребует согласованного toolchain/адаптеров. Диагностическую сборку нельзя считать подтверждением ABI игры.
 
 ## Анализ собственного APK
 
@@ -61,6 +61,7 @@ Runtime gate сейчас возвращает код 1 намеренно: за
 - [C PT_DYNAMIC parser](docs/C-DYNAMIC-PARSER.md)
 - [C link pipeline](docs/LINK-PIPELINE.md)
 - [Порядок разрешения символов](docs/SYMBOL-SCOPE.md)
+- [Первый Android logging backend](docs/ANDROID-LOGGING.md)
 - [Участники и роль ИИ](CONTRIBUTORS.md)
 - [Исходники и лицензии зависимостей](THIRD_PARTY.md)
 

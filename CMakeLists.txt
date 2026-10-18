@@ -18,3 +18,5 @@ add_library(arm_link_host SHARED vita/src/arm_link.c vita/src/arm_dynamic.c vita
 set_target_properties(arm_link_host PROPERTIES PREFIX "")
 add_executable(scope_test tests/scope_test.c vita/src/arm_scope.c)
 add_test(NAME symbol_scope COMMAND scope_test)
+add_executable(android_log_test tests/android_log_test.c vita/src/android_log_adapter.c)
+add_test(NAME android_logging COMMAND android_log_test)

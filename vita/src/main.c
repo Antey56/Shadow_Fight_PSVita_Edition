@@ -7,9 +7,16 @@
 #include "diagnostic_ui.h"
 #include "arm_reloc.h"
 #include "native_registry.h"
+#include "android_log_adapter.h"
 int _newlib_heap_size_user=96*1024*1024;
 /* Diagnostic renderer only. kubridge is a memory/cache bridge, NOT graphics. */
 static FILE *logfile;
+static int android_log_to_file(const SfLogRecord *record,void *context){
+    FILE *file=(FILE *)context;char line[1280];
+    int n=snprintf(line,sizeof line,"[android %d/%d] %s: %s%s\n",record->buffer,record->priority,record->tag,record->text,record->truncated?" [truncated]":"");
+    if(n<0||(size_t)n>=sizeof line)return 0;
+    return fwrite(line,1,(size_t)n,file)==(size_t)n&&fflush(file)==0;
+}
 static void probe(void){}
 static int selftest(void){
     unsigned char b[4]={4,0,0,0};ArmReloc rel={0,23,0,0,0};size_t failed;
@@ -28,8 +35,13 @@ static void sink(const TouchEvent *e,void *unused){
 }
 int main(void){
     logfile=fopen("ux0:data/sf2vita-input.log","w");
+    sf_log_configure(logfile?android_log_to_file:0,logfile,SF_LOG_INFO);
     int core_ok=selftest();
-    if(logfile){fprintf(logfile,"SF2 diagnostic 0.2; Unity NOT started; core check=%s\n",core_ok?"PASS":"FAIL");fflush(logfile);}
+    ArmScopeEntry log_entries[5];ArmSymbolScope log_scope;
+    core_ok=core_ok&&sf_log_target_catalog(log_entries,5)==5&&arm_scope_init(&log_scope,log_entries,5)==0;
+    int logger_ok=__android_log_print(SF_LOG_INFO,"sf2vita","adapter check i=%d d=%.2f",7,1.25)==1;
+    core_ok=core_ok&&logger_ok;
+    if(logfile){fprintf(logfile,"SF2 diagnostic 0.3; Unity NOT started; core check=%s\n",core_ok?"PASS":"FAIL");fflush(logfile);}
     sceCtrlSetSamplingMode(SCE_CTRL_MODE_ANALOG);
     if(!vglInit(8*1024*1024)){if(logfile)fclose(logfile);return 1;}
     TouchState state={0};SceCtrlData pad={0};
