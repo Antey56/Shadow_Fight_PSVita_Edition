@@ -16,11 +16,21 @@
     34,
     35,
     36,
+    113,
+    114,
+    115,
+    116,
+    164,
+    167,
+    168,
+    169,
+    170,
+    215,
     219,
     228
   ],
   "unsupported_slots": "NULL; reject through capability gate before use",
-  "python_tests": 126,
+  "python_tests": 161,
   "ctest_targets": 8,
   "unity_executed": false,
   "device_tested": false,
@@ -36,5 +46,8 @@
   ],
   "worker_attachment": false,
   "real_worker_rejection_tested_on_host": true,
-  "exception_objects": "synthetic immutable error payload; no Java Throwable class/unwind"
+  "exception_objects": "synthetic immutable error payload; no Java Throwable class/unwind",
+  "registration": "typed JNI batch; immutable declarations and ARM32 address ranges required",
+  "reflection": "known synthetic classes only; initialize=true rejected",
+  "strings": "validated modified UTF-8; 64 KiB per string; 16 copied char leases"
 }

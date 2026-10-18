@@ -13,6 +13,10 @@
 
 assess_port_readiness.py produces port-readiness.json from the original reports and bootstrap profile. It always reports execution_allowed=false: filling observed JNI slots cannot prove the completeness of a call graph or runtime. No fixture or report unlocks execution.
 
+## Latest checkpoint
+
+Diagnostic 0.5 and JNI-REGISTRATION-REFLECTION.md supersede the earlier JNI details in the table above. RegisterNatives metadata replay now verifies all 28 methods; 26 restricted slots include modified UTF-8 strings and known-class reflection. Java initialization, arrays, shared worker environments and the platform/executable-loader layers remain incomplete. Current checks: 161 Python tests and 8 CTest targets.
+
 ## New memory/string adapters
 
 bionic_memory.c contains 20 explicit base-AAPCS wrappers with target-only address catalog. They cover malloc/calloc/realloc/free, byte memory operations and common narrow string operations. Nineteen names occur among this APK's unresolved required imports. They use one newlib allocator family, including strdup; never free an allocation from another runtime with these functions.

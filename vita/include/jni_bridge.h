@@ -2,6 +2,7 @@
 #define SF_JNI_BRIDGE_H
 #include <stdarg.h>
 #include "jni_objects.h"
+#include "jni_registration.h"
 typedef void *SfJObject;
 typedef void *SfJMethod;
 typedef union {uint8_t z;int8_t b;uint16_t c;int16_t s;int32_t i;
@@ -37,7 +38,21 @@ typedef struct SfJniTable {
     SfJObject (SF_ANDROID_ABI *CallObjectMethod)(SfJniEnv *,SfJObject,SfJMethod,...); /* 34 */
     SfJObject (SF_ANDROID_ABI *CallObjectMethodV)(SfJniEnv *,SfJObject,SfJMethod,va_list); /* 35 */
     SfJObject (SF_ANDROID_ABI *CallObjectMethodA)(SfJniEnv *,SfJObject,SfJMethod,const SfJValue *); /* 36 */
-    SfJniUnused unused37_218[182];
+    SfJniUnused unused37_112[76];
+    SfJMethod (SF_ANDROID_ABI *GetStaticMethodID)(SfJniEnv *,SfJObject,const char *,const char *); /* 113 */
+    SfJObject (SF_ANDROID_ABI *CallStaticObjectMethod)(SfJniEnv *,SfJObject,SfJMethod,...); /* 114 */
+    SfJObject (SF_ANDROID_ABI *CallStaticObjectMethodV)(SfJniEnv *,SfJObject,SfJMethod,va_list); /* 115 */
+    SfJObject (SF_ANDROID_ABI *CallStaticObjectMethodA)(SfJniEnv *,SfJObject,SfJMethod,const SfJValue *); /* 116 */
+    SfJniUnused unused117_163[47];
+    int32_t (SF_ANDROID_ABI *GetStringLength)(SfJniEnv *,SfJObject); /* 164 */
+    SfJniUnused unused165_166[2];
+    SfJObject (SF_ANDROID_ABI *NewStringUTF)(SfJniEnv *,const char *); /* 167 */
+    int32_t (SF_ANDROID_ABI *GetStringUTFLength)(SfJniEnv *,SfJObject); /* 168 */
+    const char *(SF_ANDROID_ABI *GetStringUTFChars)(SfJniEnv *,SfJObject,uint8_t *); /* 169 */
+    void (SF_ANDROID_ABI *ReleaseStringUTFChars)(SfJniEnv *,SfJObject,const char *); /* 170 */
+    SfJniUnused unused171_214[44];
+    int32_t (SF_ANDROID_ABI *RegisterNatives)(SfJniEnv *,SfJObject,const SfJniNativeMethod *,int32_t); /* 215 */
+    SfJniUnused unused216_218[3];
     int32_t (SF_ANDROID_ABI *GetJavaVM)(SfJniEnv *,SfJavaVM **); /* 219 */
     SfJniUnused unused220_227[8];
     uint8_t (SF_ANDROID_ABI *ExceptionCheck)(SfJniEnv *); /* 228 */
@@ -54,4 +69,9 @@ int sf_jni_bridge_require(const unsigned *,size_t);
 /* Internal owner-thread VM integration; not for application use. */
 void sf_jni_bridge_bind_vm(SfJniEnv *,SfJavaVM *,int (*)(void *),void *);
 void sf_jni_bridge_clear_locals(SfJniEnv *);
+/* Borrowed immutable policy must outlive env; ARM32 executable ranges must
+   come from a separately validated loader. This API does not certify them. */
+int sf_jni_bridge_configure_natives(SfJniEnv *,const NativeDeclaration *,size_t,
+                                   const SfJniCodeRange *,size_t);
+uintptr_t sf_jni_bridge_registered(SfJniEnv *,const char *,const char *,const char *);
 #endif

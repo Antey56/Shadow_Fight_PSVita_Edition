@@ -34,6 +34,14 @@ static int runtime_selftest(void){
         SfJMethod method=(*env)->GetMethodID(env,cls,"getAssets","()Landroid/content/res/AssetManager;");
         SfJObject asset=(*env)->CallObjectMethodA(env,context,method,0);
         ok=ok&&asset&&sf_jni_bridge_assets(env,asset)!=0;
+        SfJObject meta=(*env)->FindClass(env,"java/lang/Class");
+        SfJMethod for_name=(*env)->GetStaticMethodID(env,meta,"forName","(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;");
+        SfJObject name=(*env)->NewStringUTF(env,"java.lang.String");
+        SfJValue args[3]={{0},{0},{0}};args[0].l=name;
+        SfJObject string_class=(*env)->CallStaticObjectMethodA(env,meta,for_name,args);
+        const char *chars=(*env)->GetStringUTFChars(env,name,0);
+        ok=ok&&string_class&&chars&&sf_bionic_strcmp(chars,"java.lang.String")==0;
+        if(chars)(*env)->ReleaseStringUTFChars(env,name,chars);
         (*env)->FindClass(env,"diagnostic/UnsupportedClass");
         SfJObject error=(*env)->ExceptionOccurred(env);
         ok=ok&&error&&(*env)->ExceptionCheck(env);
@@ -68,7 +76,7 @@ int main(void){
     core_ok=core_ok&&sf_log_target_catalog(log_entries,5)==5&&arm_scope_init(&log_scope,log_entries,5)==0;
     int logger_ok=__android_log_print(SF_LOG_INFO,"sf2vita","adapter check i=%d d=%.2f",7,1.25)==1;
     core_ok=core_ok&&logger_ok;
-    if(logfile){fprintf(logfile,"SF2 diagnostic 0.4; Unity NOT started; core check=%s; JNI/memory probe=%s\n",core_ok?"PASS":"FAIL",runtime_ok?"PASS":"FAIL");fflush(logfile);}
+    if(logfile){fprintf(logfile,"SF2 diagnostic 0.5; Unity NOT started; core check=%s; JNI/memory/reflection probe=%s\n",core_ok?"PASS":"FAIL",runtime_ok?"PASS":"FAIL");fflush(logfile);}
     sceCtrlSetSamplingMode(SCE_CTRL_MODE_ANALOG);
     if(!vglInit(8*1024*1024)){if(logfile)fclose(logfile);return 1;}
     TouchState state={0};SceCtrlData pad={0};

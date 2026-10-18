@@ -5,10 +5,14 @@ static SfJObject invoke_v(SfJniEnv *e,SfJObject o,SfJMethod m,...){
     va_list args;va_start(args,m);
     SfJObject result=(*e)->CallObjectMethodV(e,o,m,args);va_end(args);return result;
 }
+static SfJObject invoke_static_v(SfJniEnv *e,SfJObject cls,SfJMethod m,...){
+    va_list args;va_start(args,m);
+    SfJObject result=(*e)->CallStaticObjectMethodV(e,cls,m,args);va_end(args);return result;
+}
 int main(void){
     unsigned required[]={4,6,17,21,22,23,25,31,33,34,35,36,228};
     assert(!sf_jni_bridge_require(required,13));
-    unsigned missing[]={4,113};assert(sf_jni_bridge_require(missing,2)<0);
+    unsigned missing[]={4,94};assert(sf_jni_bridge_require(missing,2)<0);
     assert(sf_jni_bridge_require(0,0)<0);
     SfJniEnv *e=sf_jni_bridge_create(".",4096);assert(e);
     assert((*e)->GetVersion(e)==0x10006);
@@ -31,5 +35,11 @@ int main(void){
     assert(!(*e)->CallObjectMethodA(e,aa,m,0));
     (*e)->ExceptionClear(e);
     assert(!(*e)->CallObjectMethodA(e,aa,m,0));assert((*e)->ExceptionCheck(e));
+    (*e)->ExceptionClear(e);
+    SfJObject meta=(*e)->FindClass(e,"java/lang/Class");assert(meta);
+    SfJMethod lookup=(*e)->GetStaticMethodID(e,meta,"forName","(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;");assert(lookup);
+    SfJObject name=(*e)->NewStringUTF(e,"java.lang.String");assert(name);
+    assert((*e)->CallStaticObjectMethod(e,meta,lookup,name,0,(SfJObject)0));
+    assert(invoke_static_v(e,meta,lookup,name,0,(SfJObject)0));
     sf_jni_bridge_destroy(e);puts("restricted JNI table PASS");return 0;
 }

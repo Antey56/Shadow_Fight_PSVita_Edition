@@ -13,11 +13,9 @@
       "name": "JNI runtime semantics",
       "status": "blocked",
       "observed_missing_slots": [
-        18,
-        113,
-        215
+        18
       ],
-      "note": "ClassLoader/Class reflection, strings, arrays, registration and worker threads remain incomplete."
+      "note": "Class initialization, arrays and worker threads remain incomplete; implemented JNI slots have restricted semantics."
     },
     {
       "stage": 3,

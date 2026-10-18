@@ -52,13 +52,13 @@ class BridgeTests(unittest.TestCase):
         finally:self.lib.AAsset_close(a)
 
     def test_slots_and_gate(self):
-        slots=(4,6,13,15,17,21,22,23,25,31,33,34,35,36,219,228)
+        slots=(4,6,13,15,17,21,22,23,25,31,33,34,35,36,113,114,115,116,164,167,168,169,170,215,219,228)
         self.assertEqual({i for i in range(233) if self.table[i]},set(slots))
         self.assertEqual(self.lib.sf_jni_bridge_require((C.c_uint*len(slots))(*slots),len(slots)),0)
-        self.assertLess(self.lib.sf_jni_bridge_require((C.c_uint*2)(36,113),2),0)
+        self.assertLess(self.lib.sf_jni_bridge_require((C.c_uint*2)(36,94),2),0)
 
     def test_unknown_class_and_clear(self):
-        self.assertFalse(self.fn(6,P,C.c_char_p)(self.env,b'java/lang/String'))
+        self.assertFalse(self.fn(6,P,C.c_char_p)(self.env,b'java/lang/Unsupported'))
         self.assertTrue(self.fn(228,C.c_uint8)(self.env))
         self.assertFalse(self.fn(6,P,C.c_char_p)(self.env,b'android/content/Context'))
         self.fn(17,None)(self.env)
@@ -143,3 +143,27 @@ class BridgeTests(unittest.TestCase):
         self.assertTrue(self.fn(228,C.c_uint8)(self.env))
         self.fn(23,None,P)(self.env,self.context)
         self.assertTrue(self.fn(15,P)(self.env))
+
+    def test_class_of_class(self):
+        cls=self.fn(31,P,P)(self.env,self.context)
+        meta=self.fn(31,P,P)(self.env,cls);self.assertTrue(meta)
+        self.assertTrue(self.fn(31,P,P)(self.env,meta))
+        self.assertFalse(self.fn(228,C.c_uint8)(self.env))
+
+    def test_class_get_class_loader(self):
+        cls=self.fn(31,P,P)(self.env,self.context)
+        meta=self.fn(31,P,P)(self.env,cls)
+        method=self.fn(33,P,P,C.c_char_p,C.c_char_p)(self.env,meta,b'getClassLoader',b'()Ljava/lang/ClassLoader;')
+        self.assertTrue(method)
+        loader=self.fn(36,P,P,P,P)(self.env,cls,method,None);self.assertTrue(loader)
+        self.assertTrue(self.fn(31,P,P)(self.env,loader))
+
+    def test_get_class_loader_wrong_receiver(self):
+        meta=self.fn(6,P,C.c_char_p)(self.env,b'java/lang/Class')
+        method=self.fn(33,P,P,C.c_char_p,C.c_char_p)(self.env,meta,b'getClassLoader',b'()Ljava/lang/ClassLoader;')
+        self.assertFalse(self.fn(36,P,P,P,P)(self.env,self.context,method,None))
+        self.assertTrue(self.fn(228,C.c_uint8)(self.env))
+
+    def test_class_loader_class_available(self):
+        cls=self.fn(6,P,C.c_char_p)(self.env,b'java/lang/ClassLoader');self.assertTrue(cls)
+        self.assertTrue(self.fn(31,P,P)(self.env,cls))

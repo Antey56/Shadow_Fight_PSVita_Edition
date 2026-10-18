@@ -1,0 +1,10 @@
+{
+  "version": "0.5",
+  "sha256": "112b1bcddcea1ea4c6c182f37f26af8bf0930fd0bf62e5143c9d2ce01ff92298",
+  "bytes": 487094,
+  "cross_build": "passed without warnings",
+  "device_executed": false,
+  "unity_executed": false,
+  "new_probe": "modified UTF-8/string and restricted Class.forName chain",
+  "binary_publication": "local only"
+}

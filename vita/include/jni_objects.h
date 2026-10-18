@@ -22,9 +22,14 @@ AAssetManager *sf_jni_asset_manager(SfJniObjects *,SfJniRef);
 /* Internal bridge helpers. Kinds: 1 Context, 2 AssetManager, 3/4 classes. */
 int sf_jni_kind(SfJniObjects *,SfJniRef);
 SfJniRef sf_jni_class(SfJniObjects *,int);
+SfJniRef sf_jni_class_loader(SfJniObjects *);
 void sf_jni_error(SfJniObjects *,int);
 SfJniRef sf_jni_exception_ref(SfJniObjects *);
 int sf_jni_throw(SfJniObjects *,SfJniRef);
 /* Internal diagnostic only; error code carried by a synthetic throwable. */
 int sf_jni_throwable_code(SfJniObjects *,SfJniRef);
+SfJniRef sf_jni_string_utf(SfJniObjects *,const char *);
+/* Borrowed view, including during pending error for release validation.
+   Not usable after the last reference is deleted. Identity never wraps. */
+int sf_jni_string_view(SfJniObjects *,SfJniRef,const char **,size_t *,size_t *,uint64_t *);
 #endif

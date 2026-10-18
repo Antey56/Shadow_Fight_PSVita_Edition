@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "class": "com/unity3d/player/UnityPlayer",
+      "methods_verified": 25
+    },
+    {
+      "class": "com/google/androidgamesdk/ChoreographerCallback",
+      "methods_verified": 1
+    },
+    {
+      "class": "com/google/androidgamesdk/SwappyDisplayManager",
+      "methods_verified": 2
+    }
+  ],
+  "methods_verified": 28,
+  "arm_code_executed": false,
+  "addresses": "link-time ARM32 VA stored as integers only",
+  "registration_metadata_replayed_on_host": true,
+  "unity_sha256": "82e24ba84e18a85beb7b81f221d4405b8f3befd94fc7025d8b8282c8d1d9535b",
+  "execution_allowed": false
+}
