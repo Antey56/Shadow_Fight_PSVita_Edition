@@ -35,7 +35,10 @@ teardown lifecycle, sufficient executable memory, bionic thread/TLS contracts,
 Unity EGL/surface/audio lifecycle and IL2CPP metadata/assets. The diagnostic
 vitaGL context does not implement Unity's EGL lifecycle.
 
-Validation at this checkpoint: 259 Python tests, 14 CTest targets, VitaSDK
+Validation at this checkpoint: 279 Python tests, 14 CTest targets, VitaSDK
 cross-build and VPK validation pass. New backing allocation/permissions are
 not hardware-tested. No game binaries, APKs, generated game headers or device
 dumps are published. No DRM or license checks are bypassed.
+
+
+The [retained module registry and preloaded libdl adapter](PRELOADED-NAMESPACE.md) now provide tested generation handles, dependency pins, lifecycle states and export lookup. The diagnostic has not opted into a prepared namespace; filesystem loading, constructor execution and Unity boot remain unimplemented.

@@ -32,3 +32,6 @@ To disable embedding, reconfigure with -DSF2_LIBMAIN_PROBE_INPUT= (an existing b
 
 
 Hardware completion: 0.9-libmain2 executed original JNI_OnLoad successfully on Vita, returned JNI_VERSION_1_6 and registered both expected NativeLoader methods. See [hardware report](../reports/HARDWARE-0.9.md). NativeLoader.load/unload, Unity and IL2CPP were not invoked.
+
+
+Runtime source update: libdl wrappers can now be explicitly bound to a tested preloaded module registry. Default remains namespace-unavailable; no prepared Unity namespace is supplied in the current diagnostic. See PRELOADED-NAMESPACE.md for supported ARM32 flags, lifetime and error behavior. This source update has not been tested on Vita.

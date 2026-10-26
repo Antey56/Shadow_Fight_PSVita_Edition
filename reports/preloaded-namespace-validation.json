@@ -1,0 +1,13 @@
+{
+  "python_tests": 279,
+  "ctest_targets": 14,
+  "namespace_tests": 14,
+  "adapter_tests": 6,
+  "vita_cross_build": true,
+  "vpk_validation": true,
+  "namespace_device_tested": false,
+  "diagnostic_namespace_configured": false,
+  "automatic_file_loading": false,
+  "constructors_executed": false,
+  "unity_started": false
+}

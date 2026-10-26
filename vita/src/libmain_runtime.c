@@ -2,6 +2,7 @@
  * This is not a complete Android libc, dynamic linker or exception runtime. */
 #include "libmain_runtime.h"
 #include "bionic_once.h"
+#include "preloaded_dl.h"
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -49,7 +50,8 @@ static uint32_t guard;
 static union {uint32_t alignment;unsigned char bytes[3*84];} streams;
 static uint32_t module_base,exidx_base,exidx_count;
 static size_t module_bytes;
-static int dl_pending;
+static SfPreloadedDl module_loader;
+void sf_libmain_runtime_namespace(ArmNamespace *ns){sf_preloaded_dl_init(&module_loader,ns);}
 void sf_libmain_runtime_bind(uint32_t base,size_t bytes,uint32_t exidx,uint32_t count){
     module_base=base;module_bytes=bytes;exidx_base=exidx;exidx_count=count;
 }
@@ -95,15 +97,18 @@ static SF_ANDROID_ABI int android_fflush(void *token){
     if(!token)return fflush(0);
     FILE *f=stream(token);return f?fflush(f):-1;
 }
-/* No module namespace configured for this entry-only probe: real errors are
-   reported if load/unload is attempted. Successful dlopen is never faked. */
-static SF_ANDROID_ABI void *android_dlopen(const char *path,int flags){(void)path;(void)flags;dl_pending=1;return 0;}
-static SF_ANDROID_ABI void *android_dlsym(void *handle,const char *name){(void)handle;(void)name;dl_pending=1;return 0;}
-static SF_ANDROID_ABI int android_dlclose(void *handle){(void)handle;dl_pending=1;return -1;}
-static SF_ANDROID_ABI const char *android_dlerror(void){
-    if(!dl_pending)return 0;
-    dl_pending=0;return "Android module namespace unavailable in entry-only probe";
+/* No filesystem loading: only an explicitly supplied, ready module registry. */
+static SF_ANDROID_ABI void *android_dlopen(const char *path,int flags){
+    return (void *)(uintptr_t)sf_preloaded_dlopen(&module_loader,path,flags);
 }
+static SF_ANDROID_ABI void *android_dlsym(void *handle,const char *name){
+    return (void *)(uintptr_t)sf_preloaded_dlsym(&module_loader,(uint32_t)(uintptr_t)handle,name);
+}
+static SF_ANDROID_ABI int android_dlclose(void *handle){
+    return sf_preloaded_dlclose(&module_loader,(uint32_t)(uintptr_t)handle);
+}
+static SF_ANDROID_ABI const char *android_dlerror(void){return sf_preloaded_dlerror(&module_loader);}
+
 typedef struct {const char *name;void *base;const char *symbol;void *address;} AndroidDlInfo;
 static SF_ANDROID_ABI int android_dladdr(const void *address,AndroidDlInfo *out){
     if(!out)return 0;
@@ -136,6 +141,7 @@ int sf_libmain_runtime_catalog(ArmScopeEntry *out,size_t cap){
     return 22;
 }
 #else
+void sf_libmain_runtime_namespace(ArmNamespace *ns){(void)ns;}
 int sf_libmain_runtime_prepare(void){return -22;}
 void sf_libmain_runtime_bind(uint32_t a,size_t b,uint32_t c,uint32_t d){(void)a;(void)b;(void)c;(void)d;}
 int sf_libmain_runtime_catalog(ArmScopeEntry *a,size_t b){(void)a;(void)b;return -22;}
