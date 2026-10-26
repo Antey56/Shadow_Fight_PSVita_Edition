@@ -67,3 +67,5 @@ validation pass. These namespace changes are not device-tested and were not
 transferred under an old diagnostic identity. Original libmain's last hardware
 PASS remains services1. Unity initialization is still blocked by required-import
 coverage, executable-memory validation and controlled constructor execution.
+
+Exact original-libmain disassembly confirms movs r1,#1 immediately before both dlopen calls (instruction vaddrs 0x12e0 and 0x12ec). The hash-pinned bootstrap audit now revalidates those two instructions. Its flag value is accepted by the preloaded adapter; no NativeLoader.load execution is claimed.

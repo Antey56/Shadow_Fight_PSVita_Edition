@@ -13,7 +13,8 @@ def audit(data,declarations):
     if cls!=CLASS or table!=0x5004:raise ValueError('registration profile mismatch')
     # Count and JNI function loads reviewed in Thumb disassembly.
     for va,expected in [(0x10f0,b'\x0b\x69'),(0x10fc,b'\x92\x69'),
-                        (0x1106,b'\x02\x23'),(0x110a,b'\xd2\xf8\x5c\xc3')]:
+                        (0x1106,b'\x02\x23'),(0x110a,b'\xd2\xf8\x5c\xc3'),
+                        (0x12e0,b'\x01\x21'),(0x12ec,b'\x01\x21')]:
         if data[e.file_offset(va,len(expected)):e.file_offset(va,len(expected))+len(expected)]!=expected:
             raise ValueError('instruction profile mismatch')
     candidates={m['table_vaddr']:m for m in scan(data,declarations)};methods=[]
@@ -32,6 +33,7 @@ def audit(data,declarations):
                 confirmed_method_count=2,observed_jni_slots=[6,18,168,169,170,215,219],
                 observed_vm_slots=[4],dynamic_loader_evidence=dynamic,
                 load_order=['libunity.so','libil2cpp.so'],
+                dlopen_flags=1,dlopen_flag_profile='Both reviewed calls set ARM32 RTLD_LAZY=1; path attempt then basename fallback.',
                 profile_evidence='Exact-hash profile from manual Thumb review; PC-relative strings, count, key slot instructions and relocated native table revalidated.',
                 execution_allowed=False,game_executed=False,
                 limitations=['Static metadata and instructions only; load order is not successful execution.',

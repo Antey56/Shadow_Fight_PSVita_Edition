@@ -77,6 +77,8 @@
     "libunity.so",
     "libil2cpp.so"
   ],
+  "dlopen_flags": 1,
+  "dlopen_flag_profile": "Both reviewed calls set ARM32 RTLD_LAZY=1; path attempt then basename fallback.",
   "profile_evidence": "Exact-hash profile from manual Thumb review; PC-relative strings, count, key slot instructions and relocated native table revalidated.",
   "execution_allowed": false,
   "game_executed": false,
