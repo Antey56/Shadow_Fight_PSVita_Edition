@@ -1,6 +1,7 @@
 #ifndef SF_ARM_EXEC_H
 #define SF_ARM_EXEC_H
 #include "arm_link.h"
+#include "arm_lifecycle.h"
 #define ARM_EXEC_MAX_RANGES 8
 /* Backend owns platform allocation. No callback may execute module code.
    address is the ARM32 virtual base; cookie is an opaque ownership token. */
@@ -21,6 +22,12 @@ typedef struct {
    This does NOT implement Android runtime semantics or call constructors. */
 int arm_exec_map(const unsigned char *,size_t,size_t,ArmResolve,void *,
                  const ArmExecBackend *,ArmExecImage *,ArmLinkError *);
+/* Opt-in mapping with a fully checked constructor/teardown address plan.
+   Does not execute the plan. TLS/W+X remain rejected, imports must resolve.
+   plan describes mapping lifetime only; namespace remains LINKED until the
+   owner separately performs initialization. Failure clears plan and image. */
+int arm_exec_map_planned(const unsigned char *,size_t,size_t,ArmResolve,void *,
+                        const ArmExecBackend *,ArmExecImage *,ArmLinkError *,ArmLifecyclePlan *);
 int arm_exec_entry(const ArmExecImage *,uint32_t,uint32_t *);
 void arm_exec_release(ArmExecImage *);
 #endif

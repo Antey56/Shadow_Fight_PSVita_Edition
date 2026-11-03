@@ -6,8 +6,9 @@ static uint32_t r32(const unsigned char *p){return p[0]|((uint32_t)p[1]<<8)|((ui
 void arm_exec_release(ArmExecImage *image){
     if(image){if(image->ready)image->backend.release(image->backend.context,image->cookie);memset(image,0,sizeof(*image));}
 }
-int arm_exec_map(const unsigned char *file,size_t size,size_t limit,ArmResolve resolve,void *ctx,
-                 const ArmExecBackend *backend,ArmExecImage *out,ArmLinkError *error){
+static int map_internal(const unsigned char *file,size_t size,size_t limit,ArmResolve resolve,void *ctx,
+                 const ArmExecBackend *backend,ArmExecImage *out,ArmLinkError *error,ArmLifecyclePlan *plan){
+    if(plan)memset(plan,0,sizeof(*plan));
     if(error)memset(error,0,sizeof(*error));
     if(!out)return -30;
     memset(out,0,sizeof(*out));
@@ -23,7 +24,7 @@ int arm_exec_map(const unsigned char *file,size_t size,size_t limit,ArmResolve r
             uint32_t off=r32(p+4),bytes=r32(p+16);
             for(uint32_t j=0;j+8<=bytes;j+=8){
                 uint32_t tag=r32(file+off+j),value=r32(file+off+j+4);if(!tag)break;
-                if(value&&(tag==12||tag==25||tag==32))return -32; /* INIT, INIT_ARRAY, PREINIT_ARRAY */
+                if(!plan&&value&&(tag==12||tag==25||tag==32))return -32; /* INIT, INIT_ARRAY, PREINIT_ARRAY */
             }
         }
         if(type!=1)continue;
@@ -37,6 +38,7 @@ int arm_exec_map(const unsigned char *file,size_t size,size_t limit,ArmResolve r
     ArmLinkedImage linked={0};ArmExecImage next={0};next.backend=*backend;next.cookie=cookie;
     if(address%alignment||(uint64_t)address+span>UINT32_MAX){rc=-33;goto fail;}
     rc=arm_link_image(file,size,address,limit,resolve,ctx,&linked,error);if(rc)goto fail;
+    if(plan){rc=arm_lifecycle_plan(file,size,&linked,plan);if(rc)goto fail;}
     rc=backend->publish(backend->context,cookie,linked.bytes,linked.size);if(rc)goto fail;
     rc=backend->sync(backend->context,cookie,linked.size);if(rc)goto fail;
     next.base=address;next.bias=linked.bias;next.size=span;
@@ -49,7 +51,17 @@ int arm_exec_map(const unsigned char *file,size_t size,size_t limit,ArmResolve r
     }
     next.ready=1;*out=next;arm_link_dispose(&linked);return 0;
 fail:
+    if(plan)memset(plan,0,sizeof(*plan));
     arm_link_dispose(&linked);backend->release(backend->context,cookie);return rc;
+}
+int arm_exec_map(const unsigned char *file,size_t size,size_t limit,ArmResolve resolve,void *ctx,
+                 const ArmExecBackend *backend,ArmExecImage *out,ArmLinkError *error){
+    return map_internal(file,size,limit,resolve,ctx,backend,out,error,0);
+}
+int arm_exec_map_planned(const unsigned char *file,size_t size,size_t limit,ArmResolve resolve,void *ctx,
+                         const ArmExecBackend *backend,ArmExecImage *out,ArmLinkError *error,ArmLifecyclePlan *plan){
+    if(!plan){if(out)memset(out,0,sizeof(*out));if(error)memset(error,0,sizeof(*error));return -30;}
+    return map_internal(file,size,limit,resolve,ctx,backend,out,error,plan);
 }
 int arm_exec_entry(const ArmExecImage *image,uint32_t pointer,uint32_t *address){
     if(address)*address=0;

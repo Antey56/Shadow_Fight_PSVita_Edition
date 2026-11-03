@@ -1,0 +1,16 @@
+{
+  "module": "libil2cpp.so",
+  "sha256": "4f416f6992684f4a003f6baab7e5b33969f7cbff7f289b48a11e2fbe494f79b8",
+  "init_count": 9,
+  "fini_count": 2,
+  "c_python_order_match": true,
+  "synthetic_external_names": 233,
+  "full_import_abi_certified": false,
+  "executable_mapping_created": false,
+  "constructors_executed": false,
+  "execution_allowed": false,
+  "limitations": [
+    "Host data buffer uses synthetic external import integers; not callable implementations.",
+    "Comparison validates lifecycle metadata/order only. No Android ARM code executes."
+  ]
+}

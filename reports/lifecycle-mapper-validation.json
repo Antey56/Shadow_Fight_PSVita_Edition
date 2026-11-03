@@ -1,0 +1,13 @@
+{
+  "python_tests": 291,
+  "ctest_targets": 14,
+  "lifecycle_c_tests": 12,
+  "vita_cross_build": true,
+  "vpk_validation": true,
+  "default_constructor_gate": "unchanged",
+  "opt_in_planned_mapping": true,
+  "plans_validated_before_publication": true,
+  "constructors_executed": false,
+  "vita_device_tested": false,
+  "unity_started": false
+}

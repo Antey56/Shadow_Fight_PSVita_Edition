@@ -28,3 +28,45 @@ Unity and IL2CPP together, ordered dependency initialization and owned teardown.
 The existing 16 MiB sequential probe allocation is inadequate for IL2CPP's
 39,088,128-byte load span and cannot serve as a simultaneous module arena.
 A successful libmain JNI_OnLoad is not evidence that these constructors work.
+
+
+## C planner and opt-in mapper
+
+arm_lifecycle_plan now validates the source ELF together with the staged C
+linker image. It checks singleton lifecycle tags, array tag pairs, bounds,
+4-byte slot alignment, local R_ARM_RELATIVE records and actual relocated slot
+values. Constructor/destructor targets must be ARM/Thumb aligned and wholly
+inside file-backed executable LOAD bytes. Up to 1024 calls per phase are
+supported. Nonzero PREINIT metadata is rejected. Calls through external symbol
+relocations remain unsupported. Every error clears the output plan.
+
+Initialization order is DT_INIT then forward DT_INIT_ARRAY; finalization is
+reverse DT_FINI_ARRAY then DT_FINI. The entire teardown list is checked even
+before initialization could begin. No function-pointer call occurs here.
+
+arm_exec_map_planned is an explicit opt-in companion to arm_exec_map. It stages
+and resolves the image, validates both lifecycle lists BEFORE publish/cache
+sync, and returns an image plus immutable address plan. Missing imports, TLS,
+source W+X, malformed lifecycle metadata, failed publish or failed cache sync
+still reject the mapping. Failures release the reservation and clear plan/image.
+The existing arm_exec_map retains its constructor rejection behavior. The Vita
+diagnostic continues to use that existing path and does not enable this opt-in.
+Image ready means mapped, not initialized; owners must not call exported code
+before separately completing required dependency/runtime initialization.
+
+## Actual-file cross-check
+
+verify_lifecycle_c.py compares C-produced order against the Python planner on
+original local libmain, Unity and IL2CPP. The C linker uses synthetic integer
+import addresses in a HOST DATA BUFFER ONLY. These are not runtime stubs or
+callable implementations. No executable mapping, constructors, JNI or Android
+ARM instructions run in this audit. Import ABI is deliberately uncertified.
+Reports contain only names, hashes, counts and pass/limit metadata:
+libmain 0 init/2 fini; Unity 422 init/2 fini; IL2CPP 9 init/2 fini. All orders
+match the independent Python path.
+
+Twelve new tests cover opt-in publication order, unchanged default gate,
+invalid last teardown entry, non-relative/unrelocated/mismatched slots,
+duplicate/incomplete tags, limits/alignment, PREINIT, TLS, BSS targets and
+publish/sync cleanup. Current validation: 291 Python tests and 14 CTest targets
+pass, with VitaSDK cross-build/package validation. No new device result exists.

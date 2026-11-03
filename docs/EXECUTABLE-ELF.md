@@ -34,3 +34,6 @@ Hardware update: [0.8-elfsmoke1](../reports/HARDWARE-0.8.md) reached the require
 
 
 Hardware completion: 0.8-elfsmoke4 now records AUTHORED_ELF_EXEC PASS with exact results 11.75 and 7.50 on Vita, followed by graphics/input and normal START exit. This supersedes pending wording above for the selected authored fixture. It does not authorize or certify game ELF initialization; see HARDWARE-0.8.md.
+
+
+Explicit planned mapping now exists as arm_exec_map_planned, which validates complete init/fini plans before publication but does not execute them. The default constructor gate described above remains unchanged. See ELF-LIFECYCLE.md for staged-image checks, supported limits and actual-file comparisons.
