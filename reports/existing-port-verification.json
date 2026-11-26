@@ -1,0 +1,45 @@
+{
+  "verified_on": "2026-11-26",
+  "repository": "https://github.com/franciscoclou/shadowfight2-vita",
+  "release": "https://github.com/franciscoclou/shadowfight2-vita/releases/tag/v1.0",
+  "release_tag": "v1.0",
+  "published_at": "2026-11-01T17:54:26Z",
+  "required_game": {
+    "edition": "regular Shadow Fight 2, not our Special Edition APK",
+    "version": "1.9.38",
+    "version_code": 1000109,
+    "abi": "armeabi-v7a"
+  },
+  "architecture": {
+    "engine": "Marmalade SDK per upstream README",
+    "game_image": "assets/ShadowFight2.s3e",
+    "compression": "LZMA",
+    "image_format": "XE3U",
+    "loader": "kubridge-backed executable mapping, s3e API replacement"
+  },
+  "upstream_claims": [
+    "Full single-player campaign",
+    "Physical fight controls; touchscreen menus",
+    "Offline only; PlayStation TV unsupported",
+    "Optional cheats enabled by default; cheats=0 disables them"
+  ],
+  "not_independently_verified": [
+    "60 FPS without overclock",
+    "Complete campaign on this user device",
+    "Compatibility of the release binary with currently installed plugins"
+  ],
+  "practical_next_steps": [
+    "Review upstream make_game_data.py and integrity checks before execution",
+    "Use user-owned exact regular 1.9.38 APK; current Special Edition 1.0.12 is incompatible",
+    "Prepare data locally; upstream preparation downloads content packs from Nekki",
+    "Stage verified release VPK/data and back up any existing shadowfight2 save before installation",
+    "Test launch and combat on Vita"
+  ],
+  "current_actions": {
+    "upstream_vpk_downloaded": false,
+    "upstream_scripts_executed": false,
+    "vita_installation_changed": false,
+    "our_unity_diagnostics_preserved": true
+  },
+  "shutdown_instruction": "User confirmed shutdown after current checkpoint and GitHub save; no forced app closure."
+}
