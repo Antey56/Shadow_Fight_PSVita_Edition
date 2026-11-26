@@ -1,0 +1,40 @@
+{
+  "file": "sf2-diagnostic-0.10-ctors1.vpk",
+  "sha256": "31ca543729d450a8f4f277b218d712f701383c74c7963d7706aba6acde042763",
+  "pngs": [
+    {
+      "path": "sce_sys/icon0.png",
+      "width": 128,
+      "height": 128,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/bg.png",
+      "width": 840,
+      "height": 500,
+      "bit_depth": 8,
+      "color_type": 3
+    },
+    {
+      "path": "sce_sys/livearea/contents/startup.png",
+      "width": 280,
+      "height": 158,
+      "bit_depth": 8,
+      "color_type": 3
+    }
+  ],
+  "title_id": "SF2AUD001",
+  "app_version": "00.10",
+  "xml_checked": true,
+  "zip_crc_checked": true,
+  "build_id": "0.10-ctors1",
+  "device_tested": false,
+  "ftp_transferred": false,
+  "python_tests": 300,
+  "ctest_targets": 14,
+  "original_game_library_embedded": false,
+  "unity_started": false,
+  "fixture_init_count": 1,
+  "fixture_fini_count": 1
+}

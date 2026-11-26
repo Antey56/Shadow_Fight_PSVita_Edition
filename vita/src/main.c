@@ -125,7 +125,7 @@ static void sink(const TouchEvent *e,void *unused){
 }
 int main(void){
     FILE *reset=fopen("ux0:data/sf2vita-input.log","w");log_ready=reset!=0;if(reset)fclose(reset);
-    stage("SF2 diagnostic 0.9-services1; Unity NOT started");
+    stage("SF2 diagnostic 0.10-ctors1; Unity NOT started");
     memory_snapshot("entry",0);
     sf_log_configure(log_ready?android_log_to_file:0,0,SF_LOG_INFO);
     stage("BEFORE_CORE_PROBES");

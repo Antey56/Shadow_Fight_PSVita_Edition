@@ -1,0 +1,16 @@
+{
+  "module": "arm-smoke.so",
+  "sha256": "d65c9ae013f6e15ca0e6a97b7b059ca261169fb5985d4b148ac37f434f828cf6",
+  "init_count": 1,
+  "fini_count": 1,
+  "c_python_order_match": true,
+  "synthetic_external_names": 2,
+  "full_import_abi_certified": false,
+  "executable_mapping_created": false,
+  "constructors_executed": false,
+  "execution_allowed": false,
+  "limitations": [
+    "Host data buffer uses synthetic external import integers; not callable implementations.",
+    "Comparison validates lifecycle metadata/order only. No Android ARM code executes."
+  ]
+}

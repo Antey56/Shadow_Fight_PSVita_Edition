@@ -85,3 +85,6 @@ Runtime gate сейчас возвращает код 1 намеренно: за
 
 
 Hardware milestone: original libmain JNI_OnLoad passes on Vita in 0.9-libmain2; see [result and limits](reports/HARDWARE-0.9.md). Unity and gameplay have not started.
+
+
+Current local diagnostic: [0.10-ctors1](docs/MODULE-LIFECYCLE-CONTROLLER.md), authored ARM constructor/destructor test, built and validated but awaiting device transfer/run. Unity/game remain unstarted.
