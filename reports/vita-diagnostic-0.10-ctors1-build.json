@@ -29,12 +29,19 @@
   "xml_checked": true,
   "zip_crc_checked": true,
   "build_id": "0.10-ctors1",
-  "device_tested": false,
-  "ftp_transferred": false,
+  "device_tested": true,
+  "ftp_transferred": true,
   "python_tests": 300,
   "ctest_targets": 14,
   "original_game_library_embedded": false,
   "unity_started": false,
   "fixture_init_count": 1,
-  "fixture_fini_count": 1
+  "fixture_fini_count": 1,
+  "ftp_readback_verified": true,
+  "hardware_result": "PASS",
+  "constructor_calls": 1,
+  "destructor_calls": 1,
+  "fixture_first": 11.75,
+  "fixture_second": 7.5,
+  "normal_start_exit_frames": 109
 }

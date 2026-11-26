@@ -1,0 +1,52 @@
+{
+  "purpose": "One hardware session covering implemented components; not a game readiness certificate",
+  "current_vpk": "sf2-diagnostic-0.10-ctors1.vpk",
+  "run_once": [
+    "Install VPK",
+    "Launch",
+    "Exercise dpad, sticks and face buttons",
+    "Exit through START",
+    "Enable FTP and retrieve sf2vita-input.log"
+  ],
+  "implemented_groups": [
+    "RTABI memory helpers",
+    "JNI references/strings/reflection/arrays",
+    "selected float/double ABI",
+    "normal/recursive/errorcheck mutexes",
+    "ELF mapping and relocations",
+    "authored constructor/entry/destructor lifecycle",
+    "VM cleanup and memory readings",
+    "graphics draw/swap",
+    "physical controls to touch",
+    "START exit"
+  ],
+  "not_covered_not_passed": [
+    "large executable memory through actual installed kubridge",
+    "complete Android pthread/TLS/libc contracts",
+    "Unity EGL/audio/Java lifecycle",
+    "actual Unity and IL2CPP initialization",
+    "assets/metadata loading and playable combat"
+  ],
+  "remaining_workstreams": [
+    "executable memory and required Android runtime APIs",
+    "Unity/IL2CPP initialization",
+    "graphics/audio/assets integration",
+    "gameplay/input/performance validation"
+  ],
+  "remaining_step_count": null,
+  "playable_port_guaranteed": false,
+  "external_test_candidates": [
+    {
+      "url": "https://github.com/devnoname120/vita-pthread",
+      "status": "candidate; not imported or verified against Android ARM32 ABI"
+    },
+    {
+      "url": "https://android.googlesource.com/platform/bionic/+/refs/heads/main/tests/pthread_test.cpp",
+      "status": "reference semantics; Android-specific tests require adaptation"
+    }
+  ],
+  "unity_porting_boundary": "https://github.com/Rinnegatamante/Android2Vita-Candidate-Ports-List/blob/main/README.md",
+  "current_hardware_session": "0.10-ctors1 PASS",
+  "implemented_groups_tested": true,
+  "unity_feasibility_proven": false
+}

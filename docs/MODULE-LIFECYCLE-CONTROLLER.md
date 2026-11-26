@@ -60,3 +60,32 @@ partial init/fini failures, dependency readiness/pins, open-handle blocking,
 invalid teardown targets, stale mappings and empty plans. Current checks:
 300 Python tests and 14 CTest targets pass; VitaSDK build and VPK validation
 pass. Last original-libmain hardware PASS remains 0.9-services1.
+
+
+## Actual Vita result: 0.10-ctors1 PASS
+
+Constructor at 0x835001dd ran once, followed by entry 0x8350020d returning
+11.75 and 7.50. Destructor at 0x835001f5 ran once. Lifecycle result and VM
+cleanup both returned 0. Event rc values 1/2 identify init/fini phases, not
+errors. User free memory returned to 225443840 bytes before graphics. The
+three traced frames reported GL error 0; directional and all face-button
+touch IDs were observed. START exited normally after 109 frames.
+This supersedes the pending device-result wording above. No original game
+library was included in this build and Unity was not run.
+
+## Consolidated testing and feasibility boundary
+
+The current VPK already groups implemented core/JNI/arrays, selected math and
+mutex ABI, ELF relocation/execution/lifecycle, memory cleanup, graphics, input
+and exit into one device run. The machine-readable consolidated test plan
+records both coverage and unimplemented groups; no missing group is a PASS.
+
+Upstream Android2Vita guidance explicitly excludes Unity games from its normal
+candidate path. Our diagnostic successes do not prove a runnable Unity port.
+Further work must evaluate the Unity/IL2CPP runtime path, memory/API contracts
+and EGL/lifecycle feasibility. A fixed remaining-step count or guaranteed
+playable result cannot currently be justified.
+Primary guidance: https://github.com/Rinnegatamante/Android2Vita-Candidate-Ports-List/blob/main/README.md
+Reusable test candidates, not yet imported/certified here:
+https://github.com/devnoname120/vita-pthread
+https://android.googlesource.com/platform/bionic/+/refs/heads/main/tests/pthread_test.cpp
