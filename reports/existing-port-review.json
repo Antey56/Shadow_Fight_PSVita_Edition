@@ -1,0 +1,123 @@
+{
+  "checked_on": "2026-11-26",
+  "release": "https://github.com/franciscoclou/shadowfight2-vita/releases/tag/v1.0",
+  "source_ref": "v1.0",
+  "release_integrity": {
+    "assets": [
+      {
+        "file": "make_game_data.py",
+        "bytes": 13242,
+        "sha256": "854113ba4d3f825fcd9451c3c40dde828a9427a6935ef6b30a9108617df03b6c"
+      },
+      {
+        "file": "SHA256SUMS.txt",
+        "bytes": 260,
+        "sha256": "f38cd049f3c2a663ab086230d68e6a0a23beb32b9f47e91090e94df1e530511d"
+      },
+      {
+        "file": "ShadowFight2.vpk",
+        "bytes": 1241451,
+        "sha256": "c863ba197fa30aefceff45eba0aabff241f30d5d0612c5fac8b32ff22c87b955"
+      }
+    ],
+    "checksums_match_github_digests": true,
+    "checksums_match_release_manifest": true,
+    "zip_crc_valid": true,
+    "zip_paths_valid": true,
+    "sfo": {
+      "APP_VER": "01.00",
+      "BOOT_FILE": "",
+      "CATEGORY": "gd",
+      "CONTENT_ID": "",
+      "NP_COMMUNICATION_ID": "",
+      "PSP2_DISP_VER": "00.000",
+      "STITLE": "Shadow Fight 2",
+      "TITLE": "Shadow Fight 2",
+      "TITLE_ID": "SHDF00002",
+      "VERSION": "00.00"
+    },
+    "self_header_present": true,
+    "png": [
+      {
+        "file": "sce_sys/icon0.png",
+        "width": 128,
+        "height": 128,
+        "depth": 8,
+        "color_type": 3
+      },
+      {
+        "file": "sce_sys/livearea/contents/bg.png",
+        "width": 840,
+        "height": 500,
+        "depth": 8,
+        "color_type": 3
+      },
+      {
+        "file": "sce_sys/livearea/contents/startup.png",
+        "width": 280,
+        "height": 158,
+        "depth": 8,
+        "color_type": 3
+      }
+    ],
+    "device_executed": false,
+    "script_executed": false
+  },
+  "script_review": {
+    "parsed_without_execution": true,
+    "imports": [
+      "argparse",
+      "hashlib",
+      "lzma",
+      "os",
+      "shutil",
+      "struct",
+      "sys",
+      "urllib",
+      "zipfile"
+    ],
+    "game_image_sha256_required": "4b22b4f9255e138d0c7bdfb8cc08eb451411fa9719f3123b99954301697048e7",
+    "validates_whole_apk_signature": false,
+    "content_delivery": "HTTP from assets.nekkimobile.ru with pinned MD5 checks for newly downloaded packs",
+    "existing_packs_rehashed": false,
+    "resolved_output_path_containment_checked": false,
+    "hardening_before_execution": [
+      "Use a fresh isolated output directory",
+      "Prevalidate every selected APK asset path with Windows-aware containment rules",
+      "Keep original downloaded packs/checksums separate from normalized patched packs",
+      "Do not treat matching release hashes as a malware audit or proof of game compatibility"
+    ]
+  },
+  "source_findings": {
+    "engine": "Marmalade, LZMA XE3U executable from APK assets; no Unity/IL2CPP dependency in this port",
+    "cpu_mhz_set_by_source": 444,
+    "gpu_mhz_set_by_source": 222,
+    "bus_mhz_set_by_source": 222,
+    "gpu_xbar_mhz_set_by_source": 166,
+    "extended_memory_attribute2": 12,
+    "default_newlib_heap_mb_from_build_comments": 200,
+    "cheats_default_enabled": true,
+    "offline_mode_modifies_quest_signature_checks": true,
+    "always_applied_pack_check_modification": true,
+    "loader_header_fixup_bounds_review": "Incomplete checks for malformed/truncated images; exact supplied image hash is an important precondition"
+  },
+  "user_constraint": "No DRM/license bypass requested. No third-party patches have been executed or applied here. Integrity and gameplay patches require review before adopting this port under that constraint.",
+  "claim_status": {
+    "release_exists": "verified",
+    "download_matches_release": "verified",
+    "campaign_complete": "author claim, not independently tested",
+    "steady_60fps": "not verified",
+    "unchanged_cpu_gpu_clocks": "contradicted by explicit source clock setters",
+    "vita_compatibility_on_user_device": "not yet tested"
+  },
+  "local_actions": {
+    "vpk_downloaded": true,
+    "preparation_script_downloaded": true,
+    "preparation_script_executed": false,
+    "game_assets_downloaded": false,
+    "vpk_installed": false,
+    "vita_files_modified": false,
+    "shutdown_authorization_revoked": true
+  },
+  "next_required_input": "User-owned exact regular 1.9.38 APK with the expected embedded S3E digest; not found by filename in checked Downloads folder. Existing Special Edition build is incompatible."
+}

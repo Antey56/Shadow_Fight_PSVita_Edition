@@ -36,10 +36,11 @@
     "Test launch and combat on Vita"
   ],
   "current_actions": {
-    "upstream_vpk_downloaded": false,
+    "upstream_vpk_downloaded": true,
     "upstream_scripts_executed": false,
     "vita_installation_changed": false,
     "our_unity_diagnostics_preserved": true
   },
-  "shutdown_instruction": "User confirmed shutdown after current checkpoint and GitHub save; no forced app closure."
+  "shutdown_instruction": "Revoked: user requested continued port review, no further shutdown authorized.",
+  "detailed_review": "existing-port-review.json"
 }
