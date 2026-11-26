@@ -1,0 +1,13 @@
+{
+  "python_tests": 305,
+  "ctest_targets": 16,
+  "unity_registration_groups": 9,
+  "host_replayed_native_methods": 40,
+  "default_vita_cross_build": true,
+  "experimental_memory_profile_cross_build": true,
+  "packages_validated": true,
+  "clock_provider_bound": false,
+  "clock_device_tested": false,
+  "engine_memory_device_tested": false,
+  "unity_executed": false
+}

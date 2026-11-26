@@ -1,4 +1,5 @@
 #include "bionic_math.h"
+#include "engine_budget.h"
 #include "bionic_mutex.h"
 #include "arm_vm_probe.h"
 #include <psp2/kernel/processmgr.h>
@@ -17,7 +18,10 @@
 #include "jni_vm.h"
 #include "bionic_memory.h"
 #include "aeabi_memory.h"
-int _newlib_heap_size_user=32*1024*1024;
+#ifndef SF2_HEAP_MB
+#define SF2_HEAP_MB 32
+#endif
+int _newlib_heap_size_user=SF2_HEAP_MB*1024*1024;
 /* Diagnostic renderer only. kubridge is a memory/cache bridge, NOT graphics. */
 static int log_ready;
 static void stage(const char *format,...){
@@ -187,7 +191,16 @@ int main(void){
     vglSetCircularPoolSize(1024*1024);vglSetDisplayBufferCount(2);
     /* In pinned vitaGL, return value means resolution fallback, NOT success.
        False is the normal 960x544 path; never exit based on this boolean. */
+#ifdef SF2_ENGINE_MEMORY_PROFILE
+    SceKernelFreeMemorySizeInfo budget_info={0};budget_info.size=sizeof budget_info;int ram_threshold=0;
+    int budget_rc=sceKernelGetFreeMemorySize(&budget_info);
+    if(budget_rc>=0)budget_rc=sf_engine_ram_threshold((uint32_t)budget_info.size_user,32u*1024*1024,80u*1024*1024,&ram_threshold);
+    stage("ENGINE_BUDGET heap_mb=%d gfx_ram_cap_mb=32 pending_arena_mb=64 headroom_mb=16 rc=%d threshold=%d; no arena allocated here",SF2_HEAP_MB,budget_rc,ram_threshold);
+    if(budget_rc<0){stage("ENGINE_BUDGET insufficient USER memory; exiting");sceKernelExitProcess(budget_rc);return budget_rc;}
+    GLboolean fallback=vglInitExtended(0,960,544,ram_threshold,SCE_GXM_MULTISAMPLE_NONE);
+#else
     GLboolean fallback=vglInitExtended(0,960,544,16*1024*1024,SCE_GXM_MULTISAMPLE_NONE);
+#endif
     stage("AFTER_VGL_INIT resolution_fallback=%d",(int)fallback);
     memory_snapshot("after_vglInit",1);
     glViewport(0,0,960,544);

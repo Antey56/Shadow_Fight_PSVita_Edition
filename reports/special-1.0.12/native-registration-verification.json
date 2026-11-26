@@ -11,12 +11,37 @@
     {
       "class": "com/google/androidgamesdk/SwappyDisplayManager",
       "methods_verified": 2
+    },
+    {
+      "class": "com/unity3d/player/GoogleARCoreApi",
+      "methods_verified": 3
+    },
+    {
+      "class": "com/unity3d/player/Camera2Wrapper",
+      "methods_verified": 4
+    },
+    {
+      "class": "com/unity3d/player/HFPStatus",
+      "methods_verified": 2
+    },
+    {
+      "class": "com/unity3d/player/AudioVolumeHandler",
+      "methods_verified": 1
+    },
+    {
+      "class": "com/unity3d/player/UnityCoreAssetPacksStatusCallbacks",
+      "methods_verified": 1
+    },
+    {
+      "class": "com/unity3d/player/OrientationLockListener",
+      "methods_verified": 1
     }
   ],
-  "methods_verified": 28,
+  "methods_verified": 40,
   "arm_code_executed": false,
   "addresses": "link-time ARM32 VA stored as integers only",
   "registration_metadata_replayed_on_host": true,
+  "module_sha256": "82e24ba84e18a85beb7b81f221d4405b8f3befd94fc7025d8b8282c8d1d9535b",
   "unity_sha256": "82e24ba84e18a85beb7b81f221d4405b8f3befd94fc7025d8b8282c8d1d9535b",
   "execution_allowed": false
 }

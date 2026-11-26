@@ -68,3 +68,9 @@ add_test(NAME arm_arena COMMAND arm_arena_test)
 
 add_library(arm_namespace_host SHARED vita/src/module_lifecycle.c vita/src/preloaded_dl.c vita/src/arm_namespace.c vita/src/arm_symbols.c vita/src/arm_dynamic.c)
 set_target_properties(arm_namespace_host PROPERTIES PREFIX "")
+
+add_executable(android_clock_test tests/android_clock_test.c vita/src/android_clock.c)
+add_test(NAME android_clock COMMAND android_clock_test)
+
+add_executable(engine_budget_test tests/engine_budget_test.c vita/src/engine_budget.c)
+add_test(NAME engine_budget COMMAND engine_budget_test)

@@ -3,11 +3,55 @@
   "profile_evidence": "Manual Thumb disassembly reviewed; exact ELF hash and PC-relative data revalidated by script.",
   "jni_onload_pointer": 2542105,
   "init_jni_pointer": 2540141,
+  "jni_onload_direct_calls": [
+    {
+      "caller_vaddr": 2542110,
+      "target_vaddr": 1703320
+    },
+    {
+      "caller_vaddr": 2542140,
+      "target_vaddr": 2542208
+    },
+    {
+      "caller_vaddr": 2542146,
+      "target_vaddr": 2542276
+    },
+    {
+      "caller_vaddr": 2542152,
+      "target_vaddr": 2542344
+    },
+    {
+      "caller_vaddr": 2542158,
+      "target_vaddr": 2535488
+    },
+    {
+      "caller_vaddr": 2542164,
+      "target_vaddr": 2406332
+    },
+    {
+      "caller_vaddr": 2542170,
+      "target_vaddr": 2521760
+    },
+    {
+      "caller_vaddr": 2542176,
+      "target_vaddr": 2530340
+    },
+    {
+      "caller_vaddr": 2542182,
+      "target_vaddr": 2466040
+    },
+    {
+      "caller_vaddr": 2542188,
+      "target_vaddr": 2433312
+    }
+  ],
+  "pre_registration_timing_helper": 1703320,
   "confirmed_registration_groups": [
     {
       "helper_vaddr": 2542208,
       "class": "com/unity3d/player/UnityPlayer",
       "count": 25,
+      "body_vaddr": 2542208,
       "table_vaddr": 13180492,
       "methods": [
         {
@@ -366,6 +410,7 @@
       "helper_vaddr": 2542276,
       "class": "com/google/androidgamesdk/ChoreographerCallback",
       "count": 1,
+      "body_vaddr": 2542276,
       "table_vaddr": 13180792,
       "methods": [
         {
@@ -388,6 +433,7 @@
       "helper_vaddr": 2542344,
       "class": "com/google/androidgamesdk/SwappyDisplayManager",
       "count": 2,
+      "body_vaddr": 2542344,
       "table_vaddr": 13180804,
       "methods": [
         {
@@ -419,9 +465,231 @@
           "class": "com/google/androidgamesdk/SwappyDisplayManager"
         }
       ]
+    },
+    {
+      "helper_vaddr": 2535488,
+      "class": "com/unity3d/player/GoogleARCoreApi",
+      "count": 3,
+      "body_vaddr": 2535492,
+      "table_vaddr": 13180440,
+      "methods": [
+        {
+          "table_vaddr": 13180440,
+          "method": "initializeARCore",
+          "descriptor": "(Landroid/app/Activity;)V",
+          "function_pointer": 2538805,
+          "code_vaddr": 2538804,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/GoogleARCoreApi;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/GoogleARCoreApi"
+        },
+        {
+          "table_vaddr": 13180452,
+          "method": "pauseARCore",
+          "descriptor": "()V",
+          "function_pointer": 2538877,
+          "code_vaddr": 2538876,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/GoogleARCoreApi;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/GoogleARCoreApi"
+        },
+        {
+          "table_vaddr": 13180464,
+          "method": "resumeARCore",
+          "descriptor": "()V",
+          "function_pointer": 2538929,
+          "code_vaddr": 2538928,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/GoogleARCoreApi;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/GoogleARCoreApi"
+        }
+      ]
+    },
+    {
+      "helper_vaddr": 2406332,
+      "class": "com/unity3d/player/Camera2Wrapper",
+      "count": 4,
+      "body_vaddr": 2406336,
+      "table_vaddr": 13179996,
+      "methods": [
+        {
+          "table_vaddr": 13179996,
+          "method": "initCamera2Jni",
+          "descriptor": "()V",
+          "function_pointer": 2406273,
+          "code_vaddr": 2406272,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/Camera2Wrapper;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/Camera2Wrapper"
+        },
+        {
+          "table_vaddr": 13180008,
+          "method": "deinitCamera2Jni",
+          "descriptor": "()V",
+          "function_pointer": 2406329,
+          "code_vaddr": 2406328,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/Camera2Wrapper;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/Camera2Wrapper"
+        },
+        {
+          "table_vaddr": 13180020,
+          "method": "nativeFrameReady",
+          "descriptor": "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;III)V",
+          "function_pointer": 2425945,
+          "code_vaddr": 2425944,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/Camera2Wrapper;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/Camera2Wrapper"
+        },
+        {
+          "table_vaddr": 13180032,
+          "method": "nativeSurfaceTextureReady",
+          "descriptor": "(Ljava/lang/Object;)V",
+          "function_pointer": 2425749,
+          "code_vaddr": 2425748,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/Camera2Wrapper;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/Camera2Wrapper"
+        }
+      ]
+    },
+    {
+      "helper_vaddr": 2521760,
+      "class": "com/unity3d/player/HFPStatus",
+      "count": 2,
+      "body_vaddr": 2521764,
+      "table_vaddr": 13180392,
+      "methods": [
+        {
+          "table_vaddr": 13180392,
+          "method": "initHFPStatusJni",
+          "descriptor": "()V",
+          "function_pointer": 2521701,
+          "code_vaddr": 2521700,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/HFPStatus;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/HFPStatus"
+        },
+        {
+          "table_vaddr": 13180404,
+          "method": "deinitHFPStatusJni",
+          "descriptor": "()V",
+          "function_pointer": 2521757,
+          "code_vaddr": 2521756,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/HFPStatus;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/HFPStatus"
+        }
+      ]
+    },
+    {
+      "helper_vaddr": 2530340,
+      "class": "com/unity3d/player/AudioVolumeHandler",
+      "count": 1,
+      "body_vaddr": 2530344,
+      "table_vaddr": 13180428,
+      "methods": [
+        {
+          "table_vaddr": 13180428,
+          "method": "onAudioVolumeChanged",
+          "descriptor": "(I)V",
+          "function_pointer": 2530293,
+          "code_vaddr": 2530292,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/AudioVolumeHandler;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/AudioVolumeHandler"
+        }
+      ]
+    },
+    {
+      "helper_vaddr": 2466040,
+      "class": "com/unity3d/player/UnityCoreAssetPacksStatusCallbacks",
+      "count": 1,
+      "body_vaddr": 2466044,
+      "table_vaddr": 13180272,
+      "methods": [
+        {
+          "table_vaddr": 13180272,
+          "method": "nativeStatusQueryResult",
+          "descriptor": "(Ljava/lang/String;II)V",
+          "function_pointer": 2465765,
+          "code_vaddr": 2465764,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/UnityCoreAssetPacksStatusCallbacks;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/UnityCoreAssetPacksStatusCallbacks"
+        }
+      ]
+    },
+    {
+      "helper_vaddr": 2433312,
+      "class": "com/unity3d/player/OrientationLockListener",
+      "count": 1,
+      "body_vaddr": 2433316,
+      "table_vaddr": 13180232,
+      "methods": [
+        {
+          "table_vaddr": 13180232,
+          "method": "nativeUpdateOrientationLockState",
+          "descriptor": "(I)V",
+          "function_pointer": 2433253,
+          "code_vaddr": 2433252,
+          "instruction_set": "Thumb",
+          "class_candidates": [
+            "Lcom/unity3d/player/OrientationLockListener;"
+          ],
+          "class_binding_confirmed": true,
+          "pointer_relocations": "three R_ARM_RELATIVE entries",
+          "class": "com/unity3d/player/OrientationLockListener"
+        }
+      ]
     }
   ],
-  "confirmed_method_count": 28,
+  "confirmed_method_count": 40,
   "init_helper_vaddr": 2476944,
   "reflection_evidence": [
     {
@@ -483,7 +751,8 @@
   "limitations": [
     "Observed slots are a lower bound, not a complete call graph.",
     "FatalError slot 18 is observed on failure branches, not necessarily normal startup.",
-    "The profile confirms static class/table/count wiring for three groups only; Android code was never called.",
+    "The profile confirms static class/table/count wiring for all nine reviewed direct registration helpers; Android code was never called.",
+    "The timing helper and transitive callees/constructors remain unproven; this is not a full startup call graph.",
     "ELF virtual function pointers require validated relocation, executable mapping and runtime before use."
   ],
   "execution_allowed": false

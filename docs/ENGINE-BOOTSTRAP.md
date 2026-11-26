@@ -35,7 +35,7 @@ teardown lifecycle, sufficient executable memory, bionic thread/TLS contracts,
 Unity EGL/surface/audio lifecycle and IL2CPP metadata/assets. The diagnostic
 vitaGL context does not implement Unity's EGL lifecycle.
 
-Validation at this checkpoint: 300 Python tests, 14 CTest targets, VitaSDK
+Validation at this checkpoint: 305 Python tests, 16 CTest targets, VitaSDK
 cross-build and VPK validation pass. New backing allocation/permissions are
 not hardware-tested. No game binaries, APKs, generated game headers or device
 dumps are published. No DRM or license checks are bypassed.
@@ -48,3 +48,6 @@ The C lifecycle planner and opt-in planned mapper now validate initialization AN
 
 
 A one-shot [module lifecycle controller](MODULE-LIFECYCLE-CONTROLLER.md) now orchestrates namespace transitions and explicit dispatch with failure retention. The new 0.10-ctors1 Vita build tests constructors/destructors only in an authored ARM fixture; device execution is pending and no Unity constructor dispatcher is enabled.
+
+
+Whole-path update: [Unity startup gate](UNITY-STARTUP-GATE.md) expands registration coverage to nine groups/40 methods, identifies required clocks 1/7, recalculates actual relocation imports and adds an explicit OFF-by-default memory profile. All of its stated hard gates remain blocked; no original Unity instruction has run.
